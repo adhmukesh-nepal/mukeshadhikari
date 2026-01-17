@@ -430,6 +430,100 @@
             `;
         }
 
+         function renderAbout() {
+            return `
+                <section class="min-h-screen px-4 py-24">
+                    <div class="max-w-4xl mx-auto">
+                        <h2 class="text-4xl md:text-5xl font-bold mb-12 text-center bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
+                            About Me
+                        </h2>
+
+                        <div class="bg-slate-800/50 backdrop-blur border border-purple-500/20 rounded-xl p-8 mb-8">
+                            <div class="flex flex-col md:flex-row gap-8 items-center mb-6">
+                                <img 
+                                    src="headshot.jpg" 
+                                    alt="Mukesh Adhikari" 
+                                    class="w-48 h-48 rounded-xl border-4 border-purple-500/50 shadow-lg object-cover flex-shrink-0"
+                                />
+                                <div>
+                                    <h3 class="text-2xl font-bold mb-2">Mukesh Adhikari</h3>
+                                    <p class="text-purple-400 mb-4">Public Health Researcher & Advocate</p>
+                                    <p class="text-gray-300">
+                                        I'm a public health researcher dedicated to bridging the gap between scientific evidence and real-world impact. My work focuses on rural health, medical education, maternal and child health, and health systems strengthening.
+                                    </p>
+                                </div>
+                            </div>
+                            
+                            <p class="text-lg text-gray-300 mb-4">
+                                With over 24 peer-reviewed publications in top-tier journals including JAMA, The Lancet, and BMJ, my research spans from Nepal to the United States, addressing critical issues in healthcare access, medical education policy, and health equity.
+                            </p>
+                            <p class="text-lg text-gray-300 mb-4">
+                                My work has influenced policy decisions at both national and international levels, particularly in rural graduate medical education expansion, health insurance implementation in Nepal, and maternal health service delivery during the COVID-19 pandemic.
+                            </p>
+                            <p class="text-lg text-gray-300">
+                                Beyond research, I'm passionate about translating complex health science into accessible knowledge through op-eds and public engagement, ensuring that evidence reaches those who need it most.
+                            </p>
+                        </div>
+
+                        <div class="grid md:grid-cols-2 gap-6 mb-8">
+                            <div class="bg-slate-800/50 backdrop-blur border border-purple-500/20 rounded-xl p-6">
+                                <h3 class="text-xl font-semibold mb-4 text-purple-400">Education</h3>
+                                <ul class="space-y-3 text-gray-300">
+                                    <li>
+                                        <div class="font-semibold">PhD, Health Policy</div>
+                                        <div class="text-sm text-gray-400">University Name • Year</div>
+                                    </li>
+                                    <li>
+                                        <div class="font-semibold">MPH, Public Health</div>
+                                        <div class="text-sm text-gray-400">University Name • Year</div>
+                                    </li>
+                                    <li>
+                                        <div class="font-semibold">MBBS, Medicine</div>
+                                        <div class="text-sm text-gray-400">University Name • Year</div>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div class="bg-slate-800/50 backdrop-blur border border-pink-500/20 rounded-xl p-6">
+                                <h3 class="text-xl font-semibold mb-4 text-pink-400">Recognition & Awards</h3>
+                                <ul class="space-y-2 text-gray-300">
+                                    <li>• Research Excellence Award</li>
+                                    <li>• Public Health Leadership Recognition</li>
+                                    <li>• Community Service Award</li>
+                                    <li>• Best Paper Award</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="bg-gradient-to-r from-purple-500/10 to-pink-500/10 border border-purple-500/30 rounded-xl p-8">
+                            <h3 class="text-2xl font-semibold mb-4">Research Focus Areas</h3>
+                            <div class="grid md:grid-cols-2 gap-4 text-gray-300">
+                                <ul class="space-y-2">
+                                    <li>• Rural health and medical education</li>
+                                    <li>• Health systems strengthening</li>
+                                    <li>• Maternal and child health</li>
+                                    <li>• Health policy analysis</li>
+                                </ul>
+                                <ul class="space-y-2">
+                                    <li>• Graduate medical education policy</li>
+                                    <li>• Health insurance and financing</li>
+                                    <li>• Digital health implementation</li>
+                                    <li>• Health equity and access</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="mt-8 text-center">
+                            <p class="text-gray-400 mb-4">Interested in collaboration or speaking engagements?</p>
+                            <button onclick="navigateTo('contact')" class="px-8 py-3 bg-gradient-to-r from-purple-600 to-pink-600 rounded-lg font-semibold hover:shadow-lg hover:shadow-purple-500/50 transition-all">
+                                Get in Touch
+                            </button>
+                        </div>
+                    </div>
+                </section>
+            `;
+        }
+        
         function renderSection() {
             if (currentSection === 'home') return renderHome();
             if (currentSection === 'research') return renderResearch();
