@@ -962,28 +962,6 @@ function renderPolicy() {
                 </footer>
             `;
         }
-// Handle form submission
-document.addEventListener('DOMContentLoaded', function() {
-    setupContactForm();
-});
-
-function setupContactForm() {
-    const form = document.getElementById('contact-form');
-    if (!form) return;
-    
-    form.addEventListener('submit', function(e) {
-        const submitBtn = document.getElementById('submit-btn');
-        submitBtn.textContent = 'Sending...';
-        submitBtn.disabled = true;
-    });
-}
-
-function render() {
-    // ... existing render code ...
-    
-    // Re-setup form after render
-    setTimeout(setupContactForm, 100);
-}
         // Initial render
         render();
     </script>
