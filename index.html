@@ -67,7 +67,7 @@
                             <div class="hidden md:flex space-x-8">
                                 ${sections.map(s => `
                                     <button onclick="navigateTo('${s}')" class="capitalize transition-colors ${currentSection === s ? 'text-purple-400' : 'text-gray-300 hover:text-white'}">
-                                        ${s}
+    ${s === 'socialmedia' ? 'Social Media' : s}
                                     </button>
                                 `).join('')}
                             </div>
@@ -80,7 +80,7 @@
                         <div class="md:hidden bg-slate-800 border-t border-purple-500/20">
                             ${sections.map(s => `
                                 <button onclick="navigateTo('${s}')" class="block w-full text-left px-4 py-3 capitalize hover:bg-slate-700">
-                                    ${s}
+    ${s === 'socialmedia' ? 'Social Media' : s}
                                 </button>
                             `).join('')}
                         </div>
