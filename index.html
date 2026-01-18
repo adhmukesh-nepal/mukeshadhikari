@@ -56,7 +56,7 @@
         }
 
         function renderNav() {
-            const sections = ['home', 'research', 'teaching', 'socialmedia', 'about', 'contact'];
+            const sections = ['home', 'research', 'policy', 'teaching', 'socialmedia', 'about', 'contact'];
             return `
                 <nav class="fixed w-full bg-slate-900/80 backdrop-blur-md z-50 border-b border-purple-500/20">
                     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -434,6 +434,169 @@
             `;
         }
 
+function renderPolicy() {
+            return `
+                <section class="min-h-screen px-4 py-24">
+                    <div class="max-w-6xl mx-auto">
+                        <h2 class="text-4xl md:text-5xl font-bold mb-4 text-center bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
+                            Policy Briefs & Op-eds
+                        </h2>
+                        <p class="text-center text-gray-300 mb-12 max-w-2xl mx-auto">
+                            Translating research into actionable policy recommendations and public discourse
+                        </p>
+
+                        <!-- Policy Briefs Section -->
+                        <div class="mb-12">
+                            <h3 class="text-2xl font-semibold mb-6 text-white">Policy Briefs & Papers</h3>
+                            <div class="space-y-4">
+                                <div class="bg-slate-800/50 backdrop-blur border border-purple-500/20 rounded-xl p-6 hover:border-purple-500/50 transition-all">
+                                    <h4 class="text-lg font-semibold mb-2 text-white">Section 131: A lifeline on its last breath</h4>
+                                    <p class="text-gray-400 mb-3">Association of American Medical Colleges • 2025</p>
+                                    <a href="https://www.aamc.org/about-us/mission-areas/health-care/section-131" target="_blank" class="text-purple-400 hover:text-purple-300 flex items-center">
+                                        Read Brief <span class="ml-2">${icons.link}</span>
+                                    </a>
+                                </div>
+
+                                <div class="bg-slate-800/50 backdrop-blur border border-pink-500/20 rounded-xl p-6 hover:border-pink-500/50 transition-all">
+                                    <h4 class="text-lg font-semibold mb-2 text-white">Overview of Residency Programs Selected for CAA Sec. 126 Round Two GME Slots</h4>
+                                    <p class="text-gray-400 mb-3">Rural Graduate Medical Education • 2025</p>
+                                    <a href="https://www.ruralgme.org/research" target="_blank" class="text-pink-400 hover:text-pink-300 flex items-center">
+                                        Read Brief <span class="ml-2">${icons.link}</span>
+                                    </a>
+                                </div>
+
+                                <div class="bg-slate-800/50 backdrop-blur border border-purple-500/20 rounded-xl p-6 hover:border-purple-500/50 transition-all">
+                                    <h4 class="text-lg font-semibold mb-2 text-white">Overview of Residency Programs Selected for CAA Sec. 126 Round Two GME Slots</h4>
+                                    <p class="text-gray-400 mb-3">Rural Graduate Medical Education • 2023</p>
+                                    <a href="https://www.ruralgme.org/research" target="_blank" class="text-purple-400 hover:text-purple-300 flex items-center">
+                                        Read Brief <span class="ml-2">${icons.link}</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- English Op-eds Section -->
+                        <div class="mb-12">
+                            <h3 class="text-2xl font-semibold mb-6 text-white">Op-eds (English)</h3>
+                            <div class="grid md:grid-cols-2 gap-4">
+                                <div class="bg-slate-800/50 backdrop-blur border border-purple-500/20 rounded-xl p-5 hover:border-purple-500/50 transition-all">
+                                    <h4 class="font-semibold mb-2 text-white">Irony of vaccination</h4>
+                                    <p class="text-sm text-gray-400 mb-2">My Republica • August 5, 2020</p>
+                                    <a href="https://myrepublica.nagariknetwork.com/news/irony-of-vaccination/?categoryId=opinion" target="_blank" class="text-purple-400 hover:text-purple-300 text-sm">Read Article →</a>
+                                </div>
+
+                                <div class="bg-slate-800/50 backdrop-blur border border-pink-500/20 rounded-xl p-5 hover:border-pink-500/50 transition-all">
+                                    <h4 class="font-semibold mb-2 text-white">Health for All</h4>
+                                    <p class="text-sm text-gray-400 mb-2">My Republica • March 12, 2020</p>
+                                    <a href="https://myrepublica.nagariknetwork.com/news/health-for-all-5/?categoryId=opinion" target="_blank" class="text-pink-400 hover:text-pink-300 text-sm">Read Article →</a>
+                                </div>
+
+                                <div class="bg-slate-800/50 backdrop-blur border border-purple-500/20 rounded-xl p-5 hover:border-purple-500/50 transition-all">
+                                    <h4 class="font-semibold mb-2 text-white">Reducing the Burden of Cervical Cancer in India</h4>
+                                    <p class="text-sm text-gray-400 mb-2">Yale Medicine • March 2, 2020</p>
+                                    <a href="https://medicine.yale.edu/news-article/22648/" target="_blank" class="text-purple-400 hover:text-purple-300 text-sm">Read Article →</a>
+                                </div>
+
+                                <div class="bg-slate-800/50 backdrop-blur border border-pink-500/20 rounded-xl p-5 hover:border-pink-500/50 transition-all">
+                                    <h4 class="font-semibold mb-2 text-white">Vehicular Collisions need more attention</h4>
+                                    <p class="text-sm text-gray-400 mb-2">The Kathmandu Post • February 10, 2020</p>
+                                    <a href="https://kathmandupost.com/columns/2020/02/10/vehicular-collisions-need-more-attention" target="_blank" class="text-pink-400 hover:text-pink-300 text-sm">Read Article →</a>
+                                </div>
+
+                                <div class="bg-slate-800/50 backdrop-blur border border-purple-500/20 rounded-xl p-5 hover:border-purple-500/50 transition-all">
+                                    <h4 class="font-semibold mb-2 text-white">Caution on Coronavirus</h4>
+                                    <p class="text-sm text-gray-400 mb-2">My Republica • February 10, 2020</p>
+                                    <a href="https://myrepublica.nagariknetwork.com/news/caution-on-coronavirus/" target="_blank" class="text-purple-400 hover:text-purple-300 text-sm">Read Article →</a>
+                                </div>
+
+                                <div class="bg-slate-800/50 backdrop-blur border border-pink-500/20 rounded-xl p-5 hover:border-pink-500/50 transition-all">
+                                    <h4 class="font-semibold mb-2 text-white">Empower local health institutes</h4>
+                                    <p class="text-sm text-gray-400 mb-2">My Republica • January 27, 2020</p>
+                                    <a href="https://myrepublica.nagariknetwork.com/news/empower-local-health-institutes/?categoryId=opinion" target="_blank" class="text-pink-400 hover:text-pink-300 text-sm">Read Article →</a>
+                                </div>
+
+                                <div class="bg-slate-800/50 backdrop-blur border border-purple-500/20 rounded-xl p-5 hover:border-purple-500/50 transition-all">
+                                    <h4 class="font-semibold mb-2 text-white">Tackling the coronavirus outbreak needs a holistic approach</h4>
+                                    <p class="text-sm text-gray-400 mb-2">The Kathmandu Post • January 27, 2020</p>
+                                    <a href="https://kathmandupost.com/columns/2020/01/27/tackling-the-coronavirus-outbreak-needs-a-holistic-approach" target="_blank" class="text-purple-400 hover:text-purple-300 text-sm">Read Article →</a>
+                                </div>
+
+                                <div class="bg-slate-800/50 backdrop-blur border border-pink-500/20 rounded-xl p-5 hover:border-pink-500/50 transition-all">
+                                    <h4 class="font-semibold mb-2 text-white">Preventing Vaccine Related Rumors</h4>
+                                    <p class="text-sm text-gray-400 mb-2">The Kathmandu Post • December 31, 2019</p>
+                                    <a href="https://kathmandupost.com/columns/2019/12/31/preventing-vaccine-related-rumours" target="_blank" class="text-pink-400 hover:text-pink-300 text-sm">Read Article →</a>
+                                </div>
+
+                                <div class="bg-slate-800/50 backdrop-blur border border-purple-500/20 rounded-xl p-5 hover:border-purple-500/50 transition-all">
+                                    <h4 class="font-semibold mb-2 text-white">How to prevent medical errors</h4>
+                                    <p class="text-sm text-gray-400 mb-2">The Kathmandu Post • December 19, 2019</p>
+                                    <a href="https://kathmandupost.com/columns/2019/12/19/how-to-prevent-medical-errors" target="_blank" class="text-purple-400 hover:text-purple-300 text-sm">Read Article →</a>
+                                </div>
+
+                                <div class="bg-slate-800/50 backdrop-blur border border-pink-500/20 rounded-xl p-5 hover:border-pink-500/50 transition-all">
+                                    <h4 class="font-semibold mb-2 text-white">Time to Think Out of the Box</h4>
+                                    <p class="text-sm text-gray-400 mb-2">My Republica • December 9, 2019</p>
+                                    <a href="https://myrepublica.nagariknetwork.com/news/time-to-think-out-of-the-box/?categoryId=opinion" target="_blank" class="text-pink-400 hover:text-pink-300 text-sm">Read Article →</a>
+                                </div>
+
+                                <div class="bg-slate-800/50 backdrop-blur border border-purple-500/20 rounded-xl p-5 hover:border-purple-500/50 transition-all">
+                                    <h4 class="font-semibold mb-2 text-white">Deploying Midwives to prevent deaths</h4>
+                                    <p class="text-sm text-gray-400 mb-2">The Kathmandu Post • December 1, 2019</p>
+                                    <a href="https://kathmandupost.com/columns/2019/11/30/deploying-midwives-to-prevent-deaths" target="_blank" class="text-purple-400 hover:text-purple-300 text-sm">Read Article →</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Nepali Op-eds Section -->
+                        <div>
+                            <h3 class="text-2xl font-semibold mb-6 text-white">Op-eds (Nepali / नेपाली)</h3>
+                            <div class="grid md:grid-cols-2 gap-4">
+                                <div class="bg-slate-800/50 backdrop-blur border border-purple-500/20 rounded-xl p-5 hover:border-purple-500/50 transition-all">
+                                    <h4 class="font-semibold mb-2 text-white">स्वास्थ्यकर्मीमाथि कार्यस्थलमा हुने हिंसाका कारणहरुको चिरफार</h4>
+                                    <p class="text-sm text-gray-400 mb-2">Swasthya Khabar</p>
+                                    <a href="https://swasthyakhabar.com/story/54809" target="_blank" class="text-purple-400 hover:text-purple-300 text-sm">लेख पढ्नुहोस् →</a>
+                                </div>
+
+                                <div class="bg-slate-800/50 backdrop-blur border border-pink-500/20 rounded-xl p-5 hover:border-pink-500/50 transition-all">
+                                    <h4 class="font-semibold mb-2 text-white">स्वास्थ्य बीमा कार्यक्रमको ब्ल्याक बक्स खोल्न पहल किन नगर्ने?</h4>
+                                    <p class="text-sm text-gray-400 mb-2">Swasthya Khabar</p>
+                                    <a href="https://swasthyakhabar.com/story/54596" target="_blank" class="text-pink-400 hover:text-pink-300 text-sm">लेख पढ्नुहोस् →</a>
+                                </div>
+
+                                <div class="bg-slate-800/50 backdrop-blur border border-purple-500/20 rounded-xl p-5 hover:border-purple-500/50 transition-all">
+                                    <h4 class="font-semibold mb-2 text-white">नेपालको स्वास्थ्य सूचना प्रणालीः नौलो प्रयास, चुनौती र अबको बाटो</h4>
+                                    <p class="text-sm text-gray-400 mb-2">Swasthya Khabar</p>
+                                    <a href="https://swasthyakhabar.com/story/54157" target="_blank" class="text-purple-400 hover:text-purple-300 text-sm">लेख पढ्नुहोस् →</a>
+                                </div>
+
+                                <div class="bg-slate-800/50 backdrop-blur border border-pink-500/20 rounded-xl p-5 hover:border-pink-500/50 transition-all">
+                                    <h4 class="font-semibold mb-2 text-white">कोभिड-१९ महामारी : मातृशिशु सेवामा असर र अबको बाटो</h4>
+                                    <p class="text-sm text-gray-400 mb-2">Swasthya Khabar</p>
+                                    <a href="https://swasthyakhabar.com/story/36678" target="_blank" class="text-pink-400 hover:text-pink-300 text-sm">लेख पढ्नुहोस् →</a>
+                                </div>
+
+                                <div class="bg-slate-800/50 backdrop-blur border border-purple-500/20 rounded-xl p-5 hover:border-purple-500/50 transition-all">
+                                    <h4 class="font-semibold mb-2 text-white">कोरोनाको जोखिम रोक्ने उपाय हुनसक्छ टेलिहेल्थ</h4>
+                                    <p class="text-sm text-gray-400 mb-2">Swasthya Khabar</p>
+                                    <a href="https://swasthyakhabar.com/story/31235" target="_blank" class="text-purple-400 hover:text-purple-300 text-sm">लेख पढ्नुहोस् →</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mt-12 bg-gradient-to-r from-purple-500/10 to-pink-500/10 border border-purple-500/30 rounded-xl p-8 text-center">
+                            <h3 class="text-2xl font-semibold mb-4 text-white">Impact Through Writing</h3>
+                            <p class="text-gray-300 mb-6 max-w-2xl mx-auto">
+                                My policy briefs and op-eds bridge research and practice, translating complex health issues into accessible insights for policymakers, practitioners, and the public. Published in major outlets in both English and Nepali, these pieces contribute to informed public discourse on critical health issues.
+                            </p>
+                            <button onclick="navigateTo('contact')" class="px-8 py-3 bg-gradient-to-r from-purple-600 to-pink-600 rounded-lg font-semibold hover:shadow-lg hover:shadow-purple-500/50 transition-all">
+                                Collaborate on Policy Work
+                            </button>
+                        </div>
+                    </div>
+                </section>
+            `;
+        }
+
         function renderTeaching() {
             return `
                 <section class="min-h-screen px-4 py-24">
@@ -756,6 +919,7 @@
         function renderSection() {
         if (currentSection === 'home') return renderHome();
         if (currentSection === 'research') return renderResearch();
+        if (currentSection === 'policy') return renderPolicy();
         if (currentSection === 'teaching') return renderTeaching();
         if (currentSection === 'socialmedia') return renderSocialMedia();
         if (currentSection === 'about') return renderAbout();
