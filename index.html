@@ -430,6 +430,102 @@
             `;
         }
 
+        function renderTeaching() {
+            return `
+                <section class="min-h-screen px-4 py-24">
+                    <div class="max-w-6xl mx-auto">
+                        <h2 class="text-4xl md:text-5xl font-bold mb-4 text-center bg-gradient-to-r from-indigo-600 to-blue-600 bg-clip-text text-transparent">
+                            Teaching Experience
+                        </h2>
+                        <p class="text-center text-gray-700 mb-12 max-w-2xl mx-auto">
+                            Over a decade of teaching core public health courses and mentoring future public health professionals
+                        </p>
+
+                        <div class="space-y-8">
+                            <div class="bg-white border-2 border-indigo-200 rounded-xl p-8 shadow-lg hover:shadow-xl transition-all">
+                                <div class="flex flex-col md:flex-row md:items-start md:justify-between mb-4">
+                                    <div>
+                                        <h3 class="text-2xl font-bold text-gray-900 mb-2">Safal Education Network</h3>
+                                        <p class="text-indigo-600 font-semibold mb-1">Lead Facilitator</p>
+                                        <p class="text-gray-600">Kathmandu, Nepal • 2014 - Present</p>
+                                    </div>
+                                    <div class="mt-4 md:mt-0 px-4 py-2 bg-indigo-100 text-indigo-700 rounded-lg text-sm font-semibold">
+                                        10+ Years
+                                    </div>
+                                </div>
+                                
+                                <div class="mt-6">
+                                    <h4 class="font-semibold text-gray-900 mb-3">Courses Taught:</h4>
+                                    <ul class="space-y-2 text-gray-700">
+                                        <li class="flex items-start">
+                                            <span class="text-indigo-600 mr-2 mt-1">→</span>
+                                            <span><strong>Biostatistics:</strong> Teaching core statistical concepts and methods for public health candidates preparing for Public Service Commission examinations</span>
+                                        </li>
+                                        <li class="flex items-start">
+                                            <span class="text-indigo-600 mr-2 mt-1">→</span>
+                                            <span><strong>Epidemiology:</strong> Covering disease patterns, causation, and public health surveillance methods</span>
+                                        </li>
+                                        <li class="flex items-start">
+                                            <span class="text-indigo-600 mr-2 mt-1">→</span>
+                                            <span><strong>Health Management and Health System in Nepal:</strong> Comprehensive overview of Nepal's health system structure, policies, and management practices</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="bg-white border-2 border-blue-200 rounded-xl p-8 shadow-lg hover:shadow-xl transition-all">
+                                <div class="flex flex-col md:flex-row md:items-start md:justify-between mb-4">
+                                    <div>
+                                        <h3 class="text-2xl font-bold text-gray-900 mb-2">University of North Carolina</h3>
+                                        <p class="text-blue-600 font-semibold mb-1">Graduate Teaching Assistant</p>
+                                        <p class="text-gray-600">Gillings School of Global Public Health • 2021 - 2022</p>
+                                    </div>
+                                    <div class="mt-4 md:mt-0 px-4 py-2 bg-blue-100 text-blue-700 rounded-lg text-sm font-semibold">
+                                        Academic Year 2021-22
+                                    </div>
+                                </div>
+                                
+                                <div class="mt-6">
+                                    <h4 class="font-semibold text-gray-900 mb-3">Graduate Courses:</h4>
+                                    <div class="space-y-4">
+                                        <div class="bg-gray-50 p-4 rounded-lg border border-gray-200">
+                                            <p class="font-semibold text-gray-900">HPM 715: Health Economics</p>
+                                            <p class="text-sm text-gray-600">Fall 2021</p>
+                                        </div>
+                                        <div class="bg-gray-50 p-4 rounded-lg border border-gray-200">
+                                            <p class="font-semibold text-gray-900">HPM 780: Pharmaceutical Health Policy</p>
+                                            <p class="text-sm text-gray-600">Spring 2022</p>
+                                        </div>
+                                        <div class="bg-gray-50 p-4 rounded-lg border border-gray-200">
+                                            <p class="font-semibold text-gray-900">HPM 756: Access to Healthcare</p>
+                                            <p class="text-sm text-gray-600">Spring 2022</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mt-12 bg-gradient-to-r from-indigo-50 to-blue-50 border-2 border-indigo-200 rounded-xl p-8 shadow-lg">
+                            <h3 class="text-2xl font-semibold mb-4 text-gray-900">Teaching Philosophy</h3>
+                            <p class="text-gray-700 mb-4">
+                                I believe in making complex public health concepts accessible and actionable. My teaching approach combines rigorous academic content with real-world applications, drawing from my experience working in both Nepal and the United States.
+                            </p>
+                            <p class="text-gray-700">
+                                Whether preparing students for civil service examinations or graduate-level coursework, I emphasize critical thinking, practical application, and the importance of evidence-based decision-making in public health practice.
+                            </p>
+                        </div>
+
+                        <div class="mt-8 text-center">
+                            <p class="text-gray-600 mb-4">Interested in guest lectures or teaching collaborations?</p>
+                            <button onclick="navigateTo('contact')" class="px-8 py-3 bg-gradient-to-r from-indigo-600 to-blue-700 text-white rounded-lg font-semibold hover:shadow-lg hover:shadow-indigo-300 transition-all">
+                                Get in Touch
+                            </button>
+                        </div>
+                    </div>
+                </section>
+            `;
+        }
+
          function renderAbout() {
             return `
                 <section class="min-h-screen px-4 py-24">
