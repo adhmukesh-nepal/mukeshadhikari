@@ -393,67 +393,7 @@ function renderResearch() {
                     </div>
                 `;
             }
-            ];
-
-            return `
-                <section class="min-h-screen px-4 py-24">
-                    <div class="max-w-6xl mx-auto">
-                        <h2 class="text-4xl md:text-5xl font-bold mb-4 text-center bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
-                            Research Portfolio
-                        </h2>
-                        <p class="text-center text-gray-300 mb-12 max-w-2xl mx-auto">
-                            Peer-reviewed publications in public health, epidemiology, maternal health, and health policy
-                        </p>
-
-                        <div class="grid md:grid-cols-2 gap-6 mb-12">
-                            ${publications.map(pub => `
-                                <div class="bg-slate-800/50 backdrop-blur border border-purple-500/20 rounded-xl p-6 hover:border-purple-500/50 transition-all hover:transform hover:scale-105">
-                                    <div class="flex items-start justify-between mb-4">
-                                        <div class="text-purple-400">${icons.book}</div>
-                                        <span class="text-sm text-gray-400">${pub.year}</span>
-                                    </div>
-                                    <h3 class="text-xl font-semibold mb-3">${pub.title}</h3>
-                                    <p class="text-gray-400 mb-4">${pub.journal}</p>
-                                    <div class="flex gap-2 flex-wrap mb-4">
-                                        ${pub.tags.map(tag => `
-                                            <span class="px-3 py-1 bg-purple-500/20 text-purple-300 rounded-full text-sm">${tag}</span>
-                                        `).join('')}
-                                    </div>
-                                    <a href="${pub.link}" target="_blank" class="flex items-center text-purple-400 hover:text-purple-300">
-                                        Read Paper <span class="ml-2">${icons.link}</span>
-                                    </a>
-                                </div>
-                            `).join('')}
-                        </div>
-
-                        <div class="mt-12 bg-gradient-to-r from-purple-500/10 to-pink-500/10 border border-purple-500/30 rounded-xl p-8">
-                            <h3 class="text-2xl font-semibold mb-4">Research Interests</h3>
-                            <div class="grid md:grid-cols-2 gap-4 text-gray-300">
-                                <ul class="space-y-2">
-                                    <li>• Maternal and child health</li>
-                                    <li>• Health systems strengthening</li>
-                                    <li>• Digital health implementation</li>
-                                    <li>• Medical education</li>
-                                </ul>
-                                <ul class="space-y-2">
-                                    <li>• Nutrition and food security</li>
-                                    <li>• Rural healthcare delivery</li>
-                                    <li>• Health policy analysis</li>
-                                    <li>• Patient safety and quality improvement</li>
-                                </ul>
-                            </div>
-                        </div>
-
-                        <div class="mt-8 text-center">
-                            <a href="https://scholar.google.com/citations?user=dn44ZTcAAAAJ&hl=en&oi=ao" target="_blank" class="inline-block px-8 py-3 bg-gradient-to-r from-purple-600 to-pink-600 rounded-lg font-semibold hover:shadow-lg hover:shadow-purple-500/50 transition-all">
-                                View All Publications on Google Scholar
-                            </a>
-                        </div>
-                    </div>
-                </section>
-            `;
-        }
-
+    
 function renderPolicy() {
             return `
                 <section class="min-h-screen px-4 py-24">
