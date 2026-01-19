@@ -198,22 +198,8 @@
             `;
         }
 
-        function renderResearch() {
-            const publications = [
-                {
-                    title: "Aging, Mental Health and Ethnic Disparities: Understanding Geriatric Mental Health in Western Nepal",
-                    journal: "Journal of Geriatric Psychiatry and Neurology",
-                    year: "2025",
-                    link: "https://journals.sagepub.com/doi/full/10.1177/08919887251403594",
-                    tags: ["Mental Health", "Geriatrics", "Nepal"]
-                },
-                {
-                    title: "Patient satisfaction with healthcare services among health insurance program beneficiaries in Nepal: A cross-sectional study",
-                    journal: "PLOS ONE",
-                    year: "2025",
-                    link: "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0334352",
-                    tags: ["Patient Satisfaction", "Health Insurance"]
-                },
+function renderResearch() {
+            const usPublications = [
                 {
                     title: "The Evolving Role of Critical Access Hospitals in Rural Physician Training",
                     journal: "JAMA Health Forum",
@@ -236,13 +222,6 @@
                     tags: ["Medical Education", "THC"]
                 },
                 {
-                    title: "Patient satisfaction with the components of the National Health Insurance Program of Nepal",
-                    journal: "BMC Health Services Research",
-                    year: "2025",
-                    link: "https://link.springer.com/article/10.1186/s12913-025-12893-5",
-                    tags: ["Health Insurance", "Nepal"]
-                },
-                {
                     title: "Cultivating Rural Surgeons: An Analysis of the Rural Surgery GME Landscape",
                     journal: "Journal of Surgical Education",
                     year: "2025",
@@ -257,6 +236,37 @@
                     tags: ["Medical Education", "Medicare Funding"]
                 },
                 {
+                    title: "Characteristics of Hospitals by Graduate Medical Education Expense Category",
+                    journal: "Academic Medicine",
+                    year: "2023",
+                    link: "https://journals.lww.com/academicmedicine/abstract/9900/characteristics_of_hospitals_by_graduate_medical.689.aspx",
+                    tags: ["Medical Education", "Rural Health"]
+                }
+            ];
+
+            const nepalPublications = [
+                {
+                    title: "Aging, Mental Health and Ethnic Disparities: Understanding Geriatric Mental Health in Western Nepal",
+                    journal: "Journal of Geriatric Psychiatry and Neurology",
+                    year: "2025",
+                    link: "https://journals.sagepub.com/doi/full/10.1177/08919887251403594",
+                    tags: ["Mental Health", "Geriatrics", "Nepal"]
+                },
+                {
+                    title: "Patient satisfaction with healthcare services among health insurance program beneficiaries in Nepal: A cross-sectional study",
+                    journal: "PLOS ONE",
+                    year: "2025",
+                    link: "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0334352",
+                    tags: ["Patient Satisfaction", "Health Insurance"]
+                },
+                {
+                    title: "Patient satisfaction with the components of the National Health Insurance Program of Nepal",
+                    journal: "BMC Health Services Research",
+                    year: "2025",
+                    link: "https://link.springer.com/article/10.1186/s12913-025-12893-5",
+                    tags: ["Health Insurance", "Nepal"]
+                },
+                {
                     title: "Assistive Artificial Intelligence in Epilepsy and Its Impact on Epilepsy Care in LMICs",
                     journal: "Brain Sciences",
                     year: "2025",
@@ -269,13 +279,6 @@
                     year: "2024",
                     link: "https://bmjpublichealth.bmj.com/content/2/1/e001032",
                     tags: ["Workplace Violence", "Nepal"]
-                },
-                {
-                    title: "Characteristics of Hospitals by Graduate Medical Education Expense Category",
-                    journal: "Academic Medicine",
-                    year: "2023",
-                    link: "https://journals.lww.com/academicmedicine/abstract/9900/characteristics_of_hospitals_by_graduate_medical.689.aspx",
-                    tags: ["Medical Education", "Rural Health"]
                 },
                 {
                     title: "Nutrition and Food Securities in Nepal: A narrative review of policies",
@@ -368,6 +371,28 @@
                     link: "https://www.nepjol.info/index.php/HPROSPECT/article/view/12369",
                     tags: ["Child Health", "Environmental Health"]
                 }
+            ];
+
+            function renderPublicationCard(pub) {
+                return `
+                    <div class="bg-slate-800/50 backdrop-blur border border-purple-500/20 rounded-xl p-6 hover:border-purple-500/50 transition-all hover:transform hover:scale-105">
+                        <div class="flex items-start justify-between mb-4">
+                            <div class="text-purple-400">${icons.book}</div>
+                            <span class="text-sm text-gray-400">${pub.year}</span>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-3">${pub.title}</h3>
+                        <p class="text-gray-400 mb-4">${pub.journal}</p>
+                        <div class="flex gap-2 flex-wrap mb-4">
+                            ${pub.tags.map(tag => `
+                                <span class="px-3 py-1 bg-purple-500/20 text-purple-300 rounded-full text-sm">${tag}</span>
+                            `).join('')}
+                        </div>
+                        <a href="${pub.link}" target="_blank" class="flex items-center text-purple-400 hover:text-purple-300">
+                            Read Paper <span class="ml-2">${icons.link}</span>
+                        </a>
+                    </div>
+                `;
+            }
             ];
 
             return `
