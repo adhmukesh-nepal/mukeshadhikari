@@ -198,7 +198,7 @@
             `;
         }
 
-function renderResearch() {
+ function renderResearch() {
             const usPublications = [
                 {
                     title: "The Evolving Role of Critical Access Hospitals in Rural Physician Training",
@@ -393,6 +393,80 @@ function renderResearch() {
                     </div>
                 `;
             }
+
+            return `
+                <section class="min-h-screen px-4 py-24">
+                    <div class="max-w-6xl mx-auto">
+                        <h2 class="text-4xl md:text-5xl font-bold mb-4 text-center bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
+                            Research Portfolio
+                        </h2>
+                        <p class="text-center text-gray-300 mb-12 max-w-2xl mx-auto">
+                            Peer-reviewed publications in public health, epidemiology, maternal health, and health policy
+                        </p>
+
+                        <!-- US Research Section -->
+                        <div class="mb-16">
+                            <div class="flex items-center mb-6">
+                                <h3 class="text-3xl font-bold bg-gradient-to-r from-blue-400 to-indigo-400 bg-clip-text text-transparent">
+                                    Research in the United States
+                                </h3>
+                                <span class="ml-4 px-3 py-1 bg-blue-500/20 text-blue-300 rounded-full text-sm font-semibold">
+                                    ${usPublications.length} Publications
+                                </span>
+                            </div>
+                            <p class="text-gray-400 mb-6">
+                                Focused on rural graduate medical education, health policy, and healthcare workforce development
+                            </p>
+                            <div class="grid md:grid-cols-2 gap-6">
+                                ${usPublications.map(pub => renderPublicationCard(pub)).join('')}
+                            </div>
+                        </div>
+
+                        <!-- Nepal Research Section -->
+                        <div class="mb-12">
+                            <div class="flex items-center mb-6">
+                                <h3 class="text-3xl font-bold bg-gradient-to-r from-pink-400 to-rose-400 bg-clip-text text-transparent">
+                                    Research in Nepal
+                                </h3>
+                                <span class="ml-4 px-3 py-1 bg-pink-500/20 text-pink-300 rounded-full text-sm font-semibold">
+                                    ${nepalPublications.length} Publications
+                                </span>
+                            </div>
+                            <p class="text-gray-400 mb-6">
+                                Addressing maternal and child health, health systems strengthening, digital health, and health equity in Nepal
+                            </p>
+                            <div class="grid md:grid-cols-2 gap-6">
+                                ${nepalPublications.map(pub => renderPublicationCard(pub)).join('')}
+                            </div>
+                        </div>
+
+                        <div class="mt-12 bg-gradient-to-r from-purple-500/10 to-pink-500/10 border border-purple-500/30 rounded-xl p-8">
+                            <h3 class="text-2xl font-semibold mb-4">Research Interests</h3>
+                            <div class="grid md:grid-cols-2 gap-4 text-gray-300">
+                                <ul class="space-y-2">
+                                    <li>• Maternal and child health</li>
+                                    <li>• Health systems strengthening</li>
+                                    <li>• Digital health implementation</li>
+                                    <li>• Medical education</li>
+                                </ul>
+                                <ul class="space-y-2">
+                                    <li>• Nutrition and food security</li>
+                                    <li>• Rural healthcare delivery</li>
+                                    <li>• Health policy analysis</li>
+                                    <li>• Patient safety and quality improvement</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="mt-8 text-center">
+                            <a href="https://scholar.google.com/citations?user=dn44ZTcAAAAJ&hl=en&oi=ao" target="_blank" class="inline-block px-8 py-3 bg-gradient-to-r from-purple-600 to-pink-600 rounded-lg font-semibold hover:shadow-lg hover:shadow-purple-500/50 transition-all">
+                                View All Publications on Google Scholar
+                            </a>
+                        </div>
+                    </div>
+                </section>
+            `;
+        }
     
 function renderPolicy() {
             return `
