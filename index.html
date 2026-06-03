@@ -65,7 +65,7 @@
         }
 
         function renderNav() {
-            const sections = ['home', 'research', 'policy', 'teaching', 'socialmedia', 'about', 'contact'];
+            const sections = ['home', 'research', 'policy', 'teaching', 'resources', 'socialmedia', 'about', 'contact'];
             return `
                 <nav class="fixed w-full bg-slate-900/80 backdrop-blur-md z-50 border-b border-purple-500/20">
                     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -737,6 +737,72 @@ function renderPolicy() {
             `;
         }
 
+        function renderResources() {
+    const resources = [
+        {
+            title: "Annual Report of DOHS: 2081/82",
+            description: "Annual Report of DOHS: 2081/82 (Published and removed from DoHS Website",
+            category: "Annual Report",
+            year: "June 2026",
+            filename: "annualreport_dohs_2081_82.pdf",
+            color: "purple"
+        },
+    
+        // Add more reports here
+    ];
+
+    const categoryColors = {
+        "Policy Brief": "bg-blue-500/20 text-blue-300",
+        "Annual Report": "bg-purple-500/20 text-purple-300",
+        "Working Paper": "bg-pink-500/20 text-pink-300",
+        "Presentation": "bg-green-500/20 text-green-300",
+    };
+
+    const downloadIcon = `<svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>`;
+    const pdfIcon = `<svg width="32" height="32" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>`;
+
+    return `
+        <section class="min-h-screen px-4 py-24">
+            <div class="max-w-6xl mx-auto">
+                <h2 class="text-4xl md:text-5xl font-bold mb-4 text-center bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
+                    Resources
+                </h2>
+                <p class="text-center text-gray-300 mb-12 max-w-2xl mx-auto">
+                    Downloadable reports, policy briefs, presentations, and working papers
+                </p>
+
+                <div class="grid md:grid-cols-2 gap-6 mb-12">
+                    ${resources.map(r => `
+                        <div class="bg-slate-800/50 backdrop-blur border border-${r.color}-500/20 rounded-xl p-6 hover:border-${r.color}-500/50 transition-all hover:transform hover:scale-105">
+                            <div class="flex items-start justify-between mb-4">
+                                <div class="text-${r.color}-400">${pdfIcon}</div>
+                                <div class="flex gap-2 items-center">
+                                    <span class="text-xs px-2 py-1 rounded-full ${categoryColors[r.category] || 'bg-gray-500/20 text-gray-300'}">${r.category}</span>
+                                    <span class="text-sm text-gray-400">${r.year}</span>
+                                </div>
+                            </div>
+                            <h3 class="text-lg font-semibold mb-2 text-white">${r.title}</h3>
+                            <p class="text-gray-400 text-sm mb-5">${r.description}</p>
+                            <a href="${r.filename}" download 
+                               class="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-purple-600 to-pink-600 rounded-lg text-sm font-semibold hover:shadow-lg hover:shadow-purple-500/30 transition-all">
+                                ${downloadIcon} Download PDF
+                            </a>
+                        </div>
+                    `).join('')}
+                </div>
+
+                <div class="bg-gradient-to-r from-purple-500/10 to-pink-500/10 border border-purple-500/30 rounded-xl p-8 text-center">
+                    <h3 class="text-xl font-semibold mb-3 text-white">Looking for something specific?</h3>
+                    <p class="text-gray-300 mb-4">If you're looking for a particular report or would like to request materials, feel free to reach out.</p>
+                    <button onclick="navigateTo('contact')" class="px-8 py-3 bg-gradient-to-r from-purple-600 to-pink-600 rounded-lg font-semibold hover:shadow-lg hover:shadow-purple-500/50 transition-all">
+                        Contact Me
+                    </button>
+                </div>
+            </div>
+        </section>
+    `;
+}
+
         function renderSocialMedia() {
             return `
                 <section class="min-h-screen px-4 py-24">
@@ -981,6 +1047,7 @@ function renderPolicy() {
         if (currentSection === 'research') return renderResearch();
         if (currentSection === 'policy') return renderPolicy();
         if (currentSection === 'teaching') return renderTeaching();
+        if (currentSection === 'resources') return renderResources();
         if (currentSection === 'socialmedia') return renderSocialMedia();
         if (currentSection === 'about') return renderAbout();
         if (currentSection === 'contact') return renderContact();
