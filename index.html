@@ -26,7 +26,7 @@
         
     </style>
 </head>
-<body class="bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 text-white">
+<body class="bg-white text-slate-700">
     <div id="fb-root"></div>
     <script async defer crossorigin="anonymous" 
             src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v18.0">
@@ -72,15 +72,15 @@
         function renderNav() {
             const sections = ['home', 'research', 'policy', 'teaching', 'resources', 'socialmedia', 'about', 'contact'];
             return `
-                <nav class="fixed w-full bg-slate-900/80 backdrop-blur-md z-50 border-b border-purple-500/20">
+                <nav class="fixed w-full bg-white/90 backdrop-blur-md z-50 border-b border-slate-200">
                     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                         <div class="flex justify-between items-center h-16">
-                            <div class="text-2xl font-bold bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
+                            <div class="text-2xl font-bold text-slate-900">
                                 Mukesh Adhikari, PhD, MPH, MPA
                             </div>
                             <div class="hidden md:flex space-x-8">
                                 ${sections.map(s => `
-                                    <button onclick="navigateTo('${s}')" class="capitalize transition-colors ${currentSection === s ? 'text-purple-400' : 'text-gray-300 hover:text-white'}">
+                                    <button onclick="navigateTo('${s}')" class="capitalize transition-colors ${currentSection === s ? 'text-slate-800' : 'text-slate-600 hover:text-slate-900'}">
     ${s === 'socialmedia' ? 'Social Media' : s}
                                     </button>
                                 `).join('')}
@@ -91,9 +91,9 @@
                         </div>
                     </div>
                     ${menuOpen ? `
-                        <div class="md:hidden bg-slate-800 border-t border-purple-500/20">
+                        <div class="md:hidden bg-white border-t border-slate-200">
                             ${sections.map(s => `
-                                <button onclick="navigateTo('${s}')" class="block w-full text-left px-4 py-3 capitalize hover:bg-slate-700">
+                                <button onclick="navigateTo('${s}')" class="block w-full text-left px-4 py-3 capitalize hover:bg-slate-100">
     ${s === 'socialmedia' ? 'Social Media' : s}
                                 </button>
                             `).join('')}
@@ -107,8 +107,8 @@
             return `
                 <section class="min-h-screen flex items-center justify-center px-4 pt-16">
                     <div class="max-w-5xl mx-auto text-center">
-                        <div class="mb-8 inline-block p-1 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full">
-                            <div class="bg-slate-900 rounded-full px-6 py-2">
+                        <div class="mb-8 inline-block p-1 bg-slate-200 rounded-full">
+                            <div class="bg-white rounded-full px-6 py-2">
                                 <span class="text-sm">Researcher • Health Misinformation Debunker • Proud Husband & Dad • Cricket Enthusiast</span>
                             </div>
                         </div>
@@ -117,38 +117,38 @@
                             <img 
                                 src="headshot.jpg" 
                                 alt="Mukesh Adhikari,PhD, MPH" 
-                                class="w-40 h-40 md:w-48 md:h-48 rounded-full mx-auto border-4 border-purple-500/50 shadow-2xl shadow-purple-500/50 object-cover"
+                                class="w-40 h-40 md:w-48 md:h-48 rounded-full mx-auto border-4 border-slate-300 shadow-2xl  object-cover"
                             />
                         </div>
-                        <h1 class="text-2xl md:text-4xl font-bold mb-6 bg-gradient-to-r from-purple-400 via-pink-400 to-purple-400 bg-clip-text text-transparent animate-pulse-custom">
+                        <h1 class="text-2xl md:text-4xl font-bold mb-6 text-slate-900 animate-pulse-custom">
                             Health Services Researcher & Health Policy Analyst
                         </h1>
-                        <p class="text-xl md:text-xl text-gray-300 mb-12 max-w-3xl mx-auto">
+                        <p class="text-xl md:text-xl text-slate-600 mb-12 max-w-3xl mx-auto">
                             Turning public health research into clear public communication and measurable policy impact.
                         </p>
                         <div class="flex flex-wrap justify-center gap-4">
-                            <button onclick="navigateTo('research')" class="px-8 py-4 bg-gradient-to-r from-purple-600 to-pink-600 rounded-lg font-semibold hover:shadow-lg hover:shadow-purple-500/50 transition-all transform hover:scale-105">
+                            <button onclick="navigateTo('research')" class="px-8 py-4 bg-slate-800 hover:bg-slate-900 text-white rounded-lg font-semibold hover:shadow-lg  transition-all transform hover:scale-105">
                                 View Research
                             </button>
-                            <button onclick="navigateTo('contact')" class="px-8 py-4 bg-slate-800 border-2 border-purple-500 rounded-lg font-semibold hover:bg-slate-700 transition-all">
+                            <button onclick="navigateTo('contact')" class="px-8 py-4 bg-white border-2 border-slate-300 text-slate-800 rounded-lg font-semibold hover:bg-slate-50 hover:border-slate-400 transition-all">
                                 Get in Touch
                             </button>
                         </div>
                         <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-20">
-                            <div class="bg-slate-800/50 backdrop-blur p-6 rounded-xl border border-purple-500/20">
-                                <div class="flex justify-center mb-4 text-purple-400">${icons.microscope}</div>
-                                <div class="text-4xl font-bold text-purple-400 mb-2">24</div>
-                                <div class="text-gray-300">Peer-Reviewed Publications</div>
+                            <div class="bg-white p-6 rounded-xl border border-slate-200">
+                                <div class="flex justify-center mb-4 text-slate-800">${icons.microscope}</div>
+                                <div class="text-4xl font-bold text-slate-800 mb-2">24</div>
+                                <div class="text-slate-600">Peer-Reviewed Publications</div>
                             </div>
-                            <div class="bg-slate-800/50 backdrop-blur p-6 rounded-xl border border-pink-500/20">
-                                <div class="flex justify-center mb-4 text-pink-400">${icons.users}</div>
-                                <div class="text-4xl font-bold text-pink-400 mb-2">15-Year</div>
-                                <div class="text-gray-300"> Teaching and Research Career (2010-present)</div>
+                            <div class="bg-white p-6 rounded-xl border border-slate-200">
+                                <div class="flex justify-center mb-4 text-slate-800">${icons.users}</div>
+                                <div class="text-4xl font-bold text-slate-800 mb-2">15-Year</div>
+                                <div class="text-slate-600"> Teaching and Research Career (2010-present)</div>
                             </div>
-                            <div class="bg-slate-800/50 backdrop-blur p-6 rounded-xl border border-purple-500/20">
-                                <div class="flex justify-center mb-4 text-purple-400">${icons.heart}</div>
-                                <div class="text-4xl font-bold text-purple-400 mb-2">7-Year</div>
-                                <div class="text-gray-300">On-the-ground Public Health Experience in Nepal (2012-2019)</div>
+                            <div class="bg-white p-6 rounded-xl border border-slate-200">
+                                <div class="flex justify-center mb-4 text-slate-800">${icons.heart}</div>
+                                <div class="text-4xl font-bold text-slate-800 mb-2">7-Year</div>
+                                <div class="text-slate-600">On-the-ground Public Health Experience in Nepal (2012-2019)</div>
                             </div>
                         </div>
                     </div>
@@ -160,53 +160,53 @@
             return `
                 <section class="min-h-screen px-4 py-24">
                     <div class="max-w-4xl mx-auto">
-                        <h2 class="text-4xl md:text-5xl font-bold mb-4 text-center bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
+                        <h2 class="text-4xl md:text-5xl font-bold mb-4 text-center text-slate-900">
                             Let's Connect
                         </h2>
-                        <p class="text-center text-gray-300 mb-12">
+                        <p class="text-center text-slate-600 mb-12">
                             Interested in collaboration, speaking engagements, or just want to chat about public health? I'd love to hear from you.
                         </p>
                         <div class="grid md:grid-cols-2 gap-8 mb-12">
-                            <div class="bg-slate-800/50 backdrop-blur border border-purple-500/20 rounded-xl p-8">
+                            <div class="bg-white border border-slate-200 rounded-xl p-8">
                                 <h3 class="text-2xl font-semibold mb-6">Get in Touch</h3>
                                 <div class="space-y-4">
                                     <div class="flex items-center space-x-3">
-                                        <div class="text-purple-400">${icons.mail}</div>
-                                        <a href="mailto:adhmukesh@gmail.com" class="text-gray-300 hover:text-purple-400">adhmukesh@gmail.com</a>
+                                        <div class="text-slate-800">${icons.mail}</div>
+                                        <a href="mailto:adhmukesh@gmail.com" class="text-slate-600 hover:text-slate-900">adhmukesh@gmail.com</a>
                                     </div>
                                     <div class="flex items-center space-x-3">
                                         <div class="text-blue-600">${icons.facebook}</div>
-                                        <a href="https://www.facebook.com/mukeshpublichealth" target="_blank" class="text-gray-300 hover:text-blue-600">Facebook Page</a>
+                                        <a href="https://www.facebook.com/mukeshpublichealth" target="_blank" class="text-slate-600 hover:text-blue-600">Facebook Page</a>
                                     </div>
                                     <div class="flex items-center space-x-3">
                                         <div class="text-red-600">${icons.youtube}</div>
-                                        <a href="https://www.youtube.com/@MukeshAdhikari" target="_blank" class="text-gray-300 hover:text-red-600">YouTube Channel</a>
+                                        <a href="https://www.youtube.com/@MukeshAdhikari" target="_blank" class="text-slate-600 hover:text-red-600">YouTube Channel</a>
                                     </div>
                                     <div class="flex items-center space-x-3">
-                                        <div class="text-blue-400">${icons.linkedin}</div>
-                                        <a href="https://www.linkedin.com/in/mukesh-adhikari-8794b153/" target="_blank" class="text-gray-300 hover:text-blue-400">LinkedIn Profile</a>
+                                        <div class="text-blue-600">${icons.linkedin}</div>
+                                        <a href="https://www.linkedin.com/in/mukesh-adhikari-8794b153/" target="_blank" class="text-slate-600 hover:text-blue-600">LinkedIn Profile</a>
                                     </div>
                                     <div class="flex items-center space-x-3">
-                                        <div class="text-blue-400">${icons.twitter}</div>
-                                        <a href="https://x.com/mukes_adhikari" target="_blank" class="text-gray-300 hover:text-blue-400">Twitter/X</a>
+                                        <div class="text-blue-600">${icons.twitter}</div>
+                                        <a href="https://x.com/mukes_adhikari" target="_blank" class="text-slate-600 hover:text-blue-600">Twitter/X</a>
                                     </div>
                                 </div>
                             </div>
-                        <div class="bg-slate-800/50 backdrop-blur border border-pink-500/20 rounded-xl p-8">
+                        <div class="bg-white border border-slate-200 rounded-xl p-8">
                                 <h3 class="text-2xl font-semibold mb-6">Send a Message</h3>
                                 <div class="space-y-4">
-                                    <input type="text" placeholder="Your Name" class="w-full px-4 py-3 bg-slate-900 border border-purple-500/30 rounded-lg focus:outline-none focus:border-purple-500 text-white">
-                                    <input type="email" placeholder="Your Email" class="w-full px-4 py-3 bg-slate-900 border border-purple-500/30 rounded-lg focus:outline-none focus:border-purple-500 text-white">
-                                    <textarea placeholder="Your Message" rows="4" class="w-full px-4 py-3 bg-slate-900 border border-purple-500/30 rounded-lg focus:outline-none focus:border-purple-500 text-white"></textarea>
-                                    <button onclick="alert('Message functionality - connect to your email service!')" class="w-full px-8 py-3 bg-gradient-to-r from-purple-600 to-pink-600 rounded-lg font-semibold hover:shadow-lg hover:shadow-purple-500/50 transition-all">
+                                    <input type="text" placeholder="Your Name" class="w-full px-4 py-3 bg-white border border-slate-200 rounded-lg focus:outline-none focus:border-slate-500 text-slate-900">
+                                    <input type="email" placeholder="Your Email" class="w-full px-4 py-3 bg-white border border-slate-200 rounded-lg focus:outline-none focus:border-slate-500 text-slate-900">
+                                    <textarea placeholder="Your Message" rows="4" class="w-full px-4 py-3 bg-white border border-slate-200 rounded-lg focus:outline-none focus:border-slate-500 text-slate-900"></textarea>
+                                    <button onclick="alert('Message functionality - connect to your email service!')" class="w-full px-8 py-3 bg-slate-800 hover:bg-slate-900 text-white rounded-lg font-semibold hover:shadow-lg  transition-all">
                                         Send Message
                                     </button>
                                 </div>
                             </div>
                         </div>
-                        <div class="bg-gradient-to-r from-purple-500/10 to-pink-500/10 border border-purple-500/30 rounded-xl p-8 text-center">
+                        <div class="bg-slate-50 border border-slate-200 rounded-xl p-8 text-center">
                             <h3 class="text-xl font-semibold mb-4">Open to Opportunities</h3>
-                            <p class="text-gray-300">Speaking engagements • Research collaborations • Consulting • Media appearances • Community partnerships</p>
+                            <p class="text-slate-600">Speaking engagements • Research collaborations • Consulting • Media appearances • Community partnerships</p>
                         </div>
                     </div>
                 </section>
@@ -390,19 +390,19 @@
 
             function renderPublicationCard(pub) {
                 return `
-                    <div class="bg-slate-800/50 backdrop-blur border border-purple-500/20 rounded-xl p-6 hover:border-purple-500/50 transition-all hover:transform hover:scale-105">
+                    <div class="bg-white border border-slate-200 rounded-xl p-6 hover:border-slate-400 transition-all hover:transform hover:scale-105">
                         <div class="flex items-start justify-between mb-4">
-                            <div class="text-purple-400">${icons.book}</div>
-                            <span class="text-sm text-gray-400">${pub.year}</span>
+                            <div class="text-slate-800">${icons.book}</div>
+                            <span class="text-sm text-slate-500">${pub.year}</span>
                         </div>
                         <h3 class="text-xl font-semibold mb-3">${pub.title}</h3>
-                        <p class="text-gray-400 mb-4">${pub.journal}</p>
+                        <p class="text-slate-500 mb-4">${pub.journal}</p>
                         <div class="flex gap-2 flex-wrap mb-4">
                             ${pub.tags.map(tag => `
-                                <span class="px-3 py-1 bg-purple-500/20 text-purple-300 rounded-full text-sm">${tag}</span>
+                                <span class="px-3 py-1 bg-slate-100 text-slate-700 rounded-full text-sm">${tag}</span>
                             `).join('')}
                         </div>
-                        <a href="${pub.link}" target="_blank" class="flex items-center text-purple-400 hover:text-purple-300">
+                        <a href="${pub.link}" target="_blank" class="flex items-center text-slate-800 hover:text-slate-900">
                             Read Paper <span class="ml-2">${icons.link}</span>
                         </a>
                     </div>
@@ -412,24 +412,24 @@
             return `
                 <section class="min-h-screen px-4 py-24">
                     <div class="max-w-6xl mx-auto">
-                        <h2 class="text-4xl md:text-5xl font-bold mb-4 text-center bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
+                        <h2 class="text-4xl md:text-5xl font-bold mb-4 text-center text-slate-900">
                             Research Portfolio
                         </h2>
-                        <p class="text-center text-gray-300 mb-12 max-w-2xl mx-auto">
+                        <p class="text-center text-slate-600 mb-12 max-w-2xl mx-auto">
                             Peer-reviewed publications in public health, epidemiology, maternal health, and health policy
                         </p>
 
                         <!-- US Research Section -->
                         <div class="mb-16">
                             <div class="flex items-center mb-6">
-                                <h3 class="text-3xl font-bold bg-gradient-to-r from-blue-400 to-indigo-400 bg-clip-text text-transparent">
+                                <h3 class="text-3xl font-bold text-slate-900">
                                     Research in the United States
                                 </h3>
-                                <span class="ml-4 px-3 py-1 bg-blue-500/20 text-blue-300 rounded-full text-sm font-semibold">
+                                <span class="ml-4 px-3 py-1 bg-blue-50 text-blue-700 rounded-full text-sm font-semibold">
                                     ${usPublications.length} Publications
                                 </span>
                             </div>
-                            <p class="text-gray-400 mb-6">
+                            <p class="text-slate-500 mb-6">
                                 Focused on rural graduate medical education, health policy, and healthcare workforce development
                             </p>
                             <div class="grid md:grid-cols-2 gap-6">
@@ -440,14 +440,14 @@
                         <!-- Nepal Research Section -->
                         <div class="mb-12">
                             <div class="flex items-center mb-6">
-                                <h3 class="text-3xl font-bold bg-gradient-to-r from-pink-400 to-rose-400 bg-clip-text text-transparent">
+                                <h3 class="text-3xl font-bold text-slate-900">
                                     Research in Nepal
                                 </h3>
-                                <span class="ml-4 px-3 py-1 bg-pink-500/20 text-pink-300 rounded-full text-sm font-semibold">
+                                <span class="ml-4 px-3 py-1 bg-slate-100 text-slate-700 rounded-full text-sm font-semibold">
                                     ${nepalPublications.length} Publications
                                 </span>
                             </div>
-                            <p class="text-gray-400 mb-6">
+                            <p class="text-slate-500 mb-6">
                                 Addressing maternal and child health, health systems strengthening, digital health, and health equity in Nepal
                             </p>
                             <div class="grid md:grid-cols-2 gap-6">
@@ -455,9 +455,9 @@
                             </div>
                         </div>
 
-                        <div class="mt-12 bg-gradient-to-r from-purple-500/10 to-pink-500/10 border border-purple-500/30 rounded-xl p-8">
+                        <div class="mt-12 bg-slate-50 border border-slate-200 rounded-xl p-8">
                             <h3 class="text-2xl font-semibold mb-4">Research Interests</h3>
-                            <div class="grid md:grid-cols-2 gap-4 text-gray-300">
+                            <div class="grid md:grid-cols-2 gap-4 text-slate-600">
                                 <ul class="space-y-2">
                                     <li>• Maternal and child health</li>
                                     <li>• Health systems strengthening</li>
@@ -474,7 +474,7 @@
                         </div>
 
                         <div class="mt-8 text-center">
-                            <a href="https://scholar.google.com/citations?user=dn44ZTcAAAAJ&hl=en&oi=ao" target="_blank" class="inline-block px-8 py-3 bg-gradient-to-r from-purple-600 to-pink-600 rounded-lg font-semibold hover:shadow-lg hover:shadow-purple-500/50 transition-all">
+                            <a href="https://scholar.google.com/citations?user=dn44ZTcAAAAJ&hl=en&oi=ao" target="_blank" class="inline-block px-8 py-3 bg-slate-800 hover:bg-slate-900 text-white rounded-lg font-semibold hover:shadow-lg  transition-all">
                                 View All Publications on Google Scholar
                             </a>
                         </div>
@@ -487,37 +487,37 @@ function renderPolicy() {
             return `
                 <section class="min-h-screen px-4 py-24">
                     <div class="max-w-6xl mx-auto">
-                        <h2 class="text-4xl md:text-5xl font-bold mb-4 text-center bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
+                        <h2 class="text-4xl md:text-5xl font-bold mb-4 text-center text-slate-900">
                             Policy Briefs & Op-eds
                         </h2>
-                        <p class="text-center text-gray-300 mb-12 max-w-2xl mx-auto">
+                        <p class="text-center text-slate-600 mb-12 max-w-2xl mx-auto">
                             Translating research into actionable policy recommendations and public discourse
                         </p>
 
                         <!-- Policy Briefs Section -->
                         <div class="mb-12">
-                            <h3 class="text-2xl font-semibold mb-6 text-white">Policy Briefs & Papers</h3>
+                            <h3 class="text-2xl font-semibold mb-6 text-slate-900">Policy Briefs & Papers</h3>
                             <div class="space-y-4">
-                                <div class="bg-slate-800/50 backdrop-blur border border-purple-500/20 rounded-xl p-6 hover:border-purple-500/50 transition-all">
-                                    <h4 class="text-lg font-semibold mb-2 text-white">Section 131: A lifeline on its last breath</h4>
-                                    <p class="text-gray-400 mb-3">Association of American Medical Colleges • 2025</p>
-                                    <a href="https://www.aamc.org/about-us/mission-areas/health-care/section-131" target="_blank" class="text-purple-400 hover:text-purple-300 flex items-center">
+                                <div class="bg-white border border-slate-200 rounded-xl p-6 hover:border-slate-400 transition-all">
+                                    <h4 class="text-lg font-semibold mb-2 text-slate-900">Section 131: A lifeline on its last breath</h4>
+                                    <p class="text-slate-500 mb-3">Association of American Medical Colleges • 2025</p>
+                                    <a href="https://www.aamc.org/about-us/mission-areas/health-care/section-131" target="_blank" class="text-slate-800 hover:text-slate-900 flex items-center">
                                         Read Brief <span class="ml-2">${icons.link}</span>
                                     </a>
                                 </div>
 
-                                <div class="bg-slate-800/50 backdrop-blur border border-pink-500/20 rounded-xl p-6 hover:border-pink-500/50 transition-all">
-                                    <h4 class="text-lg font-semibold mb-2 text-white">Overview of Residency Programs Selected for CAA Sec. 126 Round Three GME Slots</h4>
-                                    <p class="text-gray-400 mb-3">Rural Graduate Medical Education • 2025</p>
-                                    <a href="https://www.ruralgme.org/research" target="_blank" class="text-pink-400 hover:text-pink-300 flex items-center">
+                                <div class="bg-white border border-slate-200 rounded-xl p-6 hover:border-slate-400 transition-all">
+                                    <h4 class="text-lg font-semibold mb-2 text-slate-900">Overview of Residency Programs Selected for CAA Sec. 126 Round Three GME Slots</h4>
+                                    <p class="text-slate-500 mb-3">Rural Graduate Medical Education • 2025</p>
+                                    <a href="https://www.ruralgme.org/research" target="_blank" class="text-slate-800 hover:text-slate-900 flex items-center">
                                         Read Brief <span class="ml-2">${icons.link}</span>
                                     </a>
                                 </div>
 
-                                <div class="bg-slate-800/50 backdrop-blur border border-purple-500/20 rounded-xl p-6 hover:border-purple-500/50 transition-all">
-                                    <h4 class="text-lg font-semibold mb-2 text-white">Overview of Residency Programs Selected for CAA Sec. 126 Round Two GME Slots</h4>
-                                    <p class="text-gray-400 mb-3">Rural Graduate Medical Education • 2023</p>
-                                    <a href="https://www.ruralgme.org/research" target="_blank" class="text-purple-400 hover:text-purple-300 flex items-center">
+                                <div class="bg-white border border-slate-200 rounded-xl p-6 hover:border-slate-400 transition-all">
+                                    <h4 class="text-lg font-semibold mb-2 text-slate-900">Overview of Residency Programs Selected for CAA Sec. 126 Round Two GME Slots</h4>
+                                    <p class="text-slate-500 mb-3">Rural Graduate Medical Education • 2023</p>
+                                    <a href="https://www.ruralgme.org/research" target="_blank" class="text-slate-800 hover:text-slate-900 flex items-center">
                                         Read Brief <span class="ml-2">${icons.link}</span>
                                     </a>
                                 </div>
@@ -526,118 +526,118 @@ function renderPolicy() {
 
                         <!-- English Op-eds Section -->
                         <div class="mb-12">
-                            <h3 class="text-2xl font-semibold mb-6 text-white">Op-eds (English)</h3>
+                            <h3 class="text-2xl font-semibold mb-6 text-slate-900">Op-eds (English)</h3>
                             <div class="grid md:grid-cols-2 gap-4">
-                                <div class="bg-slate-800/50 backdrop-blur border border-purple-500/20 rounded-xl p-5 hover:border-purple-500/50 transition-all">
-                                    <h4 class="font-semibold mb-2 text-white">Irony of vaccination</h4>
-                                    <p class="text-sm text-gray-400 mb-2">My Republica • August 5, 2020</p>
-                                    <a href="https://myrepublica.nagariknetwork.com/news/irony-of-vaccination/?categoryId=opinion" target="_blank" class="text-purple-400 hover:text-purple-300 text-sm">Read Article →</a>
+                                <div class="bg-white border border-slate-200 rounded-xl p-5 hover:border-slate-400 transition-all">
+                                    <h4 class="font-semibold mb-2 text-slate-900">Irony of vaccination</h4>
+                                    <p class="text-sm text-slate-500 mb-2">My Republica • August 5, 2020</p>
+                                    <a href="https://myrepublica.nagariknetwork.com/news/irony-of-vaccination/?categoryId=opinion" target="_blank" class="text-slate-800 hover:text-slate-900 text-sm">Read Article →</a>
                                 </div>
 
-                                <div class="bg-slate-800/50 backdrop-blur border border-pink-500/20 rounded-xl p-5 hover:border-pink-500/50 transition-all">
-                                    <h4 class="font-semibold mb-2 text-white">Health for All</h4>
-                                    <p class="text-sm text-gray-400 mb-2">My Republica • March 12, 2020</p>
-                                    <a href="https://myrepublica.nagariknetwork.com/news/health-for-all-5/?categoryId=opinion" target="_blank" class="text-pink-400 hover:text-pink-300 text-sm">Read Article →</a>
+                                <div class="bg-white border border-slate-200 rounded-xl p-5 hover:border-slate-400 transition-all">
+                                    <h4 class="font-semibold mb-2 text-slate-900">Health for All</h4>
+                                    <p class="text-sm text-slate-500 mb-2">My Republica • March 12, 2020</p>
+                                    <a href="https://myrepublica.nagariknetwork.com/news/health-for-all-5/?categoryId=opinion" target="_blank" class="text-slate-800 hover:text-slate-900 text-sm">Read Article →</a>
                                 </div>
 
-                                <div class="bg-slate-800/50 backdrop-blur border border-purple-500/20 rounded-xl p-5 hover:border-purple-500/50 transition-all">
-                                    <h4 class="font-semibold mb-2 text-white">Reducing the Burden of Cervical Cancer in India</h4>
-                                    <p class="text-sm text-gray-400 mb-2">Yale Medicine • March 2, 2020</p>
-                                    <a href="https://medicine.yale.edu/news-article/22648/" target="_blank" class="text-purple-400 hover:text-purple-300 text-sm">Read Article →</a>
+                                <div class="bg-white border border-slate-200 rounded-xl p-5 hover:border-slate-400 transition-all">
+                                    <h4 class="font-semibold mb-2 text-slate-900">Reducing the Burden of Cervical Cancer in India</h4>
+                                    <p class="text-sm text-slate-500 mb-2">Yale Medicine • March 2, 2020</p>
+                                    <a href="https://medicine.yale.edu/news-article/22648/" target="_blank" class="text-slate-800 hover:text-slate-900 text-sm">Read Article →</a>
                                 </div>
 
-                                <div class="bg-slate-800/50 backdrop-blur border border-pink-500/20 rounded-xl p-5 hover:border-pink-500/50 transition-all">
-                                    <h4 class="font-semibold mb-2 text-white">Vehicular Collisions need more attention</h4>
-                                    <p class="text-sm text-gray-400 mb-2">The Kathmandu Post • February 10, 2020</p>
-                                    <a href="https://kathmandupost.com/columns/2020/02/10/vehicular-collisions-need-more-attention" target="_blank" class="text-pink-400 hover:text-pink-300 text-sm">Read Article →</a>
+                                <div class="bg-white border border-slate-200 rounded-xl p-5 hover:border-slate-400 transition-all">
+                                    <h4 class="font-semibold mb-2 text-slate-900">Vehicular Collisions need more attention</h4>
+                                    <p class="text-sm text-slate-500 mb-2">The Kathmandu Post • February 10, 2020</p>
+                                    <a href="https://kathmandupost.com/columns/2020/02/10/vehicular-collisions-need-more-attention" target="_blank" class="text-slate-800 hover:text-slate-900 text-sm">Read Article →</a>
                                 </div>
 
-                                <div class="bg-slate-800/50 backdrop-blur border border-purple-500/20 rounded-xl p-5 hover:border-purple-500/50 transition-all">
-                                    <h4 class="font-semibold mb-2 text-white">Caution on Coronavirus</h4>
-                                    <p class="text-sm text-gray-400 mb-2">My Republica • February 10, 2020</p>
-                                    <a href="https://myrepublica.nagariknetwork.com/news/caution-on-coronavirus/" target="_blank" class="text-purple-400 hover:text-purple-300 text-sm">Read Article →</a>
+                                <div class="bg-white border border-slate-200 rounded-xl p-5 hover:border-slate-400 transition-all">
+                                    <h4 class="font-semibold mb-2 text-slate-900">Caution on Coronavirus</h4>
+                                    <p class="text-sm text-slate-500 mb-2">My Republica • February 10, 2020</p>
+                                    <a href="https://myrepublica.nagariknetwork.com/news/caution-on-coronavirus/" target="_blank" class="text-slate-800 hover:text-slate-900 text-sm">Read Article →</a>
                                 </div>
 
-                                <div class="bg-slate-800/50 backdrop-blur border border-pink-500/20 rounded-xl p-5 hover:border-pink-500/50 transition-all">
-                                    <h4 class="font-semibold mb-2 text-white">Empower local health institutes</h4>
-                                    <p class="text-sm text-gray-400 mb-2">My Republica • January 27, 2020</p>
-                                    <a href="https://myrepublica.nagariknetwork.com/news/empower-local-health-institutes/?categoryId=opinion" target="_blank" class="text-pink-400 hover:text-pink-300 text-sm">Read Article →</a>
+                                <div class="bg-white border border-slate-200 rounded-xl p-5 hover:border-slate-400 transition-all">
+                                    <h4 class="font-semibold mb-2 text-slate-900">Empower local health institutes</h4>
+                                    <p class="text-sm text-slate-500 mb-2">My Republica • January 27, 2020</p>
+                                    <a href="https://myrepublica.nagariknetwork.com/news/empower-local-health-institutes/?categoryId=opinion" target="_blank" class="text-slate-800 hover:text-slate-900 text-sm">Read Article →</a>
                                 </div>
 
-                                <div class="bg-slate-800/50 backdrop-blur border border-purple-500/20 rounded-xl p-5 hover:border-purple-500/50 transition-all">
-                                    <h4 class="font-semibold mb-2 text-white">Tackling the coronavirus outbreak needs a holistic approach</h4>
-                                    <p class="text-sm text-gray-400 mb-2">The Kathmandu Post • January 27, 2020</p>
-                                    <a href="https://kathmandupost.com/columns/2020/01/27/tackling-the-coronavirus-outbreak-needs-a-holistic-approach" target="_blank" class="text-purple-400 hover:text-purple-300 text-sm">Read Article →</a>
+                                <div class="bg-white border border-slate-200 rounded-xl p-5 hover:border-slate-400 transition-all">
+                                    <h4 class="font-semibold mb-2 text-slate-900">Tackling the coronavirus outbreak needs a holistic approach</h4>
+                                    <p class="text-sm text-slate-500 mb-2">The Kathmandu Post • January 27, 2020</p>
+                                    <a href="https://kathmandupost.com/columns/2020/01/27/tackling-the-coronavirus-outbreak-needs-a-holistic-approach" target="_blank" class="text-slate-800 hover:text-slate-900 text-sm">Read Article →</a>
                                 </div>
 
-                                <div class="bg-slate-800/50 backdrop-blur border border-pink-500/20 rounded-xl p-5 hover:border-pink-500/50 transition-all">
-                                    <h4 class="font-semibold mb-2 text-white">Preventing Vaccine Related Rumors</h4>
-                                    <p class="text-sm text-gray-400 mb-2">The Kathmandu Post • December 31, 2019</p>
-                                    <a href="https://kathmandupost.com/columns/2019/12/31/preventing-vaccine-related-rumours" target="_blank" class="text-pink-400 hover:text-pink-300 text-sm">Read Article →</a>
+                                <div class="bg-white border border-slate-200 rounded-xl p-5 hover:border-slate-400 transition-all">
+                                    <h4 class="font-semibold mb-2 text-slate-900">Preventing Vaccine Related Rumors</h4>
+                                    <p class="text-sm text-slate-500 mb-2">The Kathmandu Post • December 31, 2019</p>
+                                    <a href="https://kathmandupost.com/columns/2019/12/31/preventing-vaccine-related-rumours" target="_blank" class="text-slate-800 hover:text-slate-900 text-sm">Read Article →</a>
                                 </div>
 
-                                <div class="bg-slate-800/50 backdrop-blur border border-purple-500/20 rounded-xl p-5 hover:border-purple-500/50 transition-all">
-                                    <h4 class="font-semibold mb-2 text-white">How to prevent medical errors</h4>
-                                    <p class="text-sm text-gray-400 mb-2">The Kathmandu Post • December 19, 2019</p>
-                                    <a href="https://kathmandupost.com/columns/2019/12/19/how-to-prevent-medical-errors" target="_blank" class="text-purple-400 hover:text-purple-300 text-sm">Read Article →</a>
+                                <div class="bg-white border border-slate-200 rounded-xl p-5 hover:border-slate-400 transition-all">
+                                    <h4 class="font-semibold mb-2 text-slate-900">How to prevent medical errors</h4>
+                                    <p class="text-sm text-slate-500 mb-2">The Kathmandu Post • December 19, 2019</p>
+                                    <a href="https://kathmandupost.com/columns/2019/12/19/how-to-prevent-medical-errors" target="_blank" class="text-slate-800 hover:text-slate-900 text-sm">Read Article →</a>
                                 </div>
 
-                                <div class="bg-slate-800/50 backdrop-blur border border-pink-500/20 rounded-xl p-5 hover:border-pink-500/50 transition-all">
-                                    <h4 class="font-semibold mb-2 text-white">Time to Think Out of the Box</h4>
-                                    <p class="text-sm text-gray-400 mb-2">My Republica • December 9, 2019</p>
-                                    <a href="https://myrepublica.nagariknetwork.com/news/time-to-think-out-of-the-box/?categoryId=opinion" target="_blank" class="text-pink-400 hover:text-pink-300 text-sm">Read Article →</a>
+                                <div class="bg-white border border-slate-200 rounded-xl p-5 hover:border-slate-400 transition-all">
+                                    <h4 class="font-semibold mb-2 text-slate-900">Time to Think Out of the Box</h4>
+                                    <p class="text-sm text-slate-500 mb-2">My Republica • December 9, 2019</p>
+                                    <a href="https://myrepublica.nagariknetwork.com/news/time-to-think-out-of-the-box/?categoryId=opinion" target="_blank" class="text-slate-800 hover:text-slate-900 text-sm">Read Article →</a>
                                 </div>
 
-                                <div class="bg-slate-800/50 backdrop-blur border border-purple-500/20 rounded-xl p-5 hover:border-purple-500/50 transition-all">
-                                    <h4 class="font-semibold mb-2 text-white">Deploying Midwives to prevent deaths</h4>
-                                    <p class="text-sm text-gray-400 mb-2">The Kathmandu Post • December 1, 2019</p>
-                                    <a href="https://kathmandupost.com/columns/2019/11/30/deploying-midwives-to-prevent-deaths" target="_blank" class="text-purple-400 hover:text-purple-300 text-sm">Read Article →</a>
+                                <div class="bg-white border border-slate-200 rounded-xl p-5 hover:border-slate-400 transition-all">
+                                    <h4 class="font-semibold mb-2 text-slate-900">Deploying Midwives to prevent deaths</h4>
+                                    <p class="text-sm text-slate-500 mb-2">The Kathmandu Post • December 1, 2019</p>
+                                    <a href="https://kathmandupost.com/columns/2019/11/30/deploying-midwives-to-prevent-deaths" target="_blank" class="text-slate-800 hover:text-slate-900 text-sm">Read Article →</a>
                                 </div>
                             </div>
                         </div>
 
                         <!-- Nepali Op-eds Section -->
                         <div>
-                            <h3 class="text-2xl font-semibold mb-6 text-white">Op-eds (Nepali / नेपाली)</h3>
+                            <h3 class="text-2xl font-semibold mb-6 text-slate-900">Op-eds (Nepali / नेपाली)</h3>
                             <div class="grid md:grid-cols-2 gap-4">
-                                <div class="bg-slate-800/50 backdrop-blur border border-purple-500/20 rounded-xl p-5 hover:border-purple-500/50 transition-all">
-                                    <h4 class="font-semibold mb-2 text-white">स्वास्थ्यकर्मीमाथि कार्यस्थलमा हुने हिंसाका कारणहरुको चिरफार</h4>
-                                    <p class="text-sm text-gray-400 mb-2">Swasthya Khabar</p>
-                                    <a href="https://swasthyakhabar.com/story/54809" target="_blank" class="text-purple-400 hover:text-purple-300 text-sm">लेख पढ्नुहोस् →</a>
+                                <div class="bg-white border border-slate-200 rounded-xl p-5 hover:border-slate-400 transition-all">
+                                    <h4 class="font-semibold mb-2 text-slate-900">स्वास्थ्यकर्मीमाथि कार्यस्थलमा हुने हिंसाका कारणहरुको चिरफार</h4>
+                                    <p class="text-sm text-slate-500 mb-2">Swasthya Khabar</p>
+                                    <a href="https://swasthyakhabar.com/story/54809" target="_blank" class="text-slate-800 hover:text-slate-900 text-sm">लेख पढ्नुहोस् →</a>
                                 </div>
 
-                                <div class="bg-slate-800/50 backdrop-blur border border-pink-500/20 rounded-xl p-5 hover:border-pink-500/50 transition-all">
-                                    <h4 class="font-semibold mb-2 text-white">स्वास्थ्य बीमा कार्यक्रमको ब्ल्याक बक्स खोल्न पहल किन नगर्ने?</h4>
-                                    <p class="text-sm text-gray-400 mb-2">Swasthya Khabar</p>
-                                    <a href="https://swasthyakhabar.com/story/54596" target="_blank" class="text-pink-400 hover:text-pink-300 text-sm">लेख पढ्नुहोस् →</a>
+                                <div class="bg-white border border-slate-200 rounded-xl p-5 hover:border-slate-400 transition-all">
+                                    <h4 class="font-semibold mb-2 text-slate-900">स्वास्थ्य बीमा कार्यक्रमको ब्ल्याक बक्स खोल्न पहल किन नगर्ने?</h4>
+                                    <p class="text-sm text-slate-500 mb-2">Swasthya Khabar</p>
+                                    <a href="https://swasthyakhabar.com/story/54596" target="_blank" class="text-slate-800 hover:text-slate-900 text-sm">लेख पढ्नुहोस् →</a>
                                 </div>
 
-                                <div class="bg-slate-800/50 backdrop-blur border border-purple-500/20 rounded-xl p-5 hover:border-purple-500/50 transition-all">
-                                    <h4 class="font-semibold mb-2 text-white">नेपालको स्वास्थ्य सूचना प्रणालीः नौलो प्रयास, चुनौती र अबको बाटो</h4>
-                                    <p class="text-sm text-gray-400 mb-2">Swasthya Khabar</p>
-                                    <a href="https://swasthyakhabar.com/story/54157" target="_blank" class="text-purple-400 hover:text-purple-300 text-sm">लेख पढ्नुहोस् →</a>
+                                <div class="bg-white border border-slate-200 rounded-xl p-5 hover:border-slate-400 transition-all">
+                                    <h4 class="font-semibold mb-2 text-slate-900">नेपालको स्वास्थ्य सूचना प्रणालीः नौलो प्रयास, चुनौती र अबको बाटो</h4>
+                                    <p class="text-sm text-slate-500 mb-2">Swasthya Khabar</p>
+                                    <a href="https://swasthyakhabar.com/story/54157" target="_blank" class="text-slate-800 hover:text-slate-900 text-sm">लेख पढ्नुहोस् →</a>
                                 </div>
 
-                                <div class="bg-slate-800/50 backdrop-blur border border-pink-500/20 rounded-xl p-5 hover:border-pink-500/50 transition-all">
-                                    <h4 class="font-semibold mb-2 text-white">कोभिड-१९ महामारी : मातृशिशु सेवामा असर र अबको बाटो</h4>
-                                    <p class="text-sm text-gray-400 mb-2">Swasthya Khabar</p>
-                                    <a href="https://swasthyakhabar.com/story/36678" target="_blank" class="text-pink-400 hover:text-pink-300 text-sm">लेख पढ्नुहोस् →</a>
+                                <div class="bg-white border border-slate-200 rounded-xl p-5 hover:border-slate-400 transition-all">
+                                    <h4 class="font-semibold mb-2 text-slate-900">कोभिड-१९ महामारी : मातृशिशु सेवामा असर र अबको बाटो</h4>
+                                    <p class="text-sm text-slate-500 mb-2">Swasthya Khabar</p>
+                                    <a href="https://swasthyakhabar.com/story/36678" target="_blank" class="text-slate-800 hover:text-slate-900 text-sm">लेख पढ्नुहोस् →</a>
                                 </div>
 
-                                <div class="bg-slate-800/50 backdrop-blur border border-purple-500/20 rounded-xl p-5 hover:border-purple-500/50 transition-all">
-                                    <h4 class="font-semibold mb-2 text-white">कोरोनाको जोखिम रोक्ने उपाय हुनसक्छ टेलिहेल्थ</h4>
-                                    <p class="text-sm text-gray-400 mb-2">Swasthya Khabar</p>
-                                    <a href="https://swasthyakhabar.com/story/31235" target="_blank" class="text-purple-400 hover:text-purple-300 text-sm">लेख पढ्नुहोस् →</a>
+                                <div class="bg-white border border-slate-200 rounded-xl p-5 hover:border-slate-400 transition-all">
+                                    <h4 class="font-semibold mb-2 text-slate-900">कोरोनाको जोखिम रोक्ने उपाय हुनसक्छ टेलिहेल्थ</h4>
+                                    <p class="text-sm text-slate-500 mb-2">Swasthya Khabar</p>
+                                    <a href="https://swasthyakhabar.com/story/31235" target="_blank" class="text-slate-800 hover:text-slate-900 text-sm">लेख पढ्नुहोस् →</a>
                                 </div>
                             </div>
                         </div>
 
-                        <div class="mt-12 bg-gradient-to-r from-purple-500/10 to-pink-500/10 border border-purple-500/30 rounded-xl p-8 text-center">
-                            <h3 class="text-2xl font-semibold mb-4 text-white">Impact Through Writing</h3>
-                            <p class="text-gray-300 mb-6 max-w-2xl mx-auto">
+                        <div class="mt-12 bg-slate-50 border border-slate-200 rounded-xl p-8 text-center">
+                            <h3 class="text-2xl font-semibold mb-4 text-slate-900">Impact Through Writing</h3>
+                            <p class="text-slate-600 mb-6 max-w-2xl mx-auto">
                                 My policy briefs and op-eds bridge research and practice, translating complex health issues into accessible insights for policymakers, practitioners, and the public. Published in major outlets in both English and Nepali, these pieces contribute to informed public discourse on critical health issues.
                             </p>
-                            <button onclick="navigateTo('contact')" class="px-8 py-3 bg-gradient-to-r from-purple-600 to-pink-600 rounded-lg font-semibold hover:shadow-lg hover:shadow-purple-500/50 transition-all">
+                            <button onclick="navigateTo('contact')" class="px-8 py-3 bg-slate-800 hover:bg-slate-900 text-white rounded-lg font-semibold hover:shadow-lg  transition-all">
                                 Collaborate on Policy Work
                             </button>
                         </div>
@@ -650,90 +650,90 @@ function renderPolicy() {
             return `
                 <section class="min-h-screen px-4 py-24">
                     <div class="max-w-6xl mx-auto">
-                        <h2 class="text-4xl md:text-5xl font-bold mb-4 text-center bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
+                        <h2 class="text-4xl md:text-5xl font-bold mb-4 text-center text-slate-900">
                             Teaching Experience
                         </h2>
-                        <p class="text-center text-gray-300 mb-12 max-w-2xl mx-auto">
+                        <p class="text-center text-slate-600 mb-12 max-w-2xl mx-auto">
                             Over a decade of teaching core public health courses and mentoring future public health professionals
                         </p>
 
                         <div class="space-y-8">
-                            <div class="bg-slate-800/50 border border-purple-500/20 rounded-xl p-8 shadow-lg hover:shadow-xl transition-all">
+                            <div class="bg-white border border-slate-200 rounded-xl p-8 shadow-lg hover:shadow-xl transition-all">
                                 <div class="flex flex-col md:flex-row md:items-start md:justify-between mb-4">
                                     <div>
-                                        <h3 class="text-2xl font-bold text-white mb-2">Safal Education Network</h3>
-                                        <p class="text-purple-400 font-semibold mb-1">Lead Facilitator</p>
-                                        <p class="text-gray-400">Kathmandu, Nepal • 2014 - 2024</p>
+                                        <h3 class="text-2xl font-bold text-slate-900 mb-2">Safal Education Network</h3>
+                                        <p class="text-slate-800 font-semibold mb-1">Lead Facilitator</p>
+                                        <p class="text-slate-500">Kathmandu, Nepal • 2014 - 2024</p>
                                     </div>
-                                    <div class="mt-4 md:mt-0 px-4 py-2 bg-indigo-100 text-purple-700 rounded-lg text-sm font-semibold">
+                                    <div class="mt-4 md:mt-0 px-4 py-2 bg-slate-100 text-slate-700 rounded-lg text-sm font-semibold">
                                         10+ Years
                                     </div>
                                 </div>
                                 
                                 <div class="mt-6">
-                                    <h4 class="font-semibold text-white mb-3">Courses Taught:</h4>
-                                    <ul class="space-y-2 text-gray-300">
+                                    <h4 class="font-semibold text-slate-900 mb-3">Courses Taught:</h4>
+                                    <ul class="space-y-2 text-slate-600">
                                         <li class="flex items-start">
-                                            <span class="text-purple-400 mr-2 mt-1">→</span>
+                                            <span class="text-slate-800 mr-2 mt-1">→</span>
                                             <span><strong>Biostatistics:</strong> Teaching core statistical concepts and methods for public health candidates preparing for Public Service Commission examinations</span>
                                         </li>
                                         <li class="flex items-start">
-                                            <span class="text-purple-400 mr-2 mt-1">→</span>
+                                            <span class="text-slate-800 mr-2 mt-1">→</span>
                                             <span><strong>Epidemiology:</strong> Covering disease patterns, causation, and public health surveillance methods</span>
                                         </li>
                                         <li class="flex items-start">
-                                            <span class="text-purple-400 mr-2 mt-1">→</span>
+                                            <span class="text-slate-800 mr-2 mt-1">→</span>
                                             <span><strong>Health Management and Health System in Nepal:</strong> Comprehensive overview of Nepal's health system structure, policies, and management practices</span>
                                         </li>
                                     </ul>
                                 </div>
                             </div>
 
-                            <div class="bg-slate-800/50 border border-pink-500/20 rounded-xl p-8 shadow-lg hover:shadow-xl transition-all">
+                            <div class="bg-white border border-slate-200 rounded-xl p-8 shadow-lg hover:shadow-xl transition-all">
                                 <div class="flex flex-col md:flex-row md:items-start md:justify-between mb-4">
                                     <div>
-                                        <h3 class="text-2xl font-bold text-white mb-2">University of North Carolina</h3>
-                                        <p class="text-purple-400 font-semibold mb-1">Graduate Teaching Assistant</p>
-                                        <p class="text-gray-400">Gillings School of Global Public Health • 2021 - 2022</p>
+                                        <h3 class="text-2xl font-bold text-slate-900 mb-2">University of North Carolina</h3>
+                                        <p class="text-slate-800 font-semibold mb-1">Graduate Teaching Assistant</p>
+                                        <p class="text-slate-500">Gillings School of Global Public Health • 2021 - 2022</p>
                                     </div>
-                                    <div class="mt-4 md:mt-0 px-4 py-2 bg-pink-500/20 text-pink-300 rounded-lg text-sm font-semibold">
+                                    <div class="mt-4 md:mt-0 px-4 py-2 bg-slate-100 text-slate-700 rounded-lg text-sm font-semibold">
                                         Academic Year 2021-22
                                     </div>
                                 </div>
                                 
                                 <div class="mt-6">
-                                    <h4 class="font-semibold text-white mb-3">Graduate Courses:</h4>
+                                    <h4 class="font-semibold text-slate-900 mb-3">Graduate Courses:</h4>
                                     <div class="space-y-4">
-                                        <div class="bg-slate-700/50 p-4 rounded-lg border border-purple-500/20">
-                                            <p class="font-semibold text-white">HPM 715: Health Economics</p>
-                                            <p class="text-sm text-gray-400">Fall 2021</p>
+                                        <div class="bg-slate-50 p-4 rounded-lg border border-slate-200">
+                                            <p class="font-semibold text-slate-900">HPM 715: Health Economics</p>
+                                            <p class="text-sm text-slate-500">Fall 2021</p>
                                         </div>
-                                        <div class="bg-slate-700/50 p-4 rounded-lg border border-purple-500/20">
-                                            <p class="font-semibold text-white">HPM 780: Pharmaceutical Health Policy</p>
-                                            <p class="text-sm text-gray-400">Spring 2022</p>
+                                        <div class="bg-slate-50 p-4 rounded-lg border border-slate-200">
+                                            <p class="font-semibold text-slate-900">HPM 780: Pharmaceutical Health Policy</p>
+                                            <p class="text-sm text-slate-500">Spring 2022</p>
                                         </div>
-                                        <div class="bg-slate-700/50 p-4 rounded-lg border border-purple-500/20">
-                                            <p class="font-semibold text-white">HPM 756: Access to Healthcare</p>
-                                            <p class="text-sm text-gray-400">Spring 2022</p>
+                                        <div class="bg-slate-50 p-4 rounded-lg border border-slate-200">
+                                            <p class="font-semibold text-slate-900">HPM 756: Access to Healthcare</p>
+                                            <p class="text-sm text-slate-500">Spring 2022</p>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
 
-                        <div class="bg-slate-800/50 border border-purple-500/20 rounded-xl p-8 shadow-lg hover:shadow-xl transition-all">
-                            <h3 class="text-2xl font-semibold mb-4 text-white">Teaching Philosophy</h3>
-                            <p class="text-gray-300 mb-4">
+                        <div class="bg-white border border-slate-200 rounded-xl p-8 shadow-lg hover:shadow-xl transition-all">
+                            <h3 class="text-2xl font-semibold mb-4 text-slate-900">Teaching Philosophy</h3>
+                            <p class="text-slate-600 mb-4">
                                 I believe in making complex public health concepts accessible and actionable. My teaching approach combines rigorous academic content with real-world applications, drawing from my experience working in both Nepal and the United States.
                             </p>
-                            <p class="text-gray-300">
+                            <p class="text-slate-600">
                                 Whether preparing students for civil service examinations or graduate-level coursework, I emphasize critical thinking, practical application, and the importance of evidence-based decision-making in public health practice.
                             </p>
                         </div>
 
                         <div class="mt-8 text-center">
-                            <p class="text-gray-400 mb-4">Interested in guest lectures or teaching collaborations?</p>
-                            <button onclick="navigateTo('contact')" class="px-8 py-3 bg-gradient-to-r from-purple-600 to-pink-600 rounded-lg font-semibold hover:shadow-lg hover:shadow-purple-500/50 transition-all">
+                            <p class="text-slate-500 mb-4">Interested in guest lectures or teaching collaborations?</p>
+                            <button onclick="navigateTo('contact')" class="px-8 py-3 bg-slate-800 hover:bg-slate-900 text-white rounded-lg font-semibold hover:shadow-lg  transition-all">
                                 Get in Touch
                             </button>
                         </div>
@@ -750,17 +750,17 @@ function renderPolicy() {
             category: "Annual Report",
             year: "June 2026",
             filename: "annualreport_dohs_2081_82.pdf",
-            color: "purple"
+            color: "slate"
         },
     
         // Add more reports here
     ];
 
     const categoryColors = {
-        "Policy Brief": "bg-blue-500/20 text-blue-300",
-        "Annual Report": "bg-purple-500/20 text-purple-300",
-        "Working Paper": "bg-pink-500/20 text-pink-300",
-        "Presentation": "bg-green-500/20 text-green-300",
+        "Policy Brief": "bg-blue-50 text-blue-700",
+        "Annual Report": "bg-slate-100 text-slate-700",
+        "Working Paper": "bg-slate-100 text-slate-700",
+        "Presentation": "bg-green-50 text-green-700",
     };
 
     const downloadIcon = `<svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>`;
@@ -769,37 +769,37 @@ function renderPolicy() {
     return `
         <section class="min-h-screen px-4 py-24">
             <div class="max-w-6xl mx-auto">
-                <h2 class="text-4xl md:text-5xl font-bold mb-4 text-center bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
+                <h2 class="text-4xl md:text-5xl font-bold mb-4 text-center text-slate-900">
                     Resources
                 </h2>
-                <p class="text-center text-gray-300 mb-12 max-w-2xl mx-auto">
+                <p class="text-center text-slate-600 mb-12 max-w-2xl mx-auto">
                     Downloadable reports, policy briefs, presentations, and working papers
                 </p>
 
                 <div class="grid md:grid-cols-2 gap-6 mb-12">
                     ${resources.map(r => `
-                        <div class="bg-slate-800/50 backdrop-blur border border-${r.color}-500/20 rounded-xl p-6 hover:border-${r.color}-500/50 transition-all hover:transform hover:scale-105">
+                        <div class="bg-white border border-slate-200 rounded-xl p-6 hover:border-slate-400 transition-all hover:transform hover:scale-105">
                             <div class="flex items-start justify-between mb-4">
-                                <div class="text-${r.color}-400">${pdfIcon}</div>
+                                <div class="text-slate-800">${pdfIcon}</div>
                                 <div class="flex gap-2 items-center">
-                                    <span class="text-xs px-2 py-1 rounded-full ${categoryColors[r.category] || 'bg-gray-500/20 text-gray-300'}">${r.category}</span>
-                                    <span class="text-sm text-gray-400">${r.year}</span>
+                                    <span class="text-xs px-2 py-1 rounded-full ${categoryColors[r.category] || 'bg-slate-100 text-slate-600'}">${r.category}</span>
+                                    <span class="text-sm text-slate-500">${r.year}</span>
                                 </div>
                             </div>
-                            <h3 class="text-lg font-semibold mb-2 text-white">${r.title}</h3>
-                            <p class="text-gray-400 text-sm mb-5">${r.description}</p>
+                            <h3 class="text-lg font-semibold mb-2 text-slate-900">${r.title}</h3>
+                            <p class="text-slate-500 text-sm mb-5">${r.description}</p>
                             <a href="${r.filename}" download 
-                               class="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-purple-600 to-pink-600 rounded-lg text-sm font-semibold hover:shadow-lg hover:shadow-purple-500/30 transition-all">
+                               class="inline-flex items-center gap-2 px-4 py-2 bg-slate-800 hover:bg-slate-900 text-white rounded-lg text-sm font-semibold hover:shadow-lg  transition-all">
                                 ${downloadIcon} Download PDF
                             </a>
                         </div>
                     `).join('')}
                 </div>
 
-                <div class="bg-gradient-to-r from-purple-500/10 to-pink-500/10 border border-purple-500/30 rounded-xl p-8 text-center">
-                    <h3 class="text-xl font-semibold mb-3 text-white">Looking for something specific?</h3>
-                    <p class="text-gray-300 mb-4">If you're looking for a particular report or would like to request materials, feel free to reach out.</p>
-                    <button onclick="navigateTo('contact')" class="px-8 py-3 bg-gradient-to-r from-purple-600 to-pink-600 rounded-lg font-semibold hover:shadow-lg hover:shadow-purple-500/50 transition-all">
+                <div class="bg-slate-50 border border-slate-200 rounded-xl p-8 text-center">
+                    <h3 class="text-xl font-semibold mb-3 text-slate-900">Looking for something specific?</h3>
+                    <p class="text-slate-600 mb-4">If you're looking for a particular report or would like to request materials, feel free to reach out.</p>
+                    <button onclick="navigateTo('contact')" class="px-8 py-3 bg-slate-800 hover:bg-slate-900 text-white rounded-lg font-semibold hover:shadow-lg  transition-all">
                         Contact Me
                     </button>
                 </div>
@@ -812,91 +812,91 @@ function renderPolicy() {
             return `
                 <section class="min-h-screen px-4 py-24">
                     <div class="max-w-6xl mx-auto">
-                        <h2 class="text-4xl md:text-5xl font-bold mb-4 text-center bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
+                        <h2 class="text-4xl md:text-5xl font-bold mb-4 text-center text-slate-900">
                             Social Media & Public Engagement
                         </h2>
-                        <p class="text-center text-gray-300 mb-12 max-w-3xl mx-auto">
+                        <p class="text-center text-slate-600 mb-12 max-w-3xl mx-auto">
                             Making health science accessible, combating misinformation, and inspiring meaningful change through engaging edutainment content
                         </p>
 
                         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
-                            <div class="bg-slate-800/50 backdrop-blur border border-purple-500/20 rounded-xl p-6 hover:border-purple-500/50 transition-all">
+                            <div class="bg-white border border-slate-200 rounded-xl p-6 hover:border-slate-400 transition-all">
                                 <div class="text-4xl mb-4">🔬</div>
-                                <h3 class="text-xl font-semibold mb-3 text-white">Science Communication</h3>
-                                <p class="text-gray-300">
+                                <h3 class="text-xl font-semibold mb-3 text-slate-900">Science Communication</h3>
+                                <p class="text-slate-600">
                                     Translating complex health research into digestible, engaging content that empowers people to make informed decisions
                                 </p>
                             </div>
 
-                            <div class="bg-slate-800/50 backdrop-blur border border-pink-500/20 rounded-xl p-6 hover:border-pink-500/50 transition-all">
+                            <div class="bg-white border border-slate-200 rounded-xl p-6 hover:border-slate-400 transition-all">
                                 <div class="text-4xl mb-4">❌</div>
-                                <h3 class="text-xl font-semibold mb-3 text-white">Misinformation Debunking</h3>
-                                <p class="text-gray-300">
+                                <h3 class="text-xl font-semibold mb-3 text-slate-900">Misinformation Debunking</h3>
+                                <p class="text-slate-600">
                                     Fighting health myths and misinformation with evidence-based facts, helping communities distinguish truth from fiction
                                 </p>
                             </div>
 
-                            <div class="bg-slate-800/50 backdrop-blur border border-purple-500/20 rounded-xl p-6 hover:border-purple-500/50 transition-all">
+                            <div class="bg-white border border-slate-200 rounded-xl p-6 hover:border-slate-400 transition-all">
                                 <div class="text-4xl mb-4">📚</div>
-                                <h3 class="text-xl font-semibold mb-3 text-white">Health Education</h3>
-                                <p class="text-gray-300">
+                                <h3 class="text-xl font-semibold mb-3 text-slate-900">Health Education</h3>
+                                <p class="text-slate-600">
                                     Creating edutainment content that makes learning about health fun, memorable, and shareable across all age groups
                                 </p>
                             </div>
 
-                            <div class="bg-slate-800/50 backdrop-blur border border-pink-500/20 rounded-xl p-6 hover:border-pink-500/50 transition-all">
+                            <div class="bg-white border border-slate-200 rounded-xl p-6 hover:border-slate-400 transition-all">
                                 <div class="text-4xl mb-4">📋</div>
-                                <h3 class="text-xl font-semibold mb-3 text-white">Policy Critique</h3>
-                                <p class="text-gray-300">
+                                <h3 class="text-xl font-semibold mb-3 text-slate-900">Policy Critique</h3>
+                                <p class="text-slate-600">
                                     Providing thoughtful analysis and constructive criticism of health policies to promote better public health outcomes
                                 </p>
                             </div>
 
-                            <div class="bg-slate-800/50 backdrop-blur border border-purple-500/20 rounded-xl p-6 hover:border-purple-500/50 transition-all">
+                            <div class="bg-white border border-slate-200 rounded-xl p-6 hover:border-slate-400 transition-all">
                                 <div class="text-4xl mb-4">💪</div>
-                                <h3 class="text-xl font-semibold mb-3 text-white">Youth Motivation</h3>
-                                <p class="text-gray-300">
+                                <h3 class="text-xl font-semibold mb-3 text-slate-900">Youth Motivation</h3>
+                                <p class="text-slate-600">
                                     Inspiring young people to pursue meaningful careers in public health and contribute to positive social change
                                 </p>
                             </div>
 
-                            <div class="bg-slate-800/50 backdrop-blur border border-pink-500/20 rounded-xl p-6 hover:border-pink-500/50 transition-all">
+                            <div class="bg-white border border-slate-200 rounded-xl p-6 hover:border-slate-400 transition-all">
                                 <div class="text-4xl mb-4">🎭</div>
-                                <h3 class="text-xl font-semibold mb-3 text-white">Edutainment Approach</h3>
-                                <p class="text-gray-300">
+                                <h3 class="text-xl font-semibold mb-3 text-slate-900">Edutainment Approach</h3>
+                                <p class="text-slate-600">
                                     Blending education with entertainment - making serious health topics approachable through humor and creativity
                                 </p>
                             </div>
                         </div>
 
                         <div class="mb-12">
-                            <h3 class="text-2xl font-semibold mb-6 text-center text-white">My Social Media Presence</h3>
+                            <h3 class="text-2xl font-semibold mb-6 text-center text-slate-900">My Social Media Presence</h3>
                             <div class="grid md:grid-cols-3 gap-6">
-                                <a href="https://www.facebook.com/mukeshpublichealth" target="_blank" class="bg-gradient-to-br from-blue-500/20 to-blue-600/20 border border-blue-500/30 rounded-xl p-6 text-center hover:scale-105 transition-all">
-                                    <div class="text-blue-400 mb-4">${icons.facebook}</div>
+                                <a href="https://www.facebook.com/mukeshpublichealth" target="_blank" class="bg-blue-50 border border-blue-200 rounded-xl p-6 text-center hover:scale-105 transition-all">
+                                    <div class="text-blue-600 mb-4">${icons.facebook}</div>
                                     <div class="text-3xl font-bold mb-2">Facebook</div>
-                                    <div class="text-gray-300 text-sm">Daily health tips & myth-busting</div>
-                                    <div class="mt-4 text-blue-400 font-semibold">Follow →</div>
+                                    <div class="text-slate-600 text-sm">Daily health tips & myth-busting</div>
+                                    <div class="mt-4 text-blue-600 font-semibold">Follow →</div>
                                 </a>
 
-                                <a href="https://www.youtube.com/@MukeshAdhikari" target="_blank" class="bg-gradient-to-br from-red-500/20 to-red-600/20 border border-red-500/30 rounded-xl p-6 text-center hover:scale-105 transition-all">
+                                <a href="https://www.youtube.com/@MukeshAdhikari" target="_blank" class="bg-red-50 border border-red-200 rounded-xl p-6 text-center hover:scale-105 transition-all">
                                     <div class="text-red-400 mb-4">${icons.youtube}</div>
                                     <div class="text-3xl font-bold mb-2">YouTube</div>
-                                    <div class="text-gray-300 text-sm">Health education videos</div>
+                                    <div class="text-slate-600 text-sm">Health education videos</div>
                                     <div class="mt-4 text-red-400 font-semibold">Subscribe →</div>
                                 </a>
 
-                                <a href="https://x.com/mukes_adhikari" target="_blank" class="bg-gradient-to-br from-blue-400/20 to-blue-500/20 border border-blue-400/30 rounded-xl p-6 text-center hover:scale-105 transition-all">
-                                    <div class="text-blue-400 mb-4">${icons.twitter}</div>
+                                <a href="https://x.com/mukes_adhikari" target="_blank" class="bg-blue-50 border border-blue-200 rounded-xl p-6 text-center hover:scale-105 transition-all">
+                                    <div class="text-blue-600 mb-4">${icons.twitter}</div>
                                     <div class="text-3xl font-bold mb-2">Twitter/X</div>
-                                    <div class="text-gray-300 text-sm">Quick health insights & news</div>
-                                    <div class="mt-4 text-blue-400 font-semibold">Follow →</div>
+                                    <div class="text-slate-600 text-sm">Quick health insights & news</div>
+                                    <div class="mt-4 text-blue-600 font-semibold">Follow →</div>
                                 </a>
                             </div>
                         </div>
 
-                        <div class="bg-slate-800/50 border border-purple-500/20 rounded-xl p-8 mb-8">
-                            <h3 class="text-2xl font-semibold mb-6 text-white text-center">Latest from Facebook</h3>
+                        <div class="bg-white border border-slate-200 rounded-xl p-8 mb-8">
+                            <h3 class="text-2xl font-semibold mb-6 text-slate-900 text-center">Latest from Facebook</h3>
                             <div class="flex justify-center">
                                 <div class="fb-page" 
                                      data-href="https://www.facebook.com/mukeshpublichealth"
@@ -912,21 +912,21 @@ function renderPolicy() {
                                     </blockquote>
                                 </div>
                             </div>
-                            <p class="text-center text-gray-400 text-sm mt-4">
-                                Can't see the feed? <a href="https://www.facebook.com/mukeshpublichealth" target="_blank" class="text-purple-400 hover:text-purple-300">Visit my Facebook page directly →</a>
+                            <p class="text-center text-slate-500 text-sm mt-4">
+                                Can't see the feed? <a href="https://www.facebook.com/mukeshpublichealth" target="_blank" class="text-slate-800 hover:text-slate-900">Visit my Facebook page directly →</a>
                             </p>
                         </div>
 
-                        <div class="bg-gradient-to-r from-purple-500/10 to-pink-500/10 border border-purple-500/30 rounded-xl p-8 text-center">
-                            <h3 class="text-2xl font-semibold mb-4 text-white">Join the Community</h3>
-                            <p class="text-gray-300 mb-6 max-w-2xl mx-auto">
+                        <div class="bg-slate-50 border border-slate-200 rounded-xl p-8 text-center">
+                            <h3 class="text-2xl font-semibold mb-4 text-slate-900">Join the Community</h3>
+                            <p class="text-slate-600 mb-6 max-w-2xl mx-auto">
                                 Stay informed with daily health insights, evidence-based information, and engaging content that makes public health accessible to everyone. Let's build a healthier, more informed society together!
                             </p>
                             <div class="flex flex-wrap justify-center gap-4">
-                                <a href="https://www.facebook.com/mukeshpublichealth" target="_blank" class="px-8 py-3 bg-gradient-to-r from-purple-600 to-pink-600 rounded-lg font-semibold hover:shadow-lg hover:shadow-purple-500/50 transition-all">
+                                <a href="https://www.facebook.com/mukeshpublichealth" target="_blank" class="px-8 py-3 bg-slate-800 hover:bg-slate-900 text-white rounded-lg font-semibold hover:shadow-lg  transition-all">
                                     Follow on Facebook
                                 </a>
-                                <button onclick="navigateTo('contact')" class="px-8 py-3 bg-slate-800 border-2 border-purple-500 rounded-lg font-semibold hover:bg-slate-700 transition-all">
+                                <button onclick="navigateTo('contact')" class="px-8 py-3 bg-white border-2 border-slate-300 text-slate-800 rounded-lg font-semibold hover:bg-slate-50 hover:border-slate-400 transition-all">
                                     Collaboration Inquiries
                                 </button>
                             </div>
@@ -941,71 +941,71 @@ function renderPolicy() {
             return `
                 <section class="min-h-screen px-4 py-24">
                     <div class="max-w-4xl mx-auto">
-                        <h2 class="text-4xl md:text-5xl font-bold mb-12 text-center bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
+                        <h2 class="text-4xl md:text-5xl font-bold mb-12 text-center text-slate-900">
                             About Me
                         </h2>
 
-                        <div class="bg-slate-800/50 backdrop-blur border border-purple-500/20 rounded-xl p-8 mb-8">
+                        <div class="bg-white border border-slate-200 rounded-xl p-8 mb-8">
                             <div class="flex flex-col md:flex-row gap-8 items-center mb-6">
                                 <img 
                                     src="headshot.jpg" 
                                     alt="Mukesh Adhikari" 
-                                    class="w-48 h-48 rounded-xl border-4 border-purple-500/50 shadow-lg object-cover flex-shrink-0"
+                                    class="w-48 h-48 rounded-xl border-4 border-slate-300 shadow-lg object-cover flex-shrink-0"
                                 />
                                 <div>
                                     <h3 class="text-2xl font-bold mb-2">Mukesh Adhikari</h3>
-                                    <p class="text-purple-400 mb-4">Health Services Researcher</p>
-                                    <p class=" text-lg text-gray-300">
+                                    <p class="text-slate-800 mb-4">Health Services Researcher</p>
+                                    <p class=" text-lg text-slate-600">
                                         I'm a health services researcher dedicated to bridging the gap between scientific evidence and real-world impact. My work focuses on rural health, medical education, maternal and child health, and health systems strengthening.
                                     </p>
                                 </div>
                             </div>
                             
-                            <p class="text-lg text-gray-300 mb-4">
+                            <p class="text-lg text-slate-600 mb-4">
                                 With over 24 peer-reviewed publications in top-tier journals including JAMA, The Lancet, and BMJ, my research spans from Nepal to the United States, addressing critical issues in healthcare access, medical education policy, and health equity.
                             </p>
-                            <p class="text-lg text-gray-300 mb-4">
+                            <p class="text-lg text-slate-600 mb-4">
                                 My work has influenced policy decisions at both national and international levels, particularly in rural graduate medical education expansion in the US, health insurance implementation in Nepal, and maternal health service delivery during the COVID-19 pandemic.
                             </p>
-                            <p class="text-lg text-gray-300">
+                            <p class="text-lg text-slate-600">
                                 Beyond research, I'm passionate about translating complex health science into accessible knowledge through op-eds and public engagement, ensuring that evidence reaches those who need it most.
                             </p>
                         </div>
 
                         <div class="grid md:grid-cols-2 gap-6 mb-8">
-                            <div class="bg-slate-800/50 backdrop-blur border border-purple-500/20 rounded-xl p-6">
-                                <h3 class="text-xl font-semibold mb-4 text-purple-400">Education</h3>
-                                <ul class="space-y-3 text-gray-300">
+                            <div class="bg-white border border-slate-200 rounded-xl p-6">
+                                <h3 class="text-xl font-semibold mb-4 text-slate-800">Education</h3>
+                                <ul class="space-y-3 text-slate-600">
                                     <li>
                                         <div class="font-semibold">PhD, Health Policy and Management (Health Economics)</div>
-                                        <div class="text-sm text-gray-400">University of North Carolina (UNC) at Chapel Hill, NC, USA • 2026</div>
+                                        <div class="text-sm text-slate-500">University of North Carolina (UNC) at Chapel Hill, NC, USA • 2026</div>
                                     </li>
                                     <li>
                                         <div class="font-semibold">MPH, Health Policy</div>
-                                        <div class="text-sm text-gray-400">Yale School of Public Health, CT, USA • 2021</div>
+                                        <div class="text-sm text-slate-500">Yale School of Public Health, CT, USA • 2021</div>
                                     </li>
                                     <li>
                                         <div class="font-semibold">MPA, Public Administration</div>
-                                        <div class="text-sm text-gray-400">Kastamandap School of Public Affairs Management, Kathmandu, Nepal • 2019</div>
+                                        <div class="text-sm text-slate-500">Kastamandap School of Public Affairs Management, Kathmandu, Nepal • 2019</div>
                                     </li>
                                     <li>
                                         <div class="font-semibold">BPH, Public Health</div>
-                                        <div class="text-sm text-gray-400">Institute of Medicine, Kathmandu, Nepal • 2012</div>
+                                        <div class="text-sm text-slate-500">Institute of Medicine, Kathmandu, Nepal • 2012</div>
                                     </li>
                                     <li>
                                         <div class="font-semibold">ISc, Science</div>
-                                        <div class="text-sm text-gray-400">Amrit Science Campus, Kathmandu, Nepal • 2007</div>
+                                        <div class="text-sm text-slate-500">Amrit Science Campus, Kathmandu, Nepal • 2007</div>
                                     </li>
                                     <li>
                                         <div class="font-semibold">Proficiency Certificate in General Medicine, Health Assistant</div>
-                                        <div class="text-sm text-gray-400">Bhageswor Academy for Health Sciences, Dhangadhi, Nepal • 2005</div>
+                                        <div class="text-sm text-slate-500">Bhageswor Academy for Health Sciences, Dhangadhi, Nepal • 2005</div>
                                     </li>
                                 </ul>
                             </div>
 
-                            <div class="bg-slate-800/50 backdrop-blur border border-pink-500/20 rounded-xl p-6">
-                                <h3 class="text-xl font-semibold mb-4 text-pink-400">Honors & Awards</h3>
-                                <ul class="space-y-2 text-gray-300">
+                            <div class="bg-white border border-slate-200 rounded-xl p-6">
+                                <h3 class="text-xl font-semibold mb-4 text-slate-800">Honors & Awards</h3>
+                                <ul class="space-y-2 text-slate-600">
                                     <li>• Jean G. Yates Outstanding Doctoral Student Award, UNC Chapel Hill, 2025</li>
                                     <li>• American Society of Health Economics (ASHEcon) Diversity Scholarship, 2024</li>
                                     <li>• Horstman Scholarship, Yale University, 2019</li>
@@ -1018,9 +1018,9 @@ function renderPolicy() {
                             </div>
                         </div>
 
-                        <div class="bg-gradient-to-r from-purple-500/10 to-pink-500/10 border border-purple-500/30 rounded-xl p-8">
+                        <div class="bg-slate-50 border border-slate-200 rounded-xl p-8">
                             <h3 class="text-2xl font-semibold mb-4">Research Focus Areas</h3>
-                            <div class="grid md:grid-cols-2 gap-4 text-gray-300">
+                            <div class="grid md:grid-cols-2 gap-4 text-slate-600">
                                 <ul class="space-y-2">
                                     <li>• Rural health and medical education</li>
                                     <li>• Health systems strengthening</li>
@@ -1037,8 +1037,8 @@ function renderPolicy() {
                         </div>
 
                         <div class="mt-8 text-center">
-                            <p class="text-gray-400 mb-4">Interested in collaboration or speaking engagements?</p>
-                            <button onclick="navigateTo('contact')" class="px-8 py-3 bg-gradient-to-r from-purple-600 to-pink-600 rounded-lg font-semibold hover:shadow-lg hover:shadow-purple-500/50 transition-all">
+                            <p class="text-slate-500 mb-4">Interested in collaboration or speaking engagements?</p>
+                            <button onclick="navigateTo('contact')" class="px-8 py-3 bg-slate-800 hover:bg-slate-900 text-white rounded-lg font-semibold hover:shadow-lg  transition-all">
                                 Get in Touch
                             </button>
                         </div>
@@ -1059,14 +1059,14 @@ function renderPolicy() {
         return `
                 <section class="min-h-screen px-4 py-24">
                     <div class="max-w-4xl mx-auto text-center">
-                        <h2 class="text-4xl font-bold mb-8 bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent capitalize">
+                        <h2 class="text-4xl font-bold mb-8 text-slate-900 capitalize">
                             ${currentSection}
                         </h2>
-                        <p class="text-gray-300 mb-8">
+                        <p class="text-slate-600 mb-8">
                             This section would contain your ${currentSection} content. Replace this with your actual content!
                         </p>
-                        <div class="bg-slate-800/50 backdrop-blur border border-purple-500/20 rounded-xl p-8">
-                            <p class="text-gray-400">Customize this section with your ${currentSection} information.</p>
+                        <div class="bg-white border border-slate-200 rounded-xl p-8">
+                            <p class="text-slate-500">Customize this section with your ${currentSection} information.</p>
                         </div>
                     </div>
                 </section>
@@ -1077,8 +1077,8 @@ function renderPolicy() {
             document.getElementById('app').innerHTML = `
                 ${renderNav()}
                 ${renderSection()}
-                <footer class="bg-slate-900/80 border-t border-purple-500/20 py-8 px-4">
-                    <div class="max-w-6xl mx-auto text-center text-gray-400">
+                <footer class="bg-white/90 border-t border-slate-200 py-8 px-4">
+                    <div class="max-w-6xl mx-auto text-center text-slate-500">
                         <p>© 2026 Mukesh Adhikari. All rights reserved.</p>
                         <p class="mt-2 text-sm">Making health equity a reality through research, education, and action.</p>
                     </div>
