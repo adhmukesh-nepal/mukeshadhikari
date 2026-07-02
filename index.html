@@ -534,26 +534,62 @@
                             </a>
                         </div>
 
-                        <div class="bg-card border border-rule rounded-xl p-8 mb-8">
-                            <h3 class="font-serif text-2xl font-600 text-ink mb-6 text-center">Latest from Facebook</h3>
-                            <div class="flex justify-center">
-                                <div class="fb-page"
-                                     data-href="https://www.facebook.com/mukeshpublichealth"
-                                     data-tabs="timeline"
-                                     data-width="500"
-                                     data-height="600"
-                                     data-small-header="false"
-                                     data-adapt-container-width="true"
-                                     data-hide-cover="false"
-                                     data-show-facepile="true">
-                                    <blockquote cite="https://www.facebook.com/mukeshpublichealth" class="fb-xfbml-parse-ignore">
-                                        <a href="https://www.facebook.com/mukeshpublichealth">Mukesh Adhikari - Public Health</a>
-                                    </blockquote>
+                        <h3 class="font-serif text-2xl font-600 text-ink text-center mb-8">Follow My Channels</h3>
+                        <div class="grid md:grid-cols-2 gap-6 items-stretch mb-8">
+
+                            <!-- LEFT: Facebook page feed -->
+                            <div class="bg-card border border-rule rounded-xl p-6 flex flex-col">
+                                <div class="flex items-center gap-2 mb-5 text-[#1877F2]">
+                                    ${icons.facebook}
+                                    <h4 class="font-serif text-xl font-600 text-ink">Facebook</h4>
+                                </div>
+                                <div class="flex-1 flex justify-center">
+                                    <div class="fb-page"
+                                         data-href="https://www.facebook.com/mukeshpublichealth"
+                                         data-tabs="timeline"
+                                         data-width="500"
+                                         data-height="560"
+                                         data-small-header="false"
+                                         data-adapt-container-width="true"
+                                         data-hide-cover="false"
+                                         data-show-facepile="true">
+                                        <blockquote cite="https://www.facebook.com/mukeshpublichealth" class="fb-xfbml-parse-ignore">
+                                            <a href="https://www.facebook.com/mukeshpublichealth">Mukesh Adhikari - Public Health</a>
+                                        </blockquote>
+                                    </div>
+                                </div>
+                                <p class="text-center text-muted text-sm mt-4">
+                                    Can't see the feed? <a href="https://www.facebook.com/mukeshpublichealth" target="_blank" rel="noopener" class="text-navy hover:underline">Open my Facebook page →</a>
+                                </p>
+                            </div>
+
+                            <!-- RIGHT: YouTube channel card (banner = channel cover art) -->
+                            <div class="bg-card border border-rule rounded-xl overflow-hidden flex flex-col">
+                                <div class="flex items-center gap-2 px-6 pt-6 pb-4 text-[#FF0000]">
+                                    ${icons.youtube}
+                                    <h4 class="font-serif text-xl font-600 text-ink">YouTube</h4>
+                                </div>
+                                <a href="https://www.youtube.com/@MukeshAdhikari" target="_blank" rel="noopener" class="block">
+                                    <img src="https://yt3.googleusercontent.com/6vDIkVNLNQnfCi7H7qAjDDQ2U-rHGPAljwY2jJEv_Ku2dkhzHBOWjbP7_imxA9B15a_U486R5xk=w1707-fcrop64=1,00005a57ffffa5a8-k-c0xffffffff-no-nd-rj"
+                                         alt="Mukesh Adhikari YouTube channel banner"
+                                         class="w-full aspect-[6/1] object-cover bg-navy/5" loading="lazy">
+                                </a>
+                                <div class="flex-1 flex flex-col items-center text-center px-6 pb-8 -mt-10">
+                                    <img src="https://yt3.googleusercontent.com/qZN5cuvYru9nhgMqNJtrzcSYkxPPNEinySSyOBbpw0Ilmi7l0bT_f1Pg0YxKG1T6krO5z0goJg=s176-c-k-c0x00ffffff-no-rj"
+                                         alt="Mukesh Adhikari"
+                                         class="w-20 h-20 rounded-full ring-4 ring-card object-cover shadow-md bg-card" loading="lazy">
+                                    <h4 class="font-serif text-2xl font-600 text-ink mt-3">Mukesh Adhikari</h4>
+                                    <p class="text-muted text-sm mt-1">@MukeshAdhikari &middot; 13K subscribers</p>
+                                    <p class="text-muted text-sm mt-4 mb-6 max-w-xs">Health education videos, myth-busting, and science communication in Nepali &amp; English.</p>
+                                    <a href="https://www.youtube.com/@MukeshAdhikari?sub_confirmation=1" target="_blank" rel="noopener"
+                                       class="inline-flex items-center gap-2 px-6 py-3 bg-[#FF0000] text-white font-semibold rounded-full hover:bg-[#cc0000] transition-colors">
+                                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+                                        Subscribe
+                                    </a>
+                                    <a href="https://www.youtube.com/@MukeshAdhikari" target="_blank" rel="noopener" class="text-navy text-sm mt-4 hover:underline">Visit channel &rarr;</a>
                                 </div>
                             </div>
-                            <p class="text-center text-muted text-sm mt-4">
-                                Can't see the feed? <a href="https://www.facebook.com/mukeshpublichealth" target="_blank" rel="noopener" class="text-navy hover:underline">Visit my Facebook page directly →</a>
-                            </p>
+
                         </div>
 
                         <div class="bg-navy/5 border border-rule rounded-xl p-8 md:p-10 text-center">
