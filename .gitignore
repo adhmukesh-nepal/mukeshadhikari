@@ -1,0 +1,16 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Screenshots / scratch images dropped into the folder
+Screenshot *.png
+Screenshot*.png
+
+# Editor / OS cruft
+*.swp
+*~
+Thumbs.db
+
+# Local backups of the site (keep these on your machine, not in the repo)
+index.backup.*.html
