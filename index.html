@@ -61,6 +61,7 @@
     <script>
         let currentSection = 'home';
         let menuOpen = false;
+        let PUBS = {}; // populated from publications.json at load; empty = use built-in defaults
 
         const icons = {
             menu: '<svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.7"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>',
@@ -193,7 +194,7 @@
         }
 
         function renderResearch() {
-            const usPublications = [
+            const US_DEFAULT = [
                 { title: "The Evolving Role of Critical Access Hospitals in Rural Physician Training", journal: "JAMA Health Forum", year: "2025", link: "https://jamanetwork.com/journals/jama-health-forum/fullarticle/2840783", tags: ["Medical Education", "Rural Health"] },
                 { title: "Comparing Indian Health Service Sites to Rural Physician Teaching Hospitals", journal: "JAMA Internal Medicine", year: "2025", link: "https://jamanetwork.com/journals/jamainternalmedicine/article-abstract/2835618", tags: ["Medical Education", "IHS"] },
                 { title: "Evaluating Teaching Health Center Planning and Development", journal: "Journal of Graduate Medical Education", year: "2025", link: "https://jgme.kglmeridian.com/view/journals/jgme/17/3/article-p296.xml", tags: ["Medical Education", "THC"] },
@@ -202,7 +203,7 @@
                 { title: "Characteristics of Hospitals by Graduate Medical Education Expense Category", journal: "Academic Medicine", year: "2023", link: "https://journals.lww.com/academicmedicine/abstract/9900/characteristics_of_hospitals_by_graduate_medical.689.aspx", tags: ["Medical Education", "Rural Health"] }
             ];
 
-            const nepalPublications = [
+            const NEPAL_DEFAULT = [
                 { title: "Aging, Mental Health and Ethnic Disparities: Understanding Geriatric Mental Health in Western Nepal", journal: "Journal of Geriatric Psychiatry and Neurology", year: "2025", link: "https://journals.sagepub.com/doi/full/10.1177/08919887251403594", tags: ["Mental Health", "Geriatrics", "Nepal"] },
                 { title: "Patient satisfaction with healthcare services among health insurance program beneficiaries in Nepal: A cross-sectional study", journal: "PLOS ONE", year: "2025", link: "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0334352", tags: ["Patient Satisfaction", "Health Insurance"] },
                 { title: "Patient satisfaction with the components of the National Health Insurance Program of Nepal", journal: "BMC Health Services Research", year: "2025", link: "https://link.springer.com/article/10.1186/s12913-025-12893-5", tags: ["Health Insurance", "Nepal"] },
@@ -222,6 +223,11 @@
                 { title: "Practical issues in the measurement of child survival in health systems trials in rural Nepal", journal: "BMJ Global Health", year: "2016", link: "https://gh.bmj.com/content/1/4/e000050", tags: ["Child Health", "Nepal"] },
                 { title: "Types of cooking stove and risk of Acute Lower Respiratory Infection among under-five children in Nepal", journal: "Health Prospect", year: "2015", link: "https://www.nepjol.info/index.php/HPROSPECT/article/view/12369", tags: ["Child Health", "Environmental Health"] }
             ];
+
+            // Prefer publications.json (auto-synced from ORCID); fall back to the built-in defaults above.
+            const usPublications = (PUBS.us && PUBS.us.length) ? PUBS.us : US_DEFAULT;
+            const nepalPublications = (PUBS.nepal && PUBS.nepal.length) ? PUBS.nepal : NEPAL_DEFAULT;
+            const otherPublications = (PUBS.other && PUBS.other.length) ? PUBS.other : [];
 
             function renderPublicationCard(pub) {
                 return `
@@ -268,6 +274,19 @@
                                 ${nepalPublications.map(renderPublicationCard).join('')}
                             </div>
                         </div>
+
+                        ${otherPublications.length ? `
+                        <div class="mb-14">
+                            <div class="flex items-baseline gap-4 mb-2 pb-3 border-b border-rule">
+                                <h3 class="font-serif text-2xl md:text-3xl font-600 text-ink">Recent Publications</h3>
+                                <span class="eyebrow text-navy">${otherPublications.length} Publications</span>
+                            </div>
+                            <p class="text-muted mb-8 mt-4">Newly indexed work.</p>
+                            <div class="grid md:grid-cols-2 gap-6">
+                                ${otherPublications.map(renderPublicationCard).join('')}
+                            </div>
+                        </div>
+                        ` : ''}
 
                         <div class="bg-card border border-rule rounded-xl p-8 mb-10">
                             <h3 class="font-serif text-2xl font-600 text-ink mb-6">Research Interests</h3>
@@ -804,6 +823,18 @@
         }
 
         render();
+
+        // Load the auto-synced publication list, then re-render if it succeeds.
+        // Falls back silently to the built-in defaults (e.g. when opened via file://).
+        fetch('publications.json', { cache: 'no-cache' })
+            .then(res => res.ok ? res.json() : Promise.reject(res.status))
+            .then(data => {
+                if (data && (Array.isArray(data.us) || Array.isArray(data.nepal))) {
+                    PUBS = data;
+                    render();
+                }
+            })
+            .catch(() => { /* keep built-in defaults */ });
     </script>
 </body>
 </html>
