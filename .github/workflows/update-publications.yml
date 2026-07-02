@@ -19,9 +19,9 @@ jobs:
     env:
       ORCID_ID: "0000-0002-1091-328X"
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
 
-      - uses: actions/setup-python@v5
+      - uses: peter-evans/create-pull-request@v7
         with:
           python-version: "3.12"
 
