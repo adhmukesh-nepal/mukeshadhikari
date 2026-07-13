@@ -14,3 +14,4 @@ Thumbs.db
 
 # Local backups of the site (keep these on your machine, not in the repo)
 index.backup.*.html
+*.backup
