@@ -2,99 +2,244 @@
 <html lang="en">
 <head>
     <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-J176Z972QM"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-J176Z972QM"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-J176Z972QM');
+    </script>
 
-  gtag('config', 'G-J176Z972QM');
-</script>
-    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <base href="/">
+    <title>Mukesh Adhikari, PhD, MPH, MPA — Health Services Researcher</title>
+    <meta name="description" content="Mukesh Adhikari, PhD, MPH, MPA — health services researcher and health policy analyst. Research on rural graduate medical education, health systems, and maternal & child health across the United States and Nepal.">
+    <meta name="author" content="Mukesh Adhikari">
+    <link rel="canonical" href="https://mukeshadhikari.com/">
+
+    <!-- Open Graph (Facebook, LinkedIn, etc.) -->
+    <meta property="og:type" content="profile">
+    <meta property="og:site_name" content="Mukesh Adhikari">
+    <meta property="og:title" content="Mukesh Adhikari, PhD, MPH, MPA — Health Services Researcher">
+    <meta property="og:description" content="Health services researcher and health policy analyst. Research on rural graduate medical education, health systems, and maternal &amp; child health across the United States and Nepal.">
+    <meta property="og:url" content="https://mukeshadhikari.com/">
+    <meta property="og:image" content="https://mukeshadhikari.com/headshot.jpg">
+
+    <!-- Twitter / X card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@mukes_adhikari">
+    <meta name="twitter:title" content="Mukesh Adhikari, PhD, MPH, MPA — Health Services Researcher">
+    <meta name="twitter:description" content="Health services researcher and health policy analyst. Research spanning the United States and Nepal.">
+    <meta name="twitter:image" content="https://mukeshadhikari.com/headshot.jpg">
+
+    <!-- Structured data: helps Google connect searches for your name to this site -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Mukesh Adhikari",
+      "givenName": "Mukesh",
+      "familyName": "Adhikari",
+      "honorificSuffix": "PhD, MPH, MPA",
+      "url": "https://mukeshadhikari.com/",
+      "image": "https://mukeshadhikari.com/headshot.jpg",
+      "jobTitle": "Health Services Researcher",
+      "description": "Health services researcher and health policy analyst focused on rural graduate medical education, health systems strengthening, and maternal & child health across the United States and Nepal.",
+      "alumniOf": [
+        { "@type": "CollegeOrUniversity", "name": "University of North Carolina at Chapel Hill" },
+        { "@type": "CollegeOrUniversity", "name": "Yale School of Public Health" }
+      ],
+      "knowsAbout": ["Health Policy", "Health Economics", "Medical Education", "Maternal and Child Health", "Health Systems", "Global Health"],
+      "sameAs": [
+        "https://scholar.google.com/citations?user=dn44ZTcAAAAJ&hl=en",
+        "https://orcid.org/0000-0002-1091-328X",
+        "https://www.linkedin.com/in/mukesh-adhikari-8794b153/",
+        "https://x.com/mukes_adhikari",
+        "https://www.facebook.com/mukeshpublichealth"
+      ]
+    }
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        serif: ['Fraunces', 'Georgia', 'serif'],
+                        sans: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+                    },
+                    colors: {
+                        paper:    '#FAF7F1',
+                        card:     '#FFFFFF',
+                        ink:      '#23262B',
+                        navy:     '#1F3A5F',
+                        navydark: '#16293F',
+                        muted:    '#6B6B6B',
+                        rule:     '#E7E0D3',
+                    },
+                },
+            },
+        }
+    </script>
     <style>
-        @keyframes pulse {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.8; }
-        }
-        .animate-pulse-custom {
-            animation: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-        }
-        
+        html { scroll-behavior: smooth; }
+        body { font-feature-settings: "kern" 1, "liga" 1; -webkit-font-smoothing: antialiased; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+        .fade-in { animation: fadeIn .5s cubic-bezier(.2,.6,.2,1) both; }
+        .accent-rule { display: inline-block; width: 3rem; height: 2px; background: #1F3A5F; }
+        .eyebrow { letter-spacing: .18em; text-transform: uppercase; font-size: .72rem; font-weight: 600; }
+        a { text-underline-offset: 3px; }
     </style>
 </head>
-<body class="bg-white text-slate-700">
+<body class="bg-paper text-ink font-sans">
     <div id="fb-root"></div>
-    <script async defer crossorigin="anonymous" 
+    <script async defer crossorigin="anonymous"
             src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v18.0">
     </script>
     <div id="app"></div>
 
     <script>
-        // Simple vanilla JS implementation
         let currentSection = 'home';
         let menuOpen = false;
+        let PUBS = {}; // populated from publications.json at load; empty = use built-in defaults
+
+        // Built-in fallback publication lists, used only when publications.json can't
+        // be loaded (e.g. opening the file directly via file://). Kept in sync with
+        // publications.json, which is the live source auto-updated from ORCID.
+        const US_DEFAULT = [
+            { title: "Health Resources and Services Administration and Veterans Affairs Funding Intersections Expand Graduate Medical Education Training Opportunities in Rural and Underserved Areas", journal: "The Journal of Rural Health", year: "2026", link: "https://onlinelibrary.wiley.com/doi/10.1111/jrh.70185", tags: ["Medical Education", "Rural Health"] },
+            { title: "The Evolving Role of Critical Access Hospitals in Rural Physician Training", journal: "JAMA Health Forum", year: "2025", link: "https://jamanetwork.com/journals/jama-health-forum/fullarticle/2840783", tags: ["Medical Education", "Rural Health"] },
+            { title: "Comparing Indian Health Service Sites to Rural Physician Teaching Hospitals", journal: "JAMA Internal Medicine", year: "2025", link: "https://jamanetwork.com/journals/jamainternalmedicine/article-abstract/2835618", tags: ["Medical Education", "IHS"] },
+            { title: "Evaluating Teaching Health Center Planning and Development", journal: "Journal of Graduate Medical Education", year: "2025", link: "https://jgme.kglmeridian.com/view/journals/jgme/17/3/article-p296.xml", tags: ["Medical Education", "THC"] },
+            { title: "Cultivating Rural Surgeons: An Analysis of the Rural Surgery GME Landscape", journal: "Journal of Surgical Education", year: "2025", link: "https://www.sciencedirect.com/science/article/abs/pii/S1931720425000273", tags: ["Surgical Education", "Rural Health"] },
+            { title: "Financial Barriers to Rural Graduate Medical Education", journal: "Academic Medicine", year: "2025", link: "https://academic.oup.com/academicmedicine/article/100/4/490/8343766", tags: ["Medical Education", "Medicare Funding"] },
+            { title: "Characteristics of Hospitals by Graduate Medical Education Expense Category", journal: "Academic Medicine", year: "2023", link: "https://journals.lww.com/academicmedicine/abstract/9900/characteristics_of_hospitals_by_graduate_medical.689.aspx", tags: ["Medical Education", "Rural Health"] }
+        ];
+
+        const NEPAL_DEFAULT = [
+            { title: "Aging, Mental Health and Ethnic Disparities: Understanding Geriatric Mental Health in Western Nepal", journal: "Journal of Geriatric Psychiatry and Neurology", year: "2025", link: "https://journals.sagepub.com/doi/full/10.1177/08919887251403594", tags: ["Mental Health", "Geriatrics", "Nepal"] },
+            { title: "Patient satisfaction with healthcare services among health insurance program beneficiaries in Nepal: A cross-sectional study", journal: "PLOS ONE", year: "2025", link: "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0334352", tags: ["Patient Satisfaction", "Health Insurance"] },
+            { title: "Patient satisfaction with the components of the National Health Insurance Program of Nepal", journal: "BMC Health Services Research", year: "2025", link: "https://link.springer.com/article/10.1186/s12913-025-12893-5", tags: ["Health Insurance", "Nepal"] },
+            { title: "Assistive Artificial Intelligence in Epilepsy and Its Impact on Epilepsy Care in LMICs", journal: "Brain Sciences", year: "2025", link: "https://www.mdpi.com/2076-3425/15/5/481", tags: ["AI", "Epilepsy", "LMICs"] },
+            { title: "Experiences of healthcare workers who faced physical workplace violence in Nepal", journal: "BMJ Public Health", year: "2024", link: "https://bmjpublichealth.bmj.com/content/2/1/e001032", tags: ["Workplace Violence", "Nepal"] },
+            { title: "Nutrition and Food Securities in Nepal: A narrative review of policies", journal: "Nutrition Reviews", year: "2023", link: "https://doi.org/10.1093/nutrit/nuad025", tags: ["Nutrition", "Food Security", "Nepal"] },
+            { title: "Double burden of malnutrition in Nepal: A trend analysis using Global Burden of Disease data", journal: "PLOS ONE", year: "2023", link: "https://doi.org/10.1371/journal.pone.0273485", tags: ["Malnutrition", "Nepal"] },
+            { title: "Patient Satisfaction and its socio-demographic correlates in a tertiary public hospital in Nepal", journal: "BMC Health Services Research", year: "2021", link: "https://doi.org/10.1186/s12913-021-06155-3", tags: ["Patient Satisfaction", "Nepal"] },
+            { title: "Sociodemographic correlates of antenatal care visits in Nepal: results from NDHS 2016", journal: "BMC Pregnancy and Childbirth", year: "2020", link: "https://doi.org/10.1186/s12884-020-03218-x", tags: ["Maternal Health", "Nepal"] },
+            { title: "Effect of COVID-19 on maternal and neonatal services", journal: "The Lancet Global Health", year: "2020", link: "https://doi.org/10.1016/S2214-109X(20)30482-4", tags: ["COVID-19", "Maternal Health"] },
+            { title: "Frontline Healthcare Workers' Knowledge and Perception of COVID-19 in Nepal", journal: "Healthcare (MDPI)", year: "2020", link: "https://www.mdpi.com/2227-9032/8/4/554/htm", tags: ["COVID-19", "Healthcare Workers"] },
+            { title: "Measuring Fidelity, feasibility, costs: evaluation of group antenatal care in Nepal", journal: "Reproductive Health", year: "2020", link: "https://doi.org/10.1186/s12978-019-0840-4", tags: ["Maternal Health", "Implementation"] },
+            { title: "The power of peers: effectiveness evaluation of group antenatal care in rural Nepal", journal: "Reproductive Health", year: "2019", link: "https://doi.org/10.1186/s12978-019-0820-8", tags: ["Maternal Health", "Nepal"] },
+            { title: "Developing and deploying a community healthcare worker-driven, digitally-enabled integrated care system in rural Nepal", journal: "Healthcare (Elsevier)", year: "2018", link: "https://doi.org/10.1016/j.hjdsi.2018.05.002", tags: ["Digital Health", "Nepal"] },
+            { title: "Design and implementation of an affordable, public sector electronic medical record in rural Nepal", journal: "Journal of Innovation in Health Informatics", year: "2017", link: "https://informatics.bmj.com/content/24/2/186", tags: ["EMR", "Digital Health", "Nepal"] },
+            { title: "Power, potential, and pitfalls in global health academic partnerships: reflections on an approach in Nepal", journal: "Global Health Action", year: "2017", link: "https://www.tandfonline.com/doi/full/10.1080/16549716.2017.1367161", tags: ["Global Health", "Partnerships"] },
+            { title: "Practical issues in the measurement of child survival in health systems trials in rural Nepal", journal: "BMJ Global Health", year: "2016", link: "https://gh.bmj.com/content/1/4/e000050", tags: ["Child Health", "Nepal"] },
+            { title: "Types of cooking stove and risk of Acute Lower Respiratory Infection among under-five children in Nepal", journal: "Health Prospect", year: "2015", link: "https://www.nepjol.info/index.php/HPROSPECT/article/view/12369", tags: ["Child Health", "Environmental Health"] }
+        ];
+
+        // Active list for a section — prefer the auto-synced publications.json, else the built-in default.
+        function activePubs(key, fallback) {
+            return (PUBS[key] && PUBS[key].length) ? PUBS[key] : (fallback || []);
+        }
+
+        // Total publications across every section. Updates automatically as papers are added.
+        function totalPublications() {
+            return activePubs('us', US_DEFAULT).length
+                 + activePubs('nepal', NEPAL_DEFAULT).length
+                 + activePubs('other', []).length;
+        }
 
         const icons = {
-            menu: '<svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>',
-            close: '<svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>',
-            microscope: '<svg width="48" height="48" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 18h8M3 22h18M14 22a7 7 0 1 0 0-14h-1M9 14h2M9 12a2 2 0 0 1-2-2V6h6v4a2 2 0 0 1-2 2ZM12 6V3a1 1 0 0 0-1-1H9a1 1 0 0 0-1 1v3"/></svg>',
-            users: '<svg width="48" height="48" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2M9 7a4 4 0 1 0 0 8 4 4 0 0 0 0-8zM22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>',
-            heart: '<svg width="48" height="48" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>',
-            book: '<svg width="32" height="32" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2zM22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>',
-            link: '<svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14l11-11"/></svg>',
-            twitter: '<svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"/></svg>',
-            linkedin: '<svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>',
-            facebook: '<svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>',
-            youtube: '<svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"/></svg>',
-            mail: '<svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>'
+            menu: '<svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.7"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>',
+            close: '<svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.7"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>',
+            microscope: '<svg width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 18h8M3 22h18M14 22a7 7 0 1 0 0-14h-1M9 14h2M9 12a2 2 0 0 1-2-2V6h6v4a2 2 0 0 1-2 2ZM12 6V3a1 1 0 0 0-1-1H9a1 1 0 0 0-1 1v3"/></svg>',
+            users: '<svg width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2M9 7a4 4 0 1 0 0 8 4 4 0 0 0 0-8zM22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>',
+            globe: '<svg width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>',
+            book: '<svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2zM22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>',
+            link: '<svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.8" style="display:inline;vertical-align:middle"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14l11-11"/></svg>',
+            twitter: '<svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"/></svg>',
+            linkedin: '<svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>',
+            facebook: '<svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>',
+            youtube: '<svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"/></svg>',
+            mail: '<svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>'
         };
 
-        function navigateTo(section) {
+        const SECTIONS = ['home', 'research', 'policy', 'teaching', 'resources', 'socialmedia', 'about', 'contact'];
+        const SITE_TITLE = 'Mukesh Adhikari, PhD, MPH, MPA — Health Services Researcher';
+
+        // Map a URL path (e.g. "/research") to a section id; unknown paths -> home.
+        function sectionFromPath() {
+            const seg = location.pathname.replace(/^\/+|\/+$/g, '').toLowerCase();
+            return SECTIONS.indexOf(seg) !== -1 ? seg : 'home';
+        }
+
+        // Keep the browser tab title in sync with the current section.
+        function updateTitle(section) {
+            document.title = section === 'home' ? SITE_TITLE : sectionLabel(section) + ' — Mukesh Adhikari';
+        }
+
+        // pushHistory=false when the change came from the URL (initial load / back button),
+        // so we don't push a duplicate entry.
+        function navigateTo(section, pushHistory) {
             currentSection = section;
             menuOpen = false;
-            const path = section === 'home' ? '/' : '/' + section;
-            if (window.location.pathname !== path) {
-                history.pushState({ section: section }, '', path);
+            if (pushHistory !== false) {
+                const path = section === 'home' ? '/' : '/' + section;
+                if (location.pathname !== path) history.pushState({ section: section }, '', path);
             }
+            updateTitle(section);
             render();
             window.scrollTo(0, 0);
         }
+
+        // Back/forward buttons: render whatever the URL now points to, without pushing.
+        window.addEventListener('popstate', function (e) {
+            navigateTo((e.state && e.state.section) || sectionFromPath(), false);
+        });
 
         function toggleMenu() {
             menuOpen = !menuOpen;
             render();
         }
 
+        function sectionLabel(s) {
+            return s === 'socialmedia' ? 'Social Media' : s.charAt(0).toUpperCase() + s.slice(1);
+        }
+
         function renderNav() {
             const sections = ['home', 'research', 'policy', 'teaching', 'resources', 'socialmedia', 'about', 'contact'];
             return `
-                <nav class="fixed w-full bg-white/90 backdrop-blur-md z-50 border-b border-slate-200">
-                    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <nav class="fixed w-full bg-paper/90 backdrop-blur-md z-50 border-b border-rule">
+                    <div class="max-w-6xl mx-auto px-5 sm:px-8">
                         <div class="flex justify-between items-center h-16">
-                            <div class="text-2xl font-bold text-slate-900">
-                                Mukesh Adhikari, PhD, MPH, MPA
-                            </div>
-                            <div class="hidden md:flex space-x-8">
+                            <button onclick="navigateTo('home')" class="font-serif text-xl md:text-2xl font-600 text-navy tracking-tight">
+                                Mukesh&nbsp;Adhikari
+                            </button>
+                            <div class="hidden md:flex items-center gap-7">
                                 ${sections.map(s => `
-                                    <button onclick="navigateTo('${s}')" class="capitalize transition-colors ${currentSection === s ? 'text-slate-800' : 'text-slate-600 hover:text-slate-900'}">
-    ${s === 'socialmedia' ? 'Social Media' : s}
+                                    <button onclick="navigateTo('${s}')"
+                                        class="eyebrow transition-colors ${currentSection === s ? 'text-navy' : 'text-muted hover:text-navy'}">
+                                        ${sectionLabel(s)}
                                     </button>
                                 `).join('')}
                             </div>
-                            <button class="md:hidden" onclick="toggleMenu()">
+                            <button class="md:hidden text-navy" onclick="toggleMenu()">
                                 ${menuOpen ? icons.close : icons.menu}
                             </button>
                         </div>
                     </div>
                     ${menuOpen ? `
-                        <div class="md:hidden bg-white border-t border-slate-200">
+                        <div class="md:hidden bg-paper border-t border-rule">
                             ${sections.map(s => `
-                                <button onclick="navigateTo('${s}')" class="block w-full text-left px-4 py-3 capitalize hover:bg-slate-100">
-    ${s === 'socialmedia' ? 'Social Media' : s}
+                                <button onclick="navigateTo('${s}')"
+                                    class="block w-full text-left px-6 py-3 eyebrow ${currentSection === s ? 'text-navy' : 'text-muted'} hover:bg-navy/5">
+                                    ${sectionLabel(s)}
                                 </button>
                             `).join('')}
                         </div>
@@ -103,52 +248,62 @@
             `;
         }
 
+        function sectionHeader(eyebrow, title, subtitle) {
+            return `
+                <div class="text-center mb-14">
+                    <div class="eyebrow text-navy mb-4">${eyebrow}</div>
+                    <h2 class="font-serif text-4xl md:text-5xl font-600 text-ink mb-5 tracking-tight">${title}</h2>
+                    <div class="flex justify-center mb-5"><span class="accent-rule"></span></div>
+                    ${subtitle ? `<p class="text-muted text-lg max-w-2xl mx-auto leading-relaxed">${subtitle}</p>` : ''}
+                </div>
+            `;
+        }
+
         function renderHome() {
             return `
-                <section class="min-h-screen flex items-center justify-center px-4 pt-16">
-                    <div class="max-w-5xl mx-auto text-center">
-                        <div class="mb-8 inline-block p-1 bg-slate-200 rounded-full">
-                            <div class="bg-white rounded-full px-6 py-2">
-                                <span class="text-sm">Researcher • Health Misinformation Debunker • Proud Husband & Dad • Cricket Enthusiast</span>
-                            </div>
-                        </div>
-                        
-                        <div class="mb-8">
-                            <img 
-                                src="headshot.jpg" 
-                                alt="Mukesh Adhikari,PhD, MPH" 
-                                class="w-40 h-40 md:w-48 md:h-48 rounded-full mx-auto border-4 border-slate-300 shadow-2xl  object-cover"
-                            />
-                        </div>
-                        <h1 class="text-2xl md:text-4xl font-bold mb-6 text-slate-900 animate-pulse-custom">
-                            Health Services Researcher & Health Policy Analyst
+                <section class="min-h-screen flex items-center px-5 sm:px-8 pt-24 pb-16">
+                    <div class="max-w-4xl mx-auto text-center">
+                        <div class="eyebrow text-navy mb-8">Researcher · Science Communicator · Educator</div>
+
+                        <img src="headshot.jpg" alt="Mukesh Adhikari, PhD, MPH, MPA"
+                             class="w-36 h-36 md:w-44 md:h-44 rounded-full mx-auto object-cover ring-1 ring-rule shadow-md mb-10">
+
+                        <h1 class="font-serif text-4xl md:text-6xl font-600 text-ink leading-[1.08] tracking-tight mb-6">
+                            Health Services Researcher
                         </h1>
-                        <p class="text-xl md:text-xl text-slate-600 mb-12 max-w-3xl mx-auto">
+                        <p class="text-lg md:text-xl text-muted max-w-2xl mx-auto leading-relaxed mb-3">
+                            Mukesh Adhikari, <span class="text-ink">PhD, MPH, MPA</span>
+                        </p>
+                        <p class="text-lg text-muted max-w-2xl mx-auto leading-relaxed mb-10">
                             Turning public health research into clear public communication and measurable policy impact.
                         </p>
-                        <div class="flex flex-wrap justify-center gap-4">
-                            <button onclick="navigateTo('research')" class="px-8 py-4 bg-slate-800 hover:bg-slate-900 text-white rounded-lg font-semibold hover:shadow-lg  transition-all transform hover:scale-105">
+
+                        <div class="flex flex-wrap justify-center gap-4 mb-20">
+                            <button onclick="navigateTo('research')"
+                                class="px-7 py-3 bg-navy text-white font-medium rounded-md hover:bg-navydark transition-colors">
                                 View Research
                             </button>
-                            <button onclick="navigateTo('contact')" class="px-8 py-4 bg-white border-2 border-slate-300 text-slate-800 rounded-lg font-semibold hover:bg-slate-50 hover:border-slate-400 transition-all">
+                            <button onclick="navigateTo('contact')"
+                                class="px-7 py-3 border border-navy text-navy font-medium rounded-md hover:bg-navy/5 transition-colors">
                                 Get in Touch
                             </button>
                         </div>
-                        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-20">
-                            <div class="bg-white p-6 rounded-xl border border-slate-200">
-                                <div class="flex justify-center mb-4 text-slate-800">${icons.microscope}</div>
-                                <div class="text-4xl font-bold text-slate-800 mb-2">24</div>
-                                <div class="text-slate-600">Peer-Reviewed Publications</div>
+
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-px bg-rule border border-rule rounded-xl overflow-hidden text-left">
+                            <div class="bg-card p-8">
+                                <div class="text-navy mb-4">${icons.microscope}</div>
+                                <div class="font-serif text-4xl font-600 text-ink mb-1">${totalPublications()}</div>
+                                <div class="text-muted text-sm">Peer-Reviewed Publications</div>
                             </div>
-                            <div class="bg-white p-6 rounded-xl border border-slate-200">
-                                <div class="flex justify-center mb-4 text-slate-800">${icons.users}</div>
-                                <div class="text-4xl font-bold text-slate-800 mb-2">15-Year</div>
-                                <div class="text-slate-600"> Teaching and Research Career (2010-present)</div>
+                            <div class="bg-card p-8">
+                                <div class="text-navy mb-4">${icons.users}</div>
+                                <div class="font-serif text-4xl font-600 text-ink mb-1">15 Years</div>
+                                <div class="text-muted text-sm">Teaching &amp; Research Career (2010–present)</div>
                             </div>
-                            <div class="bg-white p-6 rounded-xl border border-slate-200">
-                                <div class="flex justify-center mb-4 text-slate-800">${icons.heart}</div>
-                                <div class="text-4xl font-bold text-slate-800 mb-2">7-Year</div>
-                                <div class="text-slate-600">On-the-ground Public Health Experience in Nepal (2012-2019)</div>
+                            <div class="bg-card p-8">
+                                <div class="text-navy mb-4">${icons.globe}</div>
+                                <div class="font-serif text-4xl font-600 text-ink mb-1">7 Years</div>
+                                <div class="text-muted text-sm">On-the-Ground Public Health Experience in Nepal (2012–2019)</div>
                             </div>
                         </div>
                     </div>
@@ -156,325 +311,92 @@
             `;
         }
 
-        function renderContact() {
-            return `
-                <section class="min-h-screen px-4 py-24">
-                    <div class="max-w-4xl mx-auto">
-                        <h2 class="text-4xl md:text-5xl font-bold mb-4 text-center text-slate-900">
-                            Let's Connect
-                        </h2>
-                        <p class="text-center text-slate-600 mb-12">
-                            Interested in collaboration, speaking engagements, or just want to chat about public health? I'd love to hear from you.
-                        </p>
-                        <div class="grid md:grid-cols-2 gap-8 mb-12">
-                            <div class="bg-white border border-slate-200 rounded-xl p-8">
-                                <h3 class="text-2xl font-semibold mb-6">Get in Touch</h3>
-                                <div class="space-y-4">
-                                    <div class="flex items-center space-x-3">
-                                        <div class="text-slate-800">${icons.mail}</div>
-                                        <a href="mailto:adhmukesh@gmail.com" class="text-slate-600 hover:text-slate-900">adhmukesh@gmail.com</a>
-                                    </div>
-                                    <div class="flex items-center space-x-3">
-                                        <div class="text-blue-600">${icons.facebook}</div>
-                                        <a href="https://www.facebook.com/mukeshpublichealth" target="_blank" class="text-slate-600 hover:text-blue-600">Facebook Page</a>
-                                    </div>
-                                    <div class="flex items-center space-x-3">
-                                        <div class="text-red-600">${icons.youtube}</div>
-                                        <a href="https://www.youtube.com/@MukeshAdhikari" target="_blank" class="text-slate-600 hover:text-red-600">YouTube Channel</a>
-                                    </div>
-                                    <div class="flex items-center space-x-3">
-                                        <div class="text-blue-600">${icons.linkedin}</div>
-                                        <a href="https://www.linkedin.com/in/mukesh-adhikari-8794b153/" target="_blank" class="text-slate-600 hover:text-blue-600">LinkedIn Profile</a>
-                                    </div>
-                                    <div class="flex items-center space-x-3">
-                                        <div class="text-blue-600">${icons.twitter}</div>
-                                        <a href="https://x.com/mukes_adhikari" target="_blank" class="text-slate-600 hover:text-blue-600">Twitter/X</a>
-                                    </div>
-                                </div>
-                            </div>
-                        <div class="bg-white border border-slate-200 rounded-xl p-8">
-                                <h3 class="text-2xl font-semibold mb-6">Send a Message</h3>
-                                <div class="space-y-4">
-                                    <input type="text" placeholder="Your Name" class="w-full px-4 py-3 bg-white border border-slate-200 rounded-lg focus:outline-none focus:border-slate-500 text-slate-900">
-                                    <input type="email" placeholder="Your Email" class="w-full px-4 py-3 bg-white border border-slate-200 rounded-lg focus:outline-none focus:border-slate-500 text-slate-900">
-                                    <textarea placeholder="Your Message" rows="4" class="w-full px-4 py-3 bg-white border border-slate-200 rounded-lg focus:outline-none focus:border-slate-500 text-slate-900"></textarea>
-                                    <button onclick="alert('Message functionality - connect to your email service!')" class="w-full px-8 py-3 bg-slate-800 hover:bg-slate-900 text-white rounded-lg font-semibold hover:shadow-lg  transition-all">
-                                        Send Message
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="bg-slate-50 border border-slate-200 rounded-xl p-8 text-center">
-                            <h3 class="text-xl font-semibold mb-4">Open to Opportunities</h3>
-                            <p class="text-slate-600">Speaking engagements • Research collaborations • Consulting • Media appearances • Community partnerships</p>
-                        </div>
-                    </div>
-                </section>
-            `;
-        }
-
- function renderResearch() {
-            const usPublications = [
-                {
-                    title: "The Evolving Role of Critical Access Hospitals in Rural Physician Training",
-                    journal: "JAMA Health Forum",
-                    year: "2025",
-                    link: "https://jamanetwork.com/journals/jama-health-forum/fullarticle/2840783",
-                    tags: ["Medical Education", "Rural Health"]
-                },
-                {
-                    title: "Comparing Indian Health Service Sites to Rural Physician Teaching Hospitals",
-                    journal: "JAMA Internal Medicine",
-                    year: "2025",
-                    link: "https://jamanetwork.com/journals/jamainternalmedicine/article-abstract/2835618",
-                    tags: ["Medical Education", "IHS"]
-                },
-                {
-                    title: "Evaluating Teaching Health Center Planning and Development",
-                    journal: "Journal of Graduate Medical Education",
-                    year: "2025",
-                    link: "https://jgme.kglmeridian.com/view/journals/jgme/17/3/article-p296.xml",
-                    tags: ["Medical Education", "THC"]
-                },
-                {
-                    title: "Cultivating Rural Surgeons: An Analysis of the Rural Surgery GME Landscape",
-                    journal: "Journal of Surgical Education",
-                    year: "2025",
-                    link: "https://www.sciencedirect.com/science/article/abs/pii/S1931720425000273",
-                    tags: ["Surgical Education", "Rural Health"]
-                },
-                {
-                    title: "Financial Barriers to Rural Graduate Medical Education",
-                    journal: "Academic Medicine",
-                    year: "2025",
-                    link: "https://academic.oup.com/academicmedicine/article/100/4/490/8343766",
-                    tags: ["Medical Education", "Medicare Funding"]
-                },
-                {
-                    title: "Characteristics of Hospitals by Graduate Medical Education Expense Category",
-                    journal: "Academic Medicine",
-                    year: "2023",
-                    link: "https://journals.lww.com/academicmedicine/abstract/9900/characteristics_of_hospitals_by_graduate_medical.689.aspx",
-                    tags: ["Medical Education", "Rural Health"]
-                }
-            ];
-
-            const nepalPublications = [
-                {
-                    title: "Aging, Mental Health and Ethnic Disparities: Understanding Geriatric Mental Health in Western Nepal",
-                    journal: "Journal of Geriatric Psychiatry and Neurology",
-                    year: "2025",
-                    link: "https://journals.sagepub.com/doi/full/10.1177/08919887251403594",
-                    tags: ["Mental Health", "Geriatrics", "Nepal"]
-                },
-                {
-                    title: "Patient satisfaction with healthcare services among health insurance program beneficiaries in Nepal: A cross-sectional study",
-                    journal: "PLOS ONE",
-                    year: "2025",
-                    link: "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0334352",
-                    tags: ["Patient Satisfaction", "Health Insurance"]
-                },
-                {
-                    title: "Patient satisfaction with the components of the National Health Insurance Program of Nepal",
-                    journal: "BMC Health Services Research",
-                    year: "2025",
-                    link: "https://link.springer.com/article/10.1186/s12913-025-12893-5",
-                    tags: ["Health Insurance", "Nepal"]
-                },
-                {
-                    title: "Assistive Artificial Intelligence in Epilepsy and Its Impact on Epilepsy Care in LMICs",
-                    journal: "Brain Sciences",
-                    year: "2025",
-                    link: "https://www.mdpi.com/2076-3425/15/5/481",
-                    tags: ["AI", "Epilepsy", "LMICs"]
-                },
-                {
-                    title: "Experiences of healthcare workers who faced physical workplace violence in Nepal",
-                    journal: "BMJ Public Health",
-                    year: "2024",
-                    link: "https://bmjpublichealth.bmj.com/content/2/1/e001032",
-                    tags: ["Workplace Violence", "Nepal"]
-                },
-                {
-                    title: "Nutrition and Food Securities in Nepal: A narrative review of policies",
-                    journal: "Nutrition Reviews",
-                    year: "2023",
-                    link: "https://doi.org/10.1093/nutrit/nuad025",
-                    tags: ["Nutrition", "Food Security", "Nepal"]
-                },
-                {
-                    title: "Double burden of malnutrition in Nepal: A trend analysis using Global Burden of Disease data",
-                    journal: "PLOS ONE",
-                    year: "2023",
-                    link: "https://doi.org/10.1371/journal.pone.0273485",
-                    tags: ["Malnutrition", "Nepal"]
-                },
-                {
-                    title: "Patient Satisfaction and its socio-demographic correlates in a tertiary public hospital in Nepal",
-                    journal: "BMC Health Services Research",
-                    year: "2021",
-                    link: "https://doi.org/10.1186/s12913-021-06155-3",
-                    tags: ["Patient Satisfaction", "Nepal"]
-                },
-                {
-                    title: "Sociodemographic correlates of antenatal care visits in Nepal: results from NDHS 2016",
-                    journal: "BMC Pregnancy and Childbirth",
-                    year: "2020",
-                    link: "https://doi.org/10.1186/s12884-020-03218-x",
-                    tags: ["Maternal Health", "Nepal"]
-                },
-                {
-                    title: "Effect of COVID-19 on maternal and neonatal services",
-                    journal: "The Lancet Global Health",
-                    year: "2020",
-                    link: "https://doi.org/10.1016/S2214-109X(20)30482-4",
-                    tags: ["COVID-19", "Maternal Health"]
-                },
-                {
-                    title: "Frontline Healthcare Workers' Knowledge and Perception of COVID-19 in Nepal",
-                    journal: "Healthcare (MDPI)",
-                    year: "2020",
-                    link: "https://www.mdpi.com/2227-9032/8/4/554/htm",
-                    tags: ["COVID-19", "Healthcare Workers"]
-                },
-                {
-                    title: "Measuring Fidelity, feasibility, costs: evaluation of group antenatal care in Nepal",
-                    journal: "Reproductive Health",
-                    year: "2020",
-                    link: "https://doi.org/10.1186/s12978-019-0840-4",
-                    tags: ["Maternal Health", "Implementation"]
-                },
-                {
-                    title: "The power of peers: effectiveness evaluation of group antenatal care in rural Nepal",
-                    journal: "Reproductive Health",
-                    year: "2019",
-                    link: "https://doi.org/10.1186/s12978-019-0820-8",
-                    tags: ["Maternal Health", "Nepal"]
-                },
-                {
-                    title: "Developing and deploying a community healthcare worker-driven, digitally-enabled integrated care system in rural Nepal",
-                    journal: "Healthcare (Elsevier)",
-                    year: "2018",
-                    link: "https://doi.org/10.1016/j.hjdsi.2018.05.002",
-                    tags: ["Digital Health", "Nepal"]
-                },
-                {
-                    title: "Design and implementation of an affordable, public sector electronic medical record in rural Nepal",
-                    journal: "Journal of Innovation in Health Informatics",
-                    year: "2017",
-                    link: "https://informatics.bmj.com/content/24/2/186",
-                    tags: ["EMR", "Digital Health", "Nepal"]
-                },
-                {
-                    title: "Power, potential, and pitfalls in global health academic partnerships: reflections on an approach in Nepal",
-                    journal: "Global Health Action",
-                    year: "2017",
-                    link: "https://www.tandfonline.com/doi/full/10.1080/16549716.2017.1367161",
-                    tags: ["Global Health", "Partnerships"]
-                },
-                {
-                    title: "Practical issues in the measurement of child survival in health systems trials in rural Nepal",
-                    journal: "BMJ Global Health",
-                    year: "2016",
-                    link: "https://gh.bmj.com/content/1/4/e000050",
-                    tags: ["Child Health", "Nepal"]
-                },
-                {
-                    title: "Types of cooking stove and risk of Acute Lower Respiratory Infection among under-five children in Nepal",
-                    journal: "Health Prospect",
-                    year: "2015",
-                    link: "https://www.nepjol.info/index.php/HPROSPECT/article/view/12369",
-                    tags: ["Child Health", "Environmental Health"]
-                }
-            ];
+        function renderResearch() {
+            // Prefer publications.json (auto-synced from ORCID); fall back to the built-in defaults.
+            const usPublications = activePubs('us', US_DEFAULT);
+            const nepalPublications = activePubs('nepal', NEPAL_DEFAULT);
+            const otherPublications = activePubs('other', []);
 
             function renderPublicationCard(pub) {
                 return `
-                    <div class="bg-white border border-slate-200 rounded-xl p-6 hover:border-slate-400 transition-all hover:transform hover:scale-105">
+                    <div class="bg-card border border-rule rounded-lg p-6 hover:border-navy/40 hover:shadow-sm transition-all">
                         <div class="flex items-start justify-between mb-4">
-                            <div class="text-slate-800">${icons.book}</div>
-                            <span class="text-sm text-slate-500">${pub.year}</span>
+                            <div class="text-navy">${icons.book}</div>
+                            <span class="eyebrow text-muted">${pub.year}</span>
                         </div>
-                        <h3 class="text-xl font-semibold mb-3">${pub.title}</h3>
-                        <p class="text-slate-500 mb-4">${pub.journal}</p>
-                        <div class="flex gap-2 flex-wrap mb-4">
-                            ${pub.tags.map(tag => `
-                                <span class="px-3 py-1 bg-slate-100 text-slate-700 rounded-full text-sm">${tag}</span>
-                            `).join('')}
+                        <h3 class="font-serif text-xl font-500 text-ink leading-snug mb-2">${pub.title}</h3>
+                        <p class="text-muted italic mb-4">${pub.journal}</p>
+                        <div class="flex gap-2 flex-wrap mb-5">
+                            ${pub.tags.map(tag => `<span class="px-2.5 py-1 bg-navy/5 text-navy rounded text-xs font-medium">${tag}</span>`).join('')}
                         </div>
-                        <a href="${pub.link}" target="_blank" class="flex items-center text-slate-800 hover:text-slate-900">
-                            Read Paper <span class="ml-2">${icons.link}</span>
+                        <a href="${pub.link}" target="_blank" rel="noopener" class="inline-flex items-center gap-2 text-navy font-medium text-sm hover:underline">
+                            Read Paper ${icons.link}
                         </a>
                     </div>
                 `;
             }
 
             return `
-                <section class="min-h-screen px-4 py-24">
+                <section class="min-h-screen px-5 sm:px-8 pt-28 pb-20">
                     <div class="max-w-6xl mx-auto">
-                        <h2 class="text-4xl md:text-5xl font-bold mb-4 text-center text-slate-900">
-                            Research Portfolio
-                        </h2>
-                        <p class="text-center text-slate-600 mb-12 max-w-2xl mx-auto">
-                            Peer-reviewed publications in public health, epidemiology, maternal health, and health policy
-                        </p>
+                        ${sectionHeader('Portfolio', 'Research', 'Peer-reviewed publications in public health, epidemiology, maternal &amp; child health, and health policy.')}
 
-                        <!-- US Research Section -->
                         <div class="mb-16">
-                            <div class="flex items-center mb-6">
-                                <h3 class="text-3xl font-bold text-slate-900">
-                                    Research in the United States
-                                </h3>
-                                <span class="ml-4 px-3 py-1 bg-blue-50 text-blue-700 rounded-full text-sm font-semibold">
-                                    ${usPublications.length} Publications
-                                </span>
+                            <div class="flex items-baseline gap-4 mb-2 pb-3 border-b border-rule">
+                                <h3 class="font-serif text-2xl md:text-3xl font-600 text-ink">Research in the United States</h3>
+                                <span class="eyebrow text-navy">${usPublications.length} Publications</span>
                             </div>
-                            <p class="text-slate-500 mb-6">
-                                Focused on rural graduate medical education, health policy, and healthcare workforce development
-                            </p>
+                            <p class="text-muted mb-8 mt-4">Rural graduate medical education, health policy, and healthcare workforce development.</p>
                             <div class="grid md:grid-cols-2 gap-6">
-                                ${usPublications.map(pub => renderPublicationCard(pub)).join('')}
+                                ${usPublications.map(renderPublicationCard).join('')}
                             </div>
                         </div>
 
-                        <!-- Nepal Research Section -->
-                        <div class="mb-12">
-                            <div class="flex items-center mb-6">
-                                <h3 class="text-3xl font-bold text-slate-900">
-                                    Research in Nepal
-                                </h3>
-                                <span class="ml-4 px-3 py-1 bg-slate-100 text-slate-700 rounded-full text-sm font-semibold">
-                                    ${nepalPublications.length} Publications
-                                </span>
+                        <div class="mb-14">
+                            <div class="flex items-baseline gap-4 mb-2 pb-3 border-b border-rule">
+                                <h3 class="font-serif text-2xl md:text-3xl font-600 text-ink">Research in Nepal</h3>
+                                <span class="eyebrow text-navy">${nepalPublications.length} Publications</span>
                             </div>
-                            <p class="text-slate-500 mb-6">
-                                Addressing maternal and child health, health systems strengthening, digital health, and health equity in Nepal
-                            </p>
+                            <p class="text-muted mb-8 mt-4">Maternal &amp; child health, health systems strengthening, digital health, and health equity.</p>
                             <div class="grid md:grid-cols-2 gap-6">
-                                ${nepalPublications.map(pub => renderPublicationCard(pub)).join('')}
+                                ${nepalPublications.map(renderPublicationCard).join('')}
                             </div>
                         </div>
 
-                        <div class="mt-12 bg-slate-50 border border-slate-200 rounded-xl p-8">
-                            <h3 class="text-2xl font-semibold mb-4">Research Interests</h3>
-                            <div class="grid md:grid-cols-2 gap-4 text-slate-600">
+                        ${otherPublications.length ? `
+                        <div class="mb-14">
+                            <div class="flex items-baseline gap-4 mb-2 pb-3 border-b border-rule">
+                                <h3 class="font-serif text-2xl md:text-3xl font-600 text-ink">Recent Publications</h3>
+                                <span class="eyebrow text-navy">${otherPublications.length} Publications</span>
+                            </div>
+                            <p class="text-muted mb-8 mt-4">Newly indexed work.</p>
+                            <div class="grid md:grid-cols-2 gap-6">
+                                ${otherPublications.map(renderPublicationCard).join('')}
+                            </div>
+                        </div>
+                        ` : ''}
+
+                        <div class="bg-card border border-rule rounded-xl p-8 mb-10">
+                            <h3 class="font-serif text-2xl font-600 text-ink mb-6">Research Interests</h3>
+                            <div class="grid md:grid-cols-2 gap-x-10 gap-y-2 text-ink/80">
                                 <ul class="space-y-2">
-                                    <li>• Maternal and child health</li>
-                                    <li>• Health systems strengthening</li>
-                                    <li>• Digital health implementation</li>
-                                    <li>• Medical education</li>
+                                    <li class="flex gap-3"><span class="text-navy">—</span> Maternal and child health</li>
+                                    <li class="flex gap-3"><span class="text-navy">—</span> Health systems strengthening</li>
+                                    <li class="flex gap-3"><span class="text-navy">—</span> Digital health implementation</li>
+                                    <li class="flex gap-3"><span class="text-navy">—</span> Medical education</li>
                                 </ul>
                                 <ul class="space-y-2">
-                                    <li>• Nutrition and food security</li>
-                                    <li>• Rural healthcare delivery</li>
-                                    <li>• Health policy analysis</li>
-                                    <li>• Patient safety and quality improvement</li>
+                                    <li class="flex gap-3"><span class="text-navy">—</span> Nutrition and food security</li>
+                                    <li class="flex gap-3"><span class="text-navy">—</span> Rural healthcare delivery</li>
+                                    <li class="flex gap-3"><span class="text-navy">—</span> Health policy analysis</li>
+                                    <li class="flex gap-3"><span class="text-navy">—</span> Patient safety and quality improvement</li>
                                 </ul>
                             </div>
                         </div>
 
-                        <div class="mt-8 text-center">
-                            <a href="https://scholar.google.com/citations?user=dn44ZTcAAAAJ&hl=en&oi=ao" target="_blank" class="inline-block px-8 py-3 bg-slate-800 hover:bg-slate-900 text-white rounded-lg font-semibold hover:shadow-lg  transition-all">
+                        <div class="text-center">
+                            <a href="https://scholar.google.com/citations?user=dn44ZTcAAAAJ&hl=en&oi=ao" target="_blank" rel="noopener"
+                               class="inline-block px-7 py-3 bg-navy text-white font-medium rounded-md hover:bg-navydark transition-colors">
                                 View All Publications on Google Scholar
                             </a>
                         </div>
@@ -482,162 +404,81 @@
                 </section>
             `;
         }
-    
-function renderPolicy() {
+
+        function renderPolicy() {
+            const briefs = [
+                { title: "Section 131: A lifeline on its last breath", meta: "Association of American Medical Colleges · 2025", link: "https://www.aamc.org/about-us/mission-areas/health-care/section-131" },
+                { title: "Overview of Residency Programs Selected for CAA Sec. 126 Round Three GME Slots", meta: "Rural Graduate Medical Education · 2025", link: "https://www.ruralgme.org/research" },
+                { title: "Overview of Residency Programs Selected for CAA Sec. 126 Round Two GME Slots", meta: "Rural Graduate Medical Education · 2023", link: "https://www.ruralgme.org/research" }
+            ];
+
+            const opedsEn = [
+                { title: "Irony of vaccination", meta: "My Republica · August 5, 2020", link: "https://myrepublica.nagariknetwork.com/news/irony-of-vaccination/?categoryId=opinion" },
+                { title: "Health for All", meta: "My Republica · March 12, 2020", link: "https://myrepublica.nagariknetwork.com/news/health-for-all-5/?categoryId=opinion" },
+                { title: "Reducing the Burden of Cervical Cancer in India", meta: "Yale Medicine · March 2, 2020", link: "https://medicine.yale.edu/news-article/22648/" },
+                { title: "Vehicular Collisions need more attention", meta: "The Kathmandu Post · February 10, 2020", link: "https://kathmandupost.com/columns/2020/02/10/vehicular-collisions-need-more-attention" },
+                { title: "Caution on Coronavirus", meta: "My Republica · February 10, 2020", link: "https://myrepublica.nagariknetwork.com/news/caution-on-coronavirus/" },
+                { title: "Empower local health institutes", meta: "My Republica · January 27, 2020", link: "https://myrepublica.nagariknetwork.com/news/empower-local-health-institutes/?categoryId=opinion" },
+                { title: "Tackling the coronavirus outbreak needs a holistic approach", meta: "The Kathmandu Post · January 27, 2020", link: "https://kathmandupost.com/columns/2020/01/27/tackling-the-coronavirus-outbreak-needs-a-holistic-approach" },
+                { title: "Preventing Vaccine Related Rumors", meta: "The Kathmandu Post · December 31, 2019", link: "https://kathmandupost.com/columns/2019/12/31/preventing-vaccine-related-rumours" },
+                { title: "How to prevent medical errors", meta: "The Kathmandu Post · December 19, 2019", link: "https://kathmandupost.com/columns/2019/12/19/how-to-prevent-medical-errors" },
+                { title: "Time to Think Out of the Box", meta: "My Republica · December 9, 2019", link: "https://myrepublica.nagariknetwork.com/news/time-to-think-out-of-the-box/?categoryId=opinion" },
+                { title: "Deploying Midwives to prevent deaths", meta: "The Kathmandu Post · December 1, 2019", link: "https://kathmandupost.com/columns/2019/11/30/deploying-midwives-to-prevent-deaths" }
+            ];
+
+            const opedsNe = [
+                { title: "स्वास्थ्यकर्मीमाथि कार्यस्थलमा हुने हिंसाका कारणहरुको चिरफार", meta: "Swasthya Khabar", link: "https://swasthyakhabar.com/story/54809" },
+                { title: "स्वास्थ्य बीमा कार्यक्रमको ब्ल्याक बक्स खोल्न पहल किन नगर्ने?", meta: "Swasthya Khabar", link: "https://swasthyakhabar.com/story/54596" },
+                { title: "नेपालको स्वास्थ्य सूचना प्रणालीः नौलो प्रयास, चुनौती र अबको बाटो", meta: "Swasthya Khabar", link: "https://swasthyakhabar.com/story/54157" },
+                { title: "कोभिड-१९ महामारी : मातृशिशु सेवामा असर र अबको बाटो", meta: "Swasthya Khabar", link: "https://swasthyakhabar.com/story/36678" },
+                { title: "कोरोनाको जोखिम रोक्ने उपाय हुनसक्छ टेलिहेल्थ", meta: "Swasthya Khabar", link: "https://swasthyakhabar.com/story/31235" }
+            ];
+
+            function briefCard(b) {
+                return `
+                    <div class="bg-card border border-rule rounded-lg p-6 hover:border-navy/40 hover:shadow-sm transition-all">
+                        <h4 class="font-serif text-lg font-500 text-ink mb-2 leading-snug">${b.title}</h4>
+                        <p class="text-muted text-sm mb-3">${b.meta}</p>
+                        <a href="${b.link}" target="_blank" rel="noopener" class="inline-flex items-center gap-2 text-navy font-medium text-sm hover:underline">Read Brief ${icons.link}</a>
+                    </div>
+                `;
+            }
+            function opedCard(o, cta) {
+                return `
+                    <div class="bg-card border border-rule rounded-lg p-5 hover:border-navy/40 hover:shadow-sm transition-all">
+                        <h4 class="font-serif text-base font-500 text-ink mb-2 leading-snug">${o.title}</h4>
+                        <p class="text-muted text-xs mb-2">${o.meta}</p>
+                        <a href="${o.link}" target="_blank" rel="noopener" class="text-navy font-medium text-sm hover:underline">${cta} →</a>
+                    </div>
+                `;
+            }
+
             return `
-                <section class="min-h-screen px-4 py-24">
+                <section class="min-h-screen px-5 sm:px-8 pt-28 pb-20">
                     <div class="max-w-6xl mx-auto">
-                        <h2 class="text-4xl md:text-5xl font-bold mb-4 text-center text-slate-900">
-                            Policy Briefs & Op-eds
-                        </h2>
-                        <p class="text-center text-slate-600 mb-12 max-w-2xl mx-auto">
-                            Translating research into actionable policy recommendations and public discourse
-                        </p>
+                        ${sectionHeader('Public Scholarship', 'Policy Briefs &amp; Op-eds', 'Translating research into actionable policy recommendations and public discourse.')}
 
-                        <!-- Policy Briefs Section -->
-                        <div class="mb-12">
-                            <h3 class="text-2xl font-semibold mb-6 text-slate-900">Policy Briefs & Papers</h3>
-                            <div class="space-y-4">
-                                <div class="bg-white border border-slate-200 rounded-xl p-6 hover:border-slate-400 transition-all">
-                                    <h4 class="text-lg font-semibold mb-2 text-slate-900">Section 131: A lifeline on its last breath</h4>
-                                    <p class="text-slate-500 mb-3">Association of American Medical Colleges • 2025</p>
-                                    <a href="https://www.aamc.org/about-us/mission-areas/health-care/section-131" target="_blank" class="text-slate-800 hover:text-slate-900 flex items-center">
-                                        Read Brief <span class="ml-2">${icons.link}</span>
-                                    </a>
-                                </div>
-
-                                <div class="bg-white border border-slate-200 rounded-xl p-6 hover:border-slate-400 transition-all">
-                                    <h4 class="text-lg font-semibold mb-2 text-slate-900">Overview of Residency Programs Selected for CAA Sec. 126 Round Three GME Slots</h4>
-                                    <p class="text-slate-500 mb-3">Rural Graduate Medical Education • 2025</p>
-                                    <a href="https://www.ruralgme.org/research" target="_blank" class="text-slate-800 hover:text-slate-900 flex items-center">
-                                        Read Brief <span class="ml-2">${icons.link}</span>
-                                    </a>
-                                </div>
-
-                                <div class="bg-white border border-slate-200 rounded-xl p-6 hover:border-slate-400 transition-all">
-                                    <h4 class="text-lg font-semibold mb-2 text-slate-900">Overview of Residency Programs Selected for CAA Sec. 126 Round Two GME Slots</h4>
-                                    <p class="text-slate-500 mb-3">Rural Graduate Medical Education • 2023</p>
-                                    <a href="https://www.ruralgme.org/research" target="_blank" class="text-slate-800 hover:text-slate-900 flex items-center">
-                                        Read Brief <span class="ml-2">${icons.link}</span>
-                                    </a>
-                                </div>
-                            </div>
+                        <div class="mb-14">
+                            <h3 class="font-serif text-2xl font-600 text-ink mb-6 pb-3 border-b border-rule">Policy Briefs &amp; Papers</h3>
+                            <div class="grid md:grid-cols-3 gap-6">${briefs.map(briefCard).join('')}</div>
                         </div>
 
-                        <!-- English Op-eds Section -->
-                        <div class="mb-12">
-                            <h3 class="text-2xl font-semibold mb-6 text-slate-900">Op-eds (English)</h3>
-                            <div class="grid md:grid-cols-2 gap-4">
-                                <div class="bg-white border border-slate-200 rounded-xl p-5 hover:border-slate-400 transition-all">
-                                    <h4 class="font-semibold mb-2 text-slate-900">Irony of vaccination</h4>
-                                    <p class="text-sm text-slate-500 mb-2">My Republica • August 5, 2020</p>
-                                    <a href="https://myrepublica.nagariknetwork.com/news/irony-of-vaccination/?categoryId=opinion" target="_blank" class="text-slate-800 hover:text-slate-900 text-sm">Read Article →</a>
-                                </div>
-
-                                <div class="bg-white border border-slate-200 rounded-xl p-5 hover:border-slate-400 transition-all">
-                                    <h4 class="font-semibold mb-2 text-slate-900">Health for All</h4>
-                                    <p class="text-sm text-slate-500 mb-2">My Republica • March 12, 2020</p>
-                                    <a href="https://myrepublica.nagariknetwork.com/news/health-for-all-5/?categoryId=opinion" target="_blank" class="text-slate-800 hover:text-slate-900 text-sm">Read Article →</a>
-                                </div>
-
-                                <div class="bg-white border border-slate-200 rounded-xl p-5 hover:border-slate-400 transition-all">
-                                    <h4 class="font-semibold mb-2 text-slate-900">Reducing the Burden of Cervical Cancer in India</h4>
-                                    <p class="text-sm text-slate-500 mb-2">Yale Medicine • March 2, 2020</p>
-                                    <a href="https://medicine.yale.edu/news-article/22648/" target="_blank" class="text-slate-800 hover:text-slate-900 text-sm">Read Article →</a>
-                                </div>
-
-                                <div class="bg-white border border-slate-200 rounded-xl p-5 hover:border-slate-400 transition-all">
-                                    <h4 class="font-semibold mb-2 text-slate-900">Vehicular Collisions need more attention</h4>
-                                    <p class="text-sm text-slate-500 mb-2">The Kathmandu Post • February 10, 2020</p>
-                                    <a href="https://kathmandupost.com/columns/2020/02/10/vehicular-collisions-need-more-attention" target="_blank" class="text-slate-800 hover:text-slate-900 text-sm">Read Article →</a>
-                                </div>
-
-                                <div class="bg-white border border-slate-200 rounded-xl p-5 hover:border-slate-400 transition-all">
-                                    <h4 class="font-semibold mb-2 text-slate-900">Caution on Coronavirus</h4>
-                                    <p class="text-sm text-slate-500 mb-2">My Republica • February 10, 2020</p>
-                                    <a href="https://myrepublica.nagariknetwork.com/news/caution-on-coronavirus/" target="_blank" class="text-slate-800 hover:text-slate-900 text-sm">Read Article →</a>
-                                </div>
-
-                                <div class="bg-white border border-slate-200 rounded-xl p-5 hover:border-slate-400 transition-all">
-                                    <h4 class="font-semibold mb-2 text-slate-900">Empower local health institutes</h4>
-                                    <p class="text-sm text-slate-500 mb-2">My Republica • January 27, 2020</p>
-                                    <a href="https://myrepublica.nagariknetwork.com/news/empower-local-health-institutes/?categoryId=opinion" target="_blank" class="text-slate-800 hover:text-slate-900 text-sm">Read Article →</a>
-                                </div>
-
-                                <div class="bg-white border border-slate-200 rounded-xl p-5 hover:border-slate-400 transition-all">
-                                    <h4 class="font-semibold mb-2 text-slate-900">Tackling the coronavirus outbreak needs a holistic approach</h4>
-                                    <p class="text-sm text-slate-500 mb-2">The Kathmandu Post • January 27, 2020</p>
-                                    <a href="https://kathmandupost.com/columns/2020/01/27/tackling-the-coronavirus-outbreak-needs-a-holistic-approach" target="_blank" class="text-slate-800 hover:text-slate-900 text-sm">Read Article →</a>
-                                </div>
-
-                                <div class="bg-white border border-slate-200 rounded-xl p-5 hover:border-slate-400 transition-all">
-                                    <h4 class="font-semibold mb-2 text-slate-900">Preventing Vaccine Related Rumors</h4>
-                                    <p class="text-sm text-slate-500 mb-2">The Kathmandu Post • December 31, 2019</p>
-                                    <a href="https://kathmandupost.com/columns/2019/12/31/preventing-vaccine-related-rumours" target="_blank" class="text-slate-800 hover:text-slate-900 text-sm">Read Article →</a>
-                                </div>
-
-                                <div class="bg-white border border-slate-200 rounded-xl p-5 hover:border-slate-400 transition-all">
-                                    <h4 class="font-semibold mb-2 text-slate-900">How to prevent medical errors</h4>
-                                    <p class="text-sm text-slate-500 mb-2">The Kathmandu Post • December 19, 2019</p>
-                                    <a href="https://kathmandupost.com/columns/2019/12/19/how-to-prevent-medical-errors" target="_blank" class="text-slate-800 hover:text-slate-900 text-sm">Read Article →</a>
-                                </div>
-
-                                <div class="bg-white border border-slate-200 rounded-xl p-5 hover:border-slate-400 transition-all">
-                                    <h4 class="font-semibold mb-2 text-slate-900">Time to Think Out of the Box</h4>
-                                    <p class="text-sm text-slate-500 mb-2">My Republica • December 9, 2019</p>
-                                    <a href="https://myrepublica.nagariknetwork.com/news/time-to-think-out-of-the-box/?categoryId=opinion" target="_blank" class="text-slate-800 hover:text-slate-900 text-sm">Read Article →</a>
-                                </div>
-
-                                <div class="bg-white border border-slate-200 rounded-xl p-5 hover:border-slate-400 transition-all">
-                                    <h4 class="font-semibold mb-2 text-slate-900">Deploying Midwives to prevent deaths</h4>
-                                    <p class="text-sm text-slate-500 mb-2">The Kathmandu Post • December 1, 2019</p>
-                                    <a href="https://kathmandupost.com/columns/2019/11/30/deploying-midwives-to-prevent-deaths" target="_blank" class="text-slate-800 hover:text-slate-900 text-sm">Read Article →</a>
-                                </div>
-                            </div>
+                        <div class="mb-14">
+                            <h3 class="font-serif text-2xl font-600 text-ink mb-6 pb-3 border-b border-rule">Op-eds (English)</h3>
+                            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-5">${opedsEn.map(o => opedCard(o, 'Read Article')).join('')}</div>
                         </div>
 
-                        <!-- Nepali Op-eds Section -->
-                        <div>
-                            <h3 class="text-2xl font-semibold mb-6 text-slate-900">Op-eds (Nepali / नेपाली)</h3>
-                            <div class="grid md:grid-cols-2 gap-4">
-                                <div class="bg-white border border-slate-200 rounded-xl p-5 hover:border-slate-400 transition-all">
-                                    <h4 class="font-semibold mb-2 text-slate-900">स्वास्थ्यकर्मीमाथि कार्यस्थलमा हुने हिंसाका कारणहरुको चिरफार</h4>
-                                    <p class="text-sm text-slate-500 mb-2">Swasthya Khabar</p>
-                                    <a href="https://swasthyakhabar.com/story/54809" target="_blank" class="text-slate-800 hover:text-slate-900 text-sm">लेख पढ्नुहोस् →</a>
-                                </div>
-
-                                <div class="bg-white border border-slate-200 rounded-xl p-5 hover:border-slate-400 transition-all">
-                                    <h4 class="font-semibold mb-2 text-slate-900">स्वास्थ्य बीमा कार्यक्रमको ब्ल्याक बक्स खोल्न पहल किन नगर्ने?</h4>
-                                    <p class="text-sm text-slate-500 mb-2">Swasthya Khabar</p>
-                                    <a href="https://swasthyakhabar.com/story/54596" target="_blank" class="text-slate-800 hover:text-slate-900 text-sm">लेख पढ्नुहोस् →</a>
-                                </div>
-
-                                <div class="bg-white border border-slate-200 rounded-xl p-5 hover:border-slate-400 transition-all">
-                                    <h4 class="font-semibold mb-2 text-slate-900">नेपालको स्वास्थ्य सूचना प्रणालीः नौलो प्रयास, चुनौती र अबको बाटो</h4>
-                                    <p class="text-sm text-slate-500 mb-2">Swasthya Khabar</p>
-                                    <a href="https://swasthyakhabar.com/story/54157" target="_blank" class="text-slate-800 hover:text-slate-900 text-sm">लेख पढ्नुहोस् →</a>
-                                </div>
-
-                                <div class="bg-white border border-slate-200 rounded-xl p-5 hover:border-slate-400 transition-all">
-                                    <h4 class="font-semibold mb-2 text-slate-900">कोभिड-१९ महामारी : मातृशिशु सेवामा असर र अबको बाटो</h4>
-                                    <p class="text-sm text-slate-500 mb-2">Swasthya Khabar</p>
-                                    <a href="https://swasthyakhabar.com/story/36678" target="_blank" class="text-slate-800 hover:text-slate-900 text-sm">लेख पढ्नुहोस् →</a>
-                                </div>
-
-                                <div class="bg-white border border-slate-200 rounded-xl p-5 hover:border-slate-400 transition-all">
-                                    <h4 class="font-semibold mb-2 text-slate-900">कोरोनाको जोखिम रोक्ने उपाय हुनसक्छ टेलिहेल्थ</h4>
-                                    <p class="text-sm text-slate-500 mb-2">Swasthya Khabar</p>
-                                    <a href="https://swasthyakhabar.com/story/31235" target="_blank" class="text-slate-800 hover:text-slate-900 text-sm">लेख पढ्नुहोस् →</a>
-                                </div>
-                            </div>
+                        <div class="mb-14">
+                            <h3 class="font-serif text-2xl font-600 text-ink mb-6 pb-3 border-b border-rule">Op-eds (Nepali / नेपाली)</h3>
+                            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-5">${opedsNe.map(o => opedCard(o, 'लेख पढ्नुहोस्')).join('')}</div>
                         </div>
 
-                        <div class="mt-12 bg-slate-50 border border-slate-200 rounded-xl p-8 text-center">
-                            <h3 class="text-2xl font-semibold mb-4 text-slate-900">Impact Through Writing</h3>
-                            <p class="text-slate-600 mb-6 max-w-2xl mx-auto">
+                        <div class="bg-card border border-rule rounded-xl p-8 md:p-10 text-center">
+                            <h3 class="font-serif text-2xl font-600 text-ink mb-4">Impact Through Writing</h3>
+                            <p class="text-muted mb-6 max-w-2xl mx-auto leading-relaxed">
                                 My policy briefs and op-eds bridge research and practice, translating complex health issues into accessible insights for policymakers, practitioners, and the public. Published in major outlets in both English and Nepali, these pieces contribute to informed public discourse on critical health issues.
                             </p>
-                            <button onclick="navigateTo('contact')" class="px-8 py-3 bg-slate-800 hover:bg-slate-900 text-white rounded-lg font-semibold hover:shadow-lg  transition-all">
+                            <button onclick="navigateTo('contact')" class="px-7 py-3 bg-navy text-white font-medium rounded-md hover:bg-navydark transition-colors">
                                 Collaborate on Policy Work
                             </button>
                         </div>
@@ -648,94 +489,63 @@ function renderPolicy() {
 
         function renderTeaching() {
             return `
-                <section class="min-h-screen px-4 py-24">
-                    <div class="max-w-6xl mx-auto">
-                        <h2 class="text-4xl md:text-5xl font-bold mb-4 text-center text-slate-900">
-                            Teaching Experience
-                        </h2>
-                        <p class="text-center text-slate-600 mb-12 max-w-2xl mx-auto">
-                            Over a decade of teaching core public health courses and mentoring future public health professionals
-                        </p>
+                <section class="min-h-screen px-5 sm:px-8 pt-28 pb-20">
+                    <div class="max-w-5xl mx-auto">
+                        ${sectionHeader('Education', 'Teaching', 'Over a decade teaching core public health courses and mentoring future public health professionals.')}
 
-                        <div class="space-y-8">
-                            <div class="bg-white border border-slate-200 rounded-xl p-8 shadow-lg hover:shadow-xl transition-all">
-                                <div class="flex flex-col md:flex-row md:items-start md:justify-between mb-4">
+                        <div class="space-y-6 mb-6">
+                            <div class="bg-card border border-rule rounded-xl p-8">
+                                <div class="flex flex-col md:flex-row md:items-start md:justify-between mb-4 gap-4">
                                     <div>
-                                        <h3 class="text-2xl font-bold text-slate-900 mb-2">Safal Education Network</h3>
-                                        <p class="text-slate-800 font-semibold mb-1">Lead Facilitator</p>
-                                        <p class="text-slate-500">Kathmandu, Nepal • 2014 - 2024</p>
+                                        <h3 class="font-serif text-2xl font-600 text-ink mb-1">Safal Education Network</h3>
+                                        <p class="text-navy font-medium">Lead Facilitator</p>
+                                        <p class="text-muted text-sm">Kathmandu, Nepal · 2014 – 2024</p>
                                     </div>
-                                    <div class="mt-4 md:mt-0 px-4 py-2 bg-slate-100 text-slate-700 rounded-lg text-sm font-semibold">
-                                        10+ Years
-                                    </div>
+                                    <span class="self-start px-3 py-1 bg-navy/5 text-navy rounded eyebrow whitespace-nowrap">10+ Years</span>
                                 </div>
-                                
                                 <div class="mt-6">
-                                    <h4 class="font-semibold text-slate-900 mb-3">Courses Taught:</h4>
-                                    <ul class="space-y-2 text-slate-600">
-                                        <li class="flex items-start">
-                                            <span class="text-slate-800 mr-2 mt-1">→</span>
-                                            <span><strong>Biostatistics:</strong> Teaching core statistical concepts and methods for public health candidates preparing for Public Service Commission examinations</span>
-                                        </li>
-                                        <li class="flex items-start">
-                                            <span class="text-slate-800 mr-2 mt-1">→</span>
-                                            <span><strong>Epidemiology:</strong> Covering disease patterns, causation, and public health surveillance methods</span>
-                                        </li>
-                                        <li class="flex items-start">
-                                            <span class="text-slate-800 mr-2 mt-1">→</span>
-                                            <span><strong>Health Management and Health System in Nepal:</strong> Comprehensive overview of Nepal's health system structure, policies, and management practices</span>
-                                        </li>
+                                    <h4 class="font-medium text-ink mb-3">Courses Taught</h4>
+                                    <ul class="space-y-3 text-ink/80">
+                                        <li class="flex gap-3"><span class="text-navy mt-1">→</span><span><strong class="text-ink">Biostatistics:</strong> Core statistical concepts and methods for public health candidates preparing for Public Service Commission examinations</span></li>
+                                        <li class="flex gap-3"><span class="text-navy mt-1">→</span><span><strong class="text-ink">Epidemiology:</strong> Disease patterns, causation, and public health surveillance methods</span></li>
+                                        <li class="flex gap-3"><span class="text-navy mt-1">→</span><span><strong class="text-ink">Health Management and Health System in Nepal:</strong> Comprehensive overview of Nepal's health system structure, policies, and management practices</span></li>
                                     </ul>
                                 </div>
                             </div>
 
-                            <div class="bg-white border border-slate-200 rounded-xl p-8 shadow-lg hover:shadow-xl transition-all">
-                                <div class="flex flex-col md:flex-row md:items-start md:justify-between mb-4">
+                            <div class="bg-card border border-rule rounded-xl p-8">
+                                <div class="flex flex-col md:flex-row md:items-start md:justify-between mb-4 gap-4">
                                     <div>
-                                        <h3 class="text-2xl font-bold text-slate-900 mb-2">University of North Carolina</h3>
-                                        <p class="text-slate-800 font-semibold mb-1">Graduate Teaching Assistant</p>
-                                        <p class="text-slate-500">Gillings School of Global Public Health • 2021 - 2022</p>
+                                        <h3 class="font-serif text-2xl font-600 text-ink mb-1">University of North Carolina</h3>
+                                        <p class="text-navy font-medium">Graduate Teaching Assistant</p>
+                                        <p class="text-muted text-sm">Gillings School of Global Public Health · 2021 – 2022</p>
                                     </div>
-                                    <div class="mt-4 md:mt-0 px-4 py-2 bg-slate-100 text-slate-700 rounded-lg text-sm font-semibold">
-                                        Academic Year 2021-22
-                                    </div>
+                                    <span class="self-start px-3 py-1 bg-navy/5 text-navy rounded eyebrow whitespace-nowrap">AY 2021–22</span>
                                 </div>
-                                
                                 <div class="mt-6">
-                                    <h4 class="font-semibold text-slate-900 mb-3">Graduate Courses:</h4>
-                                    <div class="space-y-4">
-                                        <div class="bg-slate-50 p-4 rounded-lg border border-slate-200">
-                                            <p class="font-semibold text-slate-900">HPM 715: Health Economics</p>
-                                            <p class="text-sm text-slate-500">Fall 2021</p>
-                                        </div>
-                                        <div class="bg-slate-50 p-4 rounded-lg border border-slate-200">
-                                            <p class="font-semibold text-slate-900">HPM 780: Pharmaceutical Health Policy</p>
-                                            <p class="text-sm text-slate-500">Spring 2022</p>
-                                        </div>
-                                        <div class="bg-slate-50 p-4 rounded-lg border border-slate-200">
-                                            <p class="font-semibold text-slate-900">HPM 756: Access to Healthcare</p>
-                                            <p class="text-sm text-slate-500">Spring 2022</p>
-                                        </div>
+                                    <h4 class="font-medium text-ink mb-3">Graduate Courses</h4>
+                                    <div class="grid sm:grid-cols-3 gap-4">
+                                        <div class="border border-rule rounded-lg p-4"><p class="font-medium text-ink">HPM 715: Health Economics</p><p class="text-sm text-muted">Fall 2021</p></div>
+                                        <div class="border border-rule rounded-lg p-4"><p class="font-medium text-ink">HPM 780: Pharmaceutical Health Policy</p><p class="text-sm text-muted">Spring 2022</p></div>
+                                        <div class="border border-rule rounded-lg p-4"><p class="font-medium text-ink">HPM 756: Access to Healthcare</p><p class="text-sm text-muted">Spring 2022</p></div>
                                     </div>
                                 </div>
                             </div>
                         </div>
 
-                        <div class="bg-white border border-slate-200 rounded-xl p-8 shadow-lg hover:shadow-xl transition-all">
-                            <h3 class="text-2xl font-semibold mb-4 text-slate-900">Teaching Philosophy</h3>
-                            <p class="text-slate-600 mb-4">
+                        <div class="bg-navy/5 border border-rule rounded-xl p-8 mb-8">
+                            <h3 class="font-serif text-2xl font-600 text-ink mb-4">Teaching Philosophy</h3>
+                            <p class="text-ink/80 mb-4 leading-relaxed">
                                 I believe in making complex public health concepts accessible and actionable. My teaching approach combines rigorous academic content with real-world applications, drawing from my experience working in both Nepal and the United States.
                             </p>
-                            <p class="text-slate-600">
+                            <p class="text-ink/80 leading-relaxed">
                                 Whether preparing students for civil service examinations or graduate-level coursework, I emphasize critical thinking, practical application, and the importance of evidence-based decision-making in public health practice.
                             </p>
                         </div>
 
-                        <div class="mt-8 text-center">
-                            <p class="text-slate-500 mb-4">Interested in guest lectures or teaching collaborations?</p>
-                            <button onclick="navigateTo('contact')" class="px-8 py-3 bg-slate-800 hover:bg-slate-900 text-white rounded-lg font-semibold hover:shadow-lg  transition-all">
-                                Get in Touch
-                            </button>
+                        <div class="text-center">
+                            <p class="text-muted mb-4">Interested in guest lectures or teaching collaborations?</p>
+                            <button onclick="navigateTo('contact')" class="px-7 py-3 bg-navy text-white font-medium rounded-md hover:bg-navydark transition-colors">Get in Touch</button>
                         </div>
                     </div>
                 </section>
@@ -743,192 +553,167 @@ function renderPolicy() {
         }
 
         function renderResources() {
-    const resources = [
-        {
-            title: "Annual Report of DOHS: 2081/82",
-            description: "Annual Report of DOHS: 2081/82 (Published and removed from DoHS Website",
-            category: "Annual Report",
-            year: "June 2026",
-            filename: "annualreport_dohs_2081_82.pdf",
-            color: "slate"
-        },
-    
-        // Add more reports here
-    ];
+            // Add resources here as { title, description, category, year, filename }.
+            const resources = [];
 
-    const categoryColors = {
-        "Policy Brief": "bg-blue-50 text-blue-700",
-        "Annual Report": "bg-slate-100 text-slate-700",
-        "Working Paper": "bg-slate-100 text-slate-700",
-        "Presentation": "bg-green-50 text-green-700",
-    };
+            const downloadIcon = `<svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" style="display:inline;vertical-align:middle"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>`;
+            const pdfIcon = `<svg width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>`;
 
-    const downloadIcon = `<svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>`;
-    const pdfIcon = `<svg width="32" height="32" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>`;
+            return `
+                <section class="min-h-screen px-5 sm:px-8 pt-28 pb-20">
+                    <div class="max-w-5xl mx-auto">
+                        ${sectionHeader('Downloads', 'Resources', 'Downloadable reports, policy briefs, presentations, and working papers.')}
 
-    return `
-        <section class="min-h-screen px-4 py-24">
-            <div class="max-w-6xl mx-auto">
-                <h2 class="text-4xl md:text-5xl font-bold mb-4 text-center text-slate-900">
-                    Resources
-                </h2>
-                <p class="text-center text-slate-600 mb-12 max-w-2xl mx-auto">
-                    Downloadable reports, policy briefs, presentations, and working papers
-                </p>
-
-                <div class="grid md:grid-cols-2 gap-6 mb-12">
-                    ${resources.map(r => `
-                        <div class="bg-white border border-slate-200 rounded-xl p-6 hover:border-slate-400 transition-all hover:transform hover:scale-105">
-                            <div class="flex items-start justify-between mb-4">
-                                <div class="text-slate-800">${pdfIcon}</div>
-                                <div class="flex gap-2 items-center">
-                                    <span class="text-xs px-2 py-1 rounded-full ${categoryColors[r.category] || 'bg-slate-100 text-slate-600'}">${r.category}</span>
-                                    <span class="text-sm text-slate-500">${r.year}</span>
+                        ${resources.length ? `
+                        <div class="grid md:grid-cols-2 gap-6 mb-12">
+                            ${resources.map(r => `
+                                <div class="bg-card border border-rule rounded-xl p-6 hover:border-navy/40 hover:shadow-sm transition-all">
+                                    <div class="flex items-start justify-between mb-4">
+                                        <div class="text-navy">${pdfIcon}</div>
+                                        <div class="flex gap-2 items-center">
+                                            <span class="px-2.5 py-1 bg-navy/5 text-navy rounded text-xs font-medium">${r.category}</span>
+                                            <span class="eyebrow text-muted">${r.year}</span>
+                                        </div>
+                                    </div>
+                                    <h3 class="font-serif text-lg font-500 text-ink mb-2">${r.title}</h3>
+                                    <p class="text-muted text-sm mb-5">${r.description}</p>
+                                    <a href="${r.filename}" download class="inline-flex items-center gap-2 px-4 py-2 bg-navy text-white rounded-md text-sm font-medium hover:bg-navydark transition-colors">
+                                        ${downloadIcon} Download PDF
+                                    </a>
                                 </div>
-                            </div>
-                            <h3 class="text-lg font-semibold mb-2 text-slate-900">${r.title}</h3>
-                            <p class="text-slate-500 text-sm mb-5">${r.description}</p>
-                            <a href="${r.filename}" download 
-                               class="inline-flex items-center gap-2 px-4 py-2 bg-slate-800 hover:bg-slate-900 text-white rounded-lg text-sm font-semibold hover:shadow-lg  transition-all">
-                                ${downloadIcon} Download PDF
-                            </a>
+                            `).join('')}
                         </div>
-                    `).join('')}
-                </div>
+                        ` : `
+                        <div class="bg-card border border-rule rounded-xl p-12 text-center mb-12">
+                            <div class="flex justify-center text-navy/40 mb-4">${pdfIcon}</div>
+                            <h3 class="font-serif text-xl font-600 text-ink mb-2">Resources coming soon</h3>
+                            <p class="text-muted max-w-md mx-auto">Reports, policy briefs, presentations, and working papers will be available for download here. Check back soon.</p>
+                        </div>
+                        `}
 
-                <div class="bg-slate-50 border border-slate-200 rounded-xl p-8 text-center">
-                    <h3 class="text-xl font-semibold mb-3 text-slate-900">Looking for something specific?</h3>
-                    <p class="text-slate-600 mb-4">If you're looking for a particular report or would like to request materials, feel free to reach out.</p>
-                    <button onclick="navigateTo('contact')" class="px-8 py-3 bg-slate-800 hover:bg-slate-900 text-white rounded-lg font-semibold hover:shadow-lg  transition-all">
-                        Contact Me
-                    </button>
-                </div>
-            </div>
-        </section>
-    `;
-}
+                        <div class="bg-navy/5 border border-rule rounded-xl p-8 text-center">
+                            <h3 class="font-serif text-xl font-600 text-ink mb-3">Looking for something specific?</h3>
+                            <p class="text-muted mb-4">If you're looking for a particular report or would like to request materials, feel free to reach out.</p>
+                            <button onclick="navigateTo('contact')" class="px-7 py-3 bg-navy text-white font-medium rounded-md hover:bg-navydark transition-colors">Contact Me</button>
+                        </div>
+                    </div>
+                </section>
+            `;
+        }
 
         function renderSocialMedia() {
+            const themes = [
+                { icon: '🔬', title: 'Science Communication', body: 'Translating complex health research into digestible, engaging content that empowers people to make informed decisions.' },
+                { icon: '❌', title: 'Misinformation Debunking', body: 'Fighting health myths and misinformation with evidence-based facts, helping communities distinguish truth from fiction.' },
+                { icon: '📚', title: 'Health Education', body: 'Creating edutainment content that makes learning about health fun, memorable, and shareable across all age groups.' },
+                { icon: '📋', title: 'Policy Critique', body: 'Providing thoughtful analysis and constructive criticism of health policies to promote better public health outcomes.' },
+                { icon: '💪', title: 'Youth Motivation', body: 'Inspiring young people to pursue meaningful careers in public health and contribute to positive social change.' },
+                { icon: '🎭', title: 'Edutainment Approach', body: 'Blending education with entertainment — making serious health topics approachable through humor and creativity.' }
+            ];
+
             return `
-                <section class="min-h-screen px-4 py-24">
+                <section class="min-h-screen px-5 sm:px-8 pt-28 pb-20">
                     <div class="max-w-6xl mx-auto">
-                        <h2 class="text-4xl md:text-5xl font-bold mb-4 text-center text-slate-900">
-                            Social Media & Public Engagement
-                        </h2>
-                        <p class="text-center text-slate-600 mb-12 max-w-3xl mx-auto">
-                            Making health science accessible, combating misinformation, and inspiring meaningful change through engaging edutainment content
-                        </p>
+                        ${sectionHeader('Public Engagement', 'Social Media', 'Making health science accessible, combating misinformation, and inspiring meaningful change through engaging edutainment content.')}
 
-                        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
-                            <div class="bg-white border border-slate-200 rounded-xl p-6 hover:border-slate-400 transition-all">
-                                <div class="text-4xl mb-4">🔬</div>
-                                <h3 class="text-xl font-semibold mb-3 text-slate-900">Science Communication</h3>
-                                <p class="text-slate-600">
-                                    Translating complex health research into digestible, engaging content that empowers people to make informed decisions
-                                </p>
-                            </div>
-
-                            <div class="bg-white border border-slate-200 rounded-xl p-6 hover:border-slate-400 transition-all">
-                                <div class="text-4xl mb-4">❌</div>
-                                <h3 class="text-xl font-semibold mb-3 text-slate-900">Misinformation Debunking</h3>
-                                <p class="text-slate-600">
-                                    Fighting health myths and misinformation with evidence-based facts, helping communities distinguish truth from fiction
-                                </p>
-                            </div>
-
-                            <div class="bg-white border border-slate-200 rounded-xl p-6 hover:border-slate-400 transition-all">
-                                <div class="text-4xl mb-4">📚</div>
-                                <h3 class="text-xl font-semibold mb-3 text-slate-900">Health Education</h3>
-                                <p class="text-slate-600">
-                                    Creating edutainment content that makes learning about health fun, memorable, and shareable across all age groups
-                                </p>
-                            </div>
-
-                            <div class="bg-white border border-slate-200 rounded-xl p-6 hover:border-slate-400 transition-all">
-                                <div class="text-4xl mb-4">📋</div>
-                                <h3 class="text-xl font-semibold mb-3 text-slate-900">Policy Critique</h3>
-                                <p class="text-slate-600">
-                                    Providing thoughtful analysis and constructive criticism of health policies to promote better public health outcomes
-                                </p>
-                            </div>
-
-                            <div class="bg-white border border-slate-200 rounded-xl p-6 hover:border-slate-400 transition-all">
-                                <div class="text-4xl mb-4">💪</div>
-                                <h3 class="text-xl font-semibold mb-3 text-slate-900">Youth Motivation</h3>
-                                <p class="text-slate-600">
-                                    Inspiring young people to pursue meaningful careers in public health and contribute to positive social change
-                                </p>
-                            </div>
-
-                            <div class="bg-white border border-slate-200 rounded-xl p-6 hover:border-slate-400 transition-all">
-                                <div class="text-4xl mb-4">🎭</div>
-                                <h3 class="text-xl font-semibold mb-3 text-slate-900">Edutainment Approach</h3>
-                                <p class="text-slate-600">
-                                    Blending education with entertainment - making serious health topics approachable through humor and creativity
-                                </p>
-                            </div>
+                        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
+                            ${themes.map(t => `
+                                <div class="bg-card border border-rule rounded-xl p-6 hover:border-navy/40 hover:shadow-sm transition-all">
+                                    <div class="text-3xl mb-4">${t.icon}</div>
+                                    <h3 class="font-serif text-xl font-500 text-ink mb-3">${t.title}</h3>
+                                    <p class="text-muted leading-relaxed">${t.body}</p>
+                                </div>
+                            `).join('')}
                         </div>
 
-                        <div class="mb-12">
-                            <h3 class="text-2xl font-semibold mb-6 text-center text-slate-900">My Social Media Presence</h3>
-                            <div class="grid md:grid-cols-3 gap-6">
-                                <a href="https://www.facebook.com/mukeshpublichealth" target="_blank" class="bg-blue-50 border border-blue-200 rounded-xl p-6 text-center hover:scale-105 transition-all">
-                                    <div class="text-blue-600 mb-4">${icons.facebook}</div>
-                                    <div class="text-3xl font-bold mb-2">Facebook</div>
-                                    <div class="text-slate-600 text-sm">Daily health tips & myth-busting</div>
-                                    <div class="mt-4 text-blue-600 font-semibold">Follow →</div>
-                                </a>
-
-                                <a href="https://www.youtube.com/@MukeshAdhikari" target="_blank" class="bg-red-50 border border-red-200 rounded-xl p-6 text-center hover:scale-105 transition-all">
-                                    <div class="text-red-400 mb-4">${icons.youtube}</div>
-                                    <div class="text-3xl font-bold mb-2">YouTube</div>
-                                    <div class="text-slate-600 text-sm">Health education videos</div>
-                                    <div class="mt-4 text-red-400 font-semibold">Subscribe →</div>
-                                </a>
-
-                                <a href="https://x.com/mukes_adhikari" target="_blank" class="bg-blue-50 border border-blue-200 rounded-xl p-6 text-center hover:scale-105 transition-all">
-                                    <div class="text-blue-600 mb-4">${icons.twitter}</div>
-                                    <div class="text-3xl font-bold mb-2">Twitter/X</div>
-                                    <div class="text-slate-600 text-sm">Quick health insights & news</div>
-                                    <div class="mt-4 text-blue-600 font-semibold">Follow →</div>
-                                </a>
-                            </div>
+                        <h3 class="font-serif text-2xl font-600 text-ink text-center mb-8">Find Me Online</h3>
+                        <div class="grid md:grid-cols-3 gap-6 mb-16">
+                            <a href="https://www.facebook.com/mukeshpublichealth" target="_blank" rel="noopener" class="bg-card border border-rule rounded-xl p-8 text-center hover:border-navy/40 hover:shadow-sm transition-all">
+                                <div class="text-navy flex justify-center mb-4">${icons.facebook}</div>
+                                <div class="font-serif text-2xl font-600 text-ink mb-1">Facebook</div>
+                                <div class="text-muted text-sm">Daily health tips &amp; myth-busting</div>
+                                <div class="mt-4 text-navy font-medium text-sm">Follow →</div>
+                            </a>
+                            <a href="https://www.youtube.com/@MukeshAdhikari" target="_blank" rel="noopener" class="bg-card border border-rule rounded-xl p-8 text-center hover:border-navy/40 hover:shadow-sm transition-all">
+                                <div class="text-navy flex justify-center mb-4">${icons.youtube}</div>
+                                <div class="font-serif text-2xl font-600 text-ink mb-1">YouTube</div>
+                                <div class="text-muted text-sm">Health education videos</div>
+                                <div class="mt-4 text-navy font-medium text-sm">Subscribe →</div>
+                            </a>
+                            <a href="https://x.com/mukes_adhikari" target="_blank" rel="noopener" class="bg-card border border-rule rounded-xl p-8 text-center hover:border-navy/40 hover:shadow-sm transition-all">
+                                <div class="text-navy flex justify-center mb-4">${icons.twitter}</div>
+                                <div class="font-serif text-2xl font-600 text-ink mb-1">Twitter / X</div>
+                                <div class="text-muted text-sm">Quick health insights &amp; news</div>
+                                <div class="mt-4 text-navy font-medium text-sm">Follow →</div>
+                            </a>
                         </div>
 
-                        <div class="bg-white border border-slate-200 rounded-xl p-8 mb-8">
-                            <h3 class="text-2xl font-semibold mb-6 text-slate-900 text-center">Latest from Facebook</h3>
-                            <div class="flex justify-center">
-                                <div class="fb-page" 
-                                     data-href="https://www.facebook.com/mukeshpublichealth"
-                                     data-tabs="timeline"
-                                     data-width="500"
-                                     data-height="600"
-                                     data-small-header="false"
-                                     data-adapt-container-width="true"
-                                     data-hide-cover="false"
-                                     data-show-facepile="true">
-                                    <blockquote cite="https://www.facebook.com/mukeshpublichealth" class="fb-xfbml-parse-ignore">
-                                        <a href="https://www.facebook.com/mukeshpublichealth">Mukesh Adhikari - Public Health</a>
-                                    </blockquote>
+                        <h3 class="font-serif text-2xl font-600 text-ink text-center mb-8">Follow My Channels</h3>
+                        <div class="grid md:grid-cols-2 gap-6 items-stretch mb-8">
+
+                            <!-- LEFT: Facebook page feed -->
+                            <div class="bg-card border border-rule rounded-xl p-6 flex flex-col">
+                                <div class="flex items-center gap-2 mb-5 text-[#1877F2]">
+                                    ${icons.facebook}
+                                    <h4 class="font-serif text-xl font-600 text-ink">Facebook</h4>
+                                </div>
+                                <div class="flex-1 flex justify-center">
+                                    <div class="fb-page"
+                                         data-href="https://www.facebook.com/mukeshpublichealth"
+                                         data-tabs="timeline"
+                                         data-width="500"
+                                         data-height="560"
+                                         data-small-header="false"
+                                         data-adapt-container-width="true"
+                                         data-hide-cover="false"
+                                         data-show-facepile="true">
+                                        <blockquote cite="https://www.facebook.com/mukeshpublichealth" class="fb-xfbml-parse-ignore">
+                                            <a href="https://www.facebook.com/mukeshpublichealth">Mukesh Adhikari - Public Health</a>
+                                        </blockquote>
+                                    </div>
+                                </div>
+                                <p class="text-center text-muted text-sm mt-4">
+                                    Can't see the feed? <a href="https://www.facebook.com/mukeshpublichealth" target="_blank" rel="noopener" class="text-navy hover:underline">Open my Facebook page →</a>
+                                </p>
+                            </div>
+
+                            <!-- RIGHT: YouTube channel card (banner = channel cover art) -->
+                            <div class="bg-card border border-rule rounded-xl overflow-hidden flex flex-col">
+                                <div class="flex items-center gap-2 px-6 pt-6 pb-4 text-[#FF0000]">
+                                    ${icons.youtube}
+                                    <h4 class="font-serif text-xl font-600 text-ink">YouTube</h4>
+                                </div>
+                                <a href="https://www.youtube.com/@MukeshAdhikari" target="_blank" rel="noopener" class="block">
+                                    <img src="https://yt3.googleusercontent.com/6vDIkVNLNQnfCi7H7qAjDDQ2U-rHGPAljwY2jJEv_Ku2dkhzHBOWjbP7_imxA9B15a_U486R5xk=w1707-fcrop64=1,00005a57ffffa5a8-k-c0xffffffff-no-nd-rj"
+                                         alt="Mukesh Adhikari YouTube channel banner"
+                                         class="w-full aspect-[6/1] object-cover bg-navy/5" loading="lazy">
+                                </a>
+                                <div class="flex-1 flex flex-col items-center text-center px-6 pb-8 -mt-10">
+                                    <img src="https://yt3.googleusercontent.com/qZN5cuvYru9nhgMqNJtrzcSYkxPPNEinySSyOBbpw0Ilmi7l0bT_f1Pg0YxKG1T6krO5z0goJg=s176-c-k-c0x00ffffff-no-rj"
+                                         alt="Mukesh Adhikari"
+                                         class="w-20 h-20 rounded-full ring-4 ring-card object-cover shadow-md bg-card" loading="lazy">
+                                    <h4 class="font-serif text-2xl font-600 text-ink mt-3">Mukesh Adhikari</h4>
+                                    <p class="text-muted text-sm mt-1">@MukeshAdhikari &middot; 13K subscribers</p>
+                                    <p class="text-muted text-sm mt-4 mb-6 max-w-xs">Health education videos, myth-busting, and science communication in Nepali &amp; English.</p>
+                                    <a href="https://www.youtube.com/@MukeshAdhikari?sub_confirmation=1" target="_blank" rel="noopener"
+                                       class="inline-flex items-center gap-2 px-6 py-3 bg-[#FF0000] text-white font-semibold rounded-full hover:bg-[#cc0000] transition-colors">
+                                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+                                        Subscribe
+                                    </a>
+                                    <a href="https://www.youtube.com/@MukeshAdhikari" target="_blank" rel="noopener" class="text-navy text-sm mt-4 hover:underline">Visit channel &rarr;</a>
                                 </div>
                             </div>
-                            <p class="text-center text-slate-500 text-sm mt-4">
-                                Can't see the feed? <a href="https://www.facebook.com/mukeshpublichealth" target="_blank" class="text-slate-800 hover:text-slate-900">Visit my Facebook page directly →</a>
-                            </p>
+
                         </div>
 
-                        <div class="bg-slate-50 border border-slate-200 rounded-xl p-8 text-center">
-                            <h3 class="text-2xl font-semibold mb-4 text-slate-900">Join the Community</h3>
-                            <p class="text-slate-600 mb-6 max-w-2xl mx-auto">
+                        <div class="bg-navy/5 border border-rule rounded-xl p-8 md:p-10 text-center">
+                            <h3 class="font-serif text-2xl font-600 text-ink mb-4">Join the Community</h3>
+                            <p class="text-muted mb-6 max-w-2xl mx-auto leading-relaxed">
                                 Stay informed with daily health insights, evidence-based information, and engaging content that makes public health accessible to everyone. Let's build a healthier, more informed society together!
                             </p>
                             <div class="flex flex-wrap justify-center gap-4">
-                                <a href="https://www.facebook.com/mukeshpublichealth" target="_blank" class="px-8 py-3 bg-slate-800 hover:bg-slate-900 text-white rounded-lg font-semibold hover:shadow-lg  transition-all">
-                                    Follow on Facebook
-                                </a>
-                                <button onclick="navigateTo('contact')" class="px-8 py-3 bg-white border-2 border-slate-300 text-slate-800 rounded-lg font-semibold hover:bg-slate-50 hover:border-slate-400 transition-all">
-                                    Collaboration Inquiries
-                                </button>
+                                <a href="https://www.facebook.com/mukeshpublichealth" target="_blank" rel="noopener" class="px-7 py-3 bg-navy text-white font-medium rounded-md hover:bg-navydark transition-colors">Follow on Facebook</a>
+                                <button onclick="navigateTo('contact')" class="px-7 py-3 border border-navy text-navy font-medium rounded-md hover:bg-navy/5 transition-colors">Collaboration Inquiries</button>
                             </div>
                         </div>
                     </div>
@@ -936,170 +721,220 @@ function renderPolicy() {
             `;
         }
 
-        
-         function renderAbout() {
+        function renderAbout() {
             return `
-                <section class="min-h-screen px-4 py-24">
+                <section class="min-h-screen px-5 sm:px-8 pt-28 pb-20">
                     <div class="max-w-4xl mx-auto">
-                        <h2 class="text-4xl md:text-5xl font-bold mb-12 text-center text-slate-900">
-                            About Me
-                        </h2>
+                        ${sectionHeader('Biography', 'About', '')}
 
-                        <div class="bg-white border border-slate-200 rounded-xl p-8 mb-8">
+                        <div class="bg-card border border-rule rounded-xl p-8 mb-8">
                             <div class="flex flex-col md:flex-row gap-8 items-center mb-6">
-                                <img 
-                                    src="headshot.jpg" 
-                                    alt="Mukesh Adhikari" 
-                                    class="w-48 h-48 rounded-xl border-4 border-slate-300 shadow-lg object-cover flex-shrink-0"
-                                />
+                                <img src="headshot.jpg" alt="Mukesh Adhikari" class="w-40 h-40 rounded-xl object-cover ring-1 ring-rule shadow-sm flex-shrink-0">
                                 <div>
-                                    <h3 class="text-2xl font-bold mb-2">Mukesh Adhikari</h3>
-                                    <p class="text-slate-800 mb-4">Health Services Researcher</p>
-                                    <p class=" text-lg text-slate-600">
+                                    <h3 class="font-serif text-2xl font-600 text-ink mb-1">Mukesh Adhikari</h3>
+                                    <p class="text-navy font-medium mb-4">Health Services Researcher</p>
+                                    <p class="text-ink/80 leading-relaxed">
                                         I'm a health services researcher dedicated to bridging the gap between scientific evidence and real-world impact. My work focuses on rural health, medical education, maternal and child health, and health systems strengthening.
                                     </p>
                                 </div>
                             </div>
-                            
-                            <p class="text-lg text-slate-600 mb-4">
-                                With over 24 peer-reviewed publications in top-tier journals including JAMA, The Lancet, and BMJ, my research spans from Nepal to the United States, addressing critical issues in healthcare access, medical education policy, and health equity.
+                            <p class="text-ink/80 leading-relaxed mb-4">
+                                With ${totalPublications()} peer-reviewed publications in top-tier journals including JAMA, The Lancet, and BMJ, my research spans from Nepal to the United States, addressing critical issues in healthcare access, medical education policy, and health equity.
                             </p>
-                            <p class="text-lg text-slate-600 mb-4">
+                            <p class="text-ink/80 leading-relaxed mb-4">
                                 My work has influenced policy decisions at both national and international levels, particularly in rural graduate medical education expansion in the US, health insurance implementation in Nepal, and maternal health service delivery during the COVID-19 pandemic.
                             </p>
-                            <p class="text-lg text-slate-600">
+                            <p class="text-ink/80 leading-relaxed">
                                 Beyond research, I'm passionate about translating complex health science into accessible knowledge through op-eds and public engagement, ensuring that evidence reaches those who need it most.
                             </p>
                         </div>
 
                         <div class="grid md:grid-cols-2 gap-6 mb-8">
-                            <div class="bg-white border border-slate-200 rounded-xl p-6">
-                                <h3 class="text-xl font-semibold mb-4 text-slate-800">Education</h3>
-                                <ul class="space-y-3 text-slate-600">
-                                    <li>
-                                        <div class="font-semibold">PhD, Health Policy and Management (Health Economics)</div>
-                                        <div class="text-sm text-slate-500">University of North Carolina (UNC) at Chapel Hill, NC, USA • 2026</div>
-                                    </li>
-                                    <li>
-                                        <div class="font-semibold">MPH, Health Policy</div>
-                                        <div class="text-sm text-slate-500">Yale School of Public Health, CT, USA • 2021</div>
-                                    </li>
-                                    <li>
-                                        <div class="font-semibold">MPA, Public Administration</div>
-                                        <div class="text-sm text-slate-500">Kastamandap School of Public Affairs Management, Kathmandu, Nepal • 2019</div>
-                                    </li>
-                                    <li>
-                                        <div class="font-semibold">BPH, Public Health</div>
-                                        <div class="text-sm text-slate-500">Institute of Medicine, Kathmandu, Nepal • 2012</div>
-                                    </li>
-                                    <li>
-                                        <div class="font-semibold">ISc, Science</div>
-                                        <div class="text-sm text-slate-500">Amrit Science Campus, Kathmandu, Nepal • 2007</div>
-                                    </li>
-                                    <li>
-                                        <div class="font-semibold">Proficiency Certificate in General Medicine, Health Assistant</div>
-                                        <div class="text-sm text-slate-500">Bhageswor Academy for Health Sciences, Dhangadhi, Nepal • 2005</div>
-                                    </li>
+                            <div class="bg-card border border-rule rounded-xl p-7">
+                                <h3 class="font-serif text-xl font-600 text-navy mb-5">Education</h3>
+                                <ul class="space-y-4 text-ink/80">
+                                    <li><div class="font-medium text-ink">PhD, Health Policy and Management (Health Economics)</div><div class="text-sm text-muted">University of North Carolina (UNC) at Chapel Hill, NC, USA · 2026</div></li>
+                                    <li><div class="font-medium text-ink">MPH, Health Policy</div><div class="text-sm text-muted">Yale School of Public Health, CT, USA · 2021</div></li>
+                                    <li><div class="font-medium text-ink">MPA, Public Administration</div><div class="text-sm text-muted">Kastamandap School of Public Affairs Management, Kathmandu, Nepal · 2019</div></li>
+                                    <li><div class="font-medium text-ink">BPH, Public Health</div><div class="text-sm text-muted">Institute of Medicine, Kathmandu, Nepal · 2012</div></li>
+                                    <li><div class="font-medium text-ink">ISc, Science</div><div class="text-sm text-muted">Amrit Science Campus, Kathmandu, Nepal · 2007</div></li>
+                                    <li><div class="font-medium text-ink">Proficiency Certificate in General Medicine, Health Assistant</div><div class="text-sm text-muted">Bhageswor Academy for Health Sciences, Dhangadhi, Nepal · 2005</div></li>
                                 </ul>
                             </div>
 
-                            <div class="bg-white border border-slate-200 rounded-xl p-6">
-                                <h3 class="text-xl font-semibold mb-4 text-slate-800">Honors & Awards</h3>
-                                <ul class="space-y-2 text-slate-600">
-                                    <li>• Jean G. Yates Outstanding Doctoral Student Award, UNC Chapel Hill, 2025</li>
-                                    <li>• American Society of Health Economics (ASHEcon) Diversity Scholarship, 2024</li>
-                                    <li>• Horstman Scholarship, Yale University, 2019</li>
-                                    <li>• Gold Medal Award: Kastamandap School of Public Affairs Management, Kathmandu, Nepal, 2019</li>
-                                    <li>• Best Supervisor Award: District Health Office, Rasuwa, Nepal, 2015</li>
-                                    <li>• Gold Medal Award: Maharaj Medical Campus, Institute of Medicine, Kathmandu, Nepal, 2012</li>
-                                    <li>• Amrit Science Medal: Amrit Science Campus, Kathmandu, Nepal, 2007</li>
-                                    <li>• Thek Raj Pant Talent Award: Panchodaya Secondary School, Dhangadhi, Nepal, 2002</li>
+                            <div class="bg-card border border-rule rounded-xl p-7">
+                                <h3 class="font-serif text-xl font-600 text-navy mb-5">Honors &amp; Awards</h3>
+                                <ul class="space-y-2.5 text-ink/80">
+                                    <li class="flex gap-3"><span class="text-navy">—</span> Jean G. Yates Outstanding Doctoral Student Award, UNC Chapel Hill, 2025</li>
+                                    <li class="flex gap-3"><span class="text-navy">—</span> American Society of Health Economics (ASHEcon) Diversity Scholarship, 2024</li>
+                                    <li class="flex gap-3"><span class="text-navy">—</span> Horstman Scholarship, Yale University, 2019</li>
+                                    <li class="flex gap-3"><span class="text-navy">—</span> Gold Medal Award: Kastamandap School of Public Affairs Management, Kathmandu, Nepal, 2019</li>
+                                    <li class="flex gap-3"><span class="text-navy">—</span> Best Supervisor Award: District Health Office, Rasuwa, Nepal, 2015</li>
+                                    <li class="flex gap-3"><span class="text-navy">—</span> Gold Medal Award: Maharaj Medical Campus, Institute of Medicine, Kathmandu, Nepal, 2012</li>
+                                    <li class="flex gap-3"><span class="text-navy">—</span> Amrit Science Medal: Amrit Science Campus, Kathmandu, Nepal, 2007</li>
+                                    <li class="flex gap-3"><span class="text-navy">—</span> Thek Raj Pant Talent Award: Panchodaya Secondary School, Dhangadhi, Nepal, 2002</li>
                                 </ul>
                             </div>
                         </div>
 
-                        <div class="bg-slate-50 border border-slate-200 rounded-xl p-8">
-                            <h3 class="text-2xl font-semibold mb-4">Research Focus Areas</h3>
-                            <div class="grid md:grid-cols-2 gap-4 text-slate-600">
+                        <div class="bg-navy/5 border border-rule rounded-xl p-8">
+                            <h3 class="font-serif text-2xl font-600 text-ink mb-5">Research Focus Areas</h3>
+                            <div class="grid md:grid-cols-2 gap-x-10 gap-y-2 text-ink/80">
                                 <ul class="space-y-2">
-                                    <li>• Rural health and medical education</li>
-                                    <li>• Health systems strengthening</li>
-                                    <li>• Maternal and child health</li>
-                                    <li>• Health policy analysis</li>
+                                    <li class="flex gap-3"><span class="text-navy">—</span> Rural health and medical education</li>
+                                    <li class="flex gap-3"><span class="text-navy">—</span> Health systems strengthening</li>
+                                    <li class="flex gap-3"><span class="text-navy">—</span> Maternal and child health</li>
+                                    <li class="flex gap-3"><span class="text-navy">—</span> Health policy analysis</li>
                                 </ul>
                                 <ul class="space-y-2">
-                                    <li>• Graduate medical education policy</li>
-                                    <li>• Health insurance and financing</li>
-                                    <li>• Digital health implementation</li>
-                                    <li>• Health equity and access</li>
+                                    <li class="flex gap-3"><span class="text-navy">—</span> Graduate medical education policy</li>
+                                    <li class="flex gap-3"><span class="text-navy">—</span> Health insurance and financing</li>
+                                    <li class="flex gap-3"><span class="text-navy">—</span> Digital health implementation</li>
+                                    <li class="flex gap-3"><span class="text-navy">—</span> Health equity and access</li>
                                 </ul>
                             </div>
                         </div>
 
                         <div class="mt-8 text-center">
-                            <p class="text-slate-500 mb-4">Interested in collaboration or speaking engagements?</p>
-                            <button onclick="navigateTo('contact')" class="px-8 py-3 bg-slate-800 hover:bg-slate-900 text-white rounded-lg font-semibold hover:shadow-lg  transition-all">
-                                Get in Touch
-                            </button>
+                            <p class="text-muted mb-4">Interested in collaboration or speaking engagements?</p>
+                            <button onclick="navigateTo('contact')" class="px-7 py-3 bg-navy text-white font-medium rounded-md hover:bg-navydark transition-colors">Get in Touch</button>
                         </div>
                     </div>
                 </section>
             `;
         }
-        
-        function renderSection() {
-        if (currentSection === 'home') return renderHome();
-        if (currentSection === 'research') return renderResearch();
-        if (currentSection === 'policy') return renderPolicy();
-        if (currentSection === 'teaching') return renderTeaching();
-        if (currentSection === 'resources') return renderResources();
-        if (currentSection === 'socialmedia') return renderSocialMedia();
-        if (currentSection === 'about') return renderAbout();
-        if (currentSection === 'contact') return renderContact();
-        return `
-                <section class="min-h-screen px-4 py-24">
-                    <div class="max-w-4xl mx-auto text-center">
-                        <h2 class="text-4xl font-bold mb-8 text-slate-900 capitalize">
-                            ${currentSection}
-                        </h2>
-                        <p class="text-slate-600 mb-8">
-                            This section would contain your ${currentSection} content. Replace this with your actual content!
-                        </p>
-                        <div class="bg-white border border-slate-200 rounded-xl p-8">
-                            <p class="text-slate-500">Customize this section with your ${currentSection} information.</p>
+
+        function renderContact() {
+            return `
+                <section class="min-h-screen px-5 sm:px-8 pt-28 pb-20">
+                    <div class="max-w-4xl mx-auto">
+                        ${sectionHeader('Contact', "Let's Connect", "Interested in collaboration, speaking engagements, or just want to chat about public health? I'd love to hear from you.")}
+
+                        <div class="grid md:grid-cols-2 gap-6 mb-8">
+                            <div class="bg-card border border-rule rounded-xl p-8">
+                                <h3 class="font-serif text-2xl font-600 text-ink mb-6">Get in Touch</h3>
+                                <div class="space-y-4">
+                                    <a href="mailto:adhmukesh@gmail.com" class="flex items-center gap-3 text-ink/80 hover:text-navy transition-colors"><span class="text-navy">${icons.mail}</span> adhmukesh@gmail.com</a>
+                                    <a href="https://www.facebook.com/mukeshpublichealth" target="_blank" rel="noopener" class="flex items-center gap-3 text-ink/80 hover:text-navy transition-colors"><span class="text-navy">${icons.facebook}</span> Facebook Page</a>
+                                    <a href="https://www.youtube.com/@MukeshAdhikari" target="_blank" rel="noopener" class="flex items-center gap-3 text-ink/80 hover:text-navy transition-colors"><span class="text-navy">${icons.youtube}</span> YouTube Channel</a>
+                                    <a href="https://www.linkedin.com/in/mukesh-adhikari-8794b153/" target="_blank" rel="noopener" class="flex items-center gap-3 text-ink/80 hover:text-navy transition-colors"><span class="text-navy">${icons.linkedin}</span> LinkedIn Profile</a>
+                                    <a href="https://x.com/mukes_adhikari" target="_blank" rel="noopener" class="flex items-center gap-3 text-ink/80 hover:text-navy transition-colors"><span class="text-navy">${icons.twitter}</span> Twitter / X</a>
+                                </div>
+                            </div>
+                            <div class="bg-card border border-rule rounded-xl p-8">
+                                <h3 class="font-serif text-2xl font-600 text-ink mb-6">Send a Message</h3>
+                                <form onsubmit="handleContactSubmit(event)" class="space-y-4">
+                                    <!-- Web3Forms access key: replace the value below with your key from https://web3forms.com -->
+                                    <input type="hidden" name="access_key" value="cbe41a20-05c6-457b-a3a7-e968f3a3000c">
+                                    <input type="hidden" name="subject" value="New message from mukeshadhikari.com">
+                                    <input type="hidden" name="from_name" value="mukeshadhikari.com contact form">
+                                    <!-- honeypot spam trap: bots fill this; humans never see it -->
+                                    <input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" style="display:none !important">
+                                    <input type="text" name="name" required placeholder="Your Name" class="w-full px-4 py-3 bg-paper border border-rule rounded-md focus:outline-none focus:border-navy text-ink placeholder-muted">
+                                    <input type="email" name="email" required placeholder="Your Email" class="w-full px-4 py-3 bg-paper border border-rule rounded-md focus:outline-none focus:border-navy text-ink placeholder-muted">
+                                    <textarea name="message" required placeholder="Your Message" rows="4" class="w-full px-4 py-3 bg-paper border border-rule rounded-md focus:outline-none focus:border-navy text-ink placeholder-muted"></textarea>
+                                    <button id="contact-submit" type="submit" class="block text-center w-full px-7 py-3 bg-navy text-white font-medium rounded-md hover:bg-navydark transition-colors disabled:opacity-60 disabled:cursor-not-allowed">Send Message</button>
+                                    <p id="form-status" class="text-sm text-center" role="status" aria-live="polite"></p>
+                                </form>
+                            </div>
+                        </div>
+
+                        <div class="bg-navy/5 border border-rule rounded-xl p-8 text-center">
+                            <h3 class="font-serif text-xl font-600 text-ink mb-3">Open to Opportunities</h3>
+                            <p class="text-muted">Speaking engagements · Research collaborations · Consulting · Media appearances · Community partnerships</p>
                         </div>
                     </div>
                 </section>
             `;
+        }
+
+        async function handleContactSubmit(e) {
+            e.preventDefault();
+            const form = e.target;
+            const statusEl = document.getElementById('form-status');
+            const btn = document.getElementById('contact-submit');
+            const key = form.querySelector('[name="access_key"]').value;
+
+            if (!key || key === 'YOUR_ACCESS_KEY_HERE') {
+                statusEl.className = 'text-sm text-center text-red-700';
+                statusEl.textContent = 'Form not configured yet. Please email adhmukesh@gmail.com directly.';
+                return;
+            }
+
+            btn.disabled = true;
+            const original = btn.textContent;
+            btn.textContent = 'Sending…';
+            statusEl.className = 'text-sm text-center text-muted';
+            statusEl.textContent = '';
+
+            try {
+                const res = await fetch('https://api.web3forms.com/submit', {
+                    method: 'POST',
+                    headers: { 'Accept': 'application/json' },
+                    body: new FormData(form)
+                });
+                const json = await res.json();
+                if (json.success) {
+                    form.reset();
+                    statusEl.className = 'text-sm text-center text-navy';
+                    statusEl.textContent = 'Thank you! Your message has been sent.';
+                } else {
+                    statusEl.className = 'text-sm text-center text-red-700';
+                    statusEl.textContent = 'Something went wrong. Please email adhmukesh@gmail.com directly.';
+                }
+            } catch (err) {
+                statusEl.className = 'text-sm text-center text-red-700';
+                statusEl.textContent = 'Network error. Please email adhmukesh@gmail.com directly.';
+            } finally {
+                btn.disabled = false;
+                btn.textContent = original;
+            }
+        }
+
+        function renderSection() {
+            if (currentSection === 'home') return renderHome();
+            if (currentSection === 'research') return renderResearch();
+            if (currentSection === 'policy') return renderPolicy();
+            if (currentSection === 'teaching') return renderTeaching();
+            if (currentSection === 'resources') return renderResources();
+            if (currentSection === 'socialmedia') return renderSocialMedia();
+            if (currentSection === 'about') return renderAbout();
+            if (currentSection === 'contact') return renderContact();
+            return renderHome();
         }
 
         function render() {
             document.getElementById('app').innerHTML = `
                 ${renderNav()}
-                ${renderSection()}
-                <footer class="bg-white/90 border-t border-slate-200 py-8 px-4">
-                    <div class="max-w-6xl mx-auto text-center text-slate-500">
-                        <p>© 2026 Mukesh Adhikari. All rights reserved.</p>
+                <main class="fade-in">${renderSection()}</main>
+                <footer class="border-t border-rule py-10 px-5">
+                    <div class="max-w-6xl mx-auto text-center text-muted">
+                        <p class="font-serif text-ink">© 2026 Mukesh Adhikari. All rights reserved.</p>
                         <p class="mt-2 text-sm">Making health equity a reality through research, education, and action.</p>
                     </div>
                 </footer>
             `;
+            if (window.FB && window.FB.XFBML) { try { window.FB.XFBML.parse(); } catch (e) {} }
         }
-        // ---- URL routing (clean paths like /resources) ----
-        const validSections = ['home','research','policy','teaching','resources','socialmedia','about','contact'];
-        function sectionFromPath() {
-            const seg = window.location.pathname.replace(/^\/+|\/+$/g, '').toLowerCase();
-            return validSections.includes(seg) ? seg : 'home';
-        }
-        window.addEventListener('popstate', function (e) {
-            currentSection = (e.state && e.state.section) ? e.state.section : sectionFromPath();
-            render();
-            window.scrollTo(0, 0);
-        });
 
-        // Initial render — pick the section from the URL
+        // Initialise from the current URL so /research deep-links and page refreshes
+        // land on the right section. replaceState records the section on this entry.
         currentSection = sectionFromPath();
+        history.replaceState({ section: currentSection }, '', location.pathname);
+        updateTitle(currentSection);
         render();
+
+        // Load the auto-synced publication list, then re-render if it succeeds.
+        // Falls back silently to the built-in defaults (e.g. when opened via file://).
+        fetch('publications.json', { cache: 'no-cache' })
+            .then(res => res.ok ? res.json() : Promise.reject(res.status))
+            .then(data => {
+                if (data && (Array.isArray(data.us) || Array.isArray(data.nepal))) {
+                    PUBS = data;
+                    render();
+                }
+            })
+            .catch(() => { /* keep built-in defaults */ });
     </script>
 </body>
 </html>

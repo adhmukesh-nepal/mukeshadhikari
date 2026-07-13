@@ -12,6 +12,7 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <base href="/">
     <title>Mukesh Adhikari, PhD, MPH, MPA — Health Services Researcher</title>
     <meta name="description" content="Mukesh Adhikari, PhD, MPH, MPA — health services researcher and health policy analyst. Research on rural graduate medical education, health systems, and maternal & child health across the United States and Nepal.">
     <meta name="author" content="Mukesh Adhikari">
@@ -169,12 +170,38 @@
             mail: '<svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>'
         };
 
-        function navigateTo(section) {
+        const SECTIONS = ['home', 'research', 'policy', 'teaching', 'resources', 'socialmedia', 'about', 'contact'];
+        const SITE_TITLE = 'Mukesh Adhikari, PhD, MPH, MPA — Health Services Researcher';
+
+        // Map a URL path (e.g. "/research") to a section id; unknown paths -> home.
+        function sectionFromPath() {
+            const seg = location.pathname.replace(/^\/+|\/+$/g, '').toLowerCase();
+            return SECTIONS.indexOf(seg) !== -1 ? seg : 'home';
+        }
+
+        // Keep the browser tab title in sync with the current section.
+        function updateTitle(section) {
+            document.title = section === 'home' ? SITE_TITLE : sectionLabel(section) + ' — Mukesh Adhikari';
+        }
+
+        // pushHistory=false when the change came from the URL (initial load / back button),
+        // so we don't push a duplicate entry.
+        function navigateTo(section, pushHistory) {
             currentSection = section;
             menuOpen = false;
+            if (pushHistory !== false) {
+                const path = section === 'home' ? '/' : '/' + section;
+                if (location.pathname !== path) history.pushState({ section: section }, '', path);
+            }
+            updateTitle(section);
             render();
             window.scrollTo(0, 0);
         }
+
+        // Back/forward buttons: render whatever the URL now points to, without pushing.
+        window.addEventListener('popstate', function (e) {
+            navigateTo((e.state && e.state.section) || sectionFromPath(), false);
+        });
 
         function toggleMenu() {
             menuOpen = !menuOpen;
@@ -890,6 +917,11 @@
             if (window.FB && window.FB.XFBML) { try { window.FB.XFBML.parse(); } catch (e) {} }
         }
 
+        // Initialise from the current URL so /research deep-links and page refreshes
+        // land on the right section. replaceState records the section on this entry.
+        currentSection = sectionFromPath();
+        history.replaceState({ section: currentSection }, '', location.pathname);
+        updateTitle(currentSection);
         render();
 
         // Load the auto-synced publication list, then re-render if it succeeds.
