@@ -108,6 +108,52 @@
         let menuOpen = false;
         let PUBS = {}; // populated from publications.json at load; empty = use built-in defaults
 
+        // Built-in fallback publication lists, used only when publications.json can't
+        // be loaded (e.g. opening the file directly via file://). Kept in sync with
+        // publications.json, which is the live source auto-updated from ORCID.
+        const US_DEFAULT = [
+            { title: "Health Resources and Services Administration and Veterans Affairs Funding Intersections Expand Graduate Medical Education Training Opportunities in Rural and Underserved Areas", journal: "The Journal of Rural Health", year: "2026", link: "https://onlinelibrary.wiley.com/doi/10.1111/jrh.70185", tags: ["Medical Education", "Rural Health"] },
+            { title: "The Evolving Role of Critical Access Hospitals in Rural Physician Training", journal: "JAMA Health Forum", year: "2025", link: "https://jamanetwork.com/journals/jama-health-forum/fullarticle/2840783", tags: ["Medical Education", "Rural Health"] },
+            { title: "Comparing Indian Health Service Sites to Rural Physician Teaching Hospitals", journal: "JAMA Internal Medicine", year: "2025", link: "https://jamanetwork.com/journals/jamainternalmedicine/article-abstract/2835618", tags: ["Medical Education", "IHS"] },
+            { title: "Evaluating Teaching Health Center Planning and Development", journal: "Journal of Graduate Medical Education", year: "2025", link: "https://jgme.kglmeridian.com/view/journals/jgme/17/3/article-p296.xml", tags: ["Medical Education", "THC"] },
+            { title: "Cultivating Rural Surgeons: An Analysis of the Rural Surgery GME Landscape", journal: "Journal of Surgical Education", year: "2025", link: "https://www.sciencedirect.com/science/article/abs/pii/S1931720425000273", tags: ["Surgical Education", "Rural Health"] },
+            { title: "Financial Barriers to Rural Graduate Medical Education", journal: "Academic Medicine", year: "2025", link: "https://academic.oup.com/academicmedicine/article/100/4/490/8343766", tags: ["Medical Education", "Medicare Funding"] },
+            { title: "Characteristics of Hospitals by Graduate Medical Education Expense Category", journal: "Academic Medicine", year: "2023", link: "https://journals.lww.com/academicmedicine/abstract/9900/characteristics_of_hospitals_by_graduate_medical.689.aspx", tags: ["Medical Education", "Rural Health"] }
+        ];
+
+        const NEPAL_DEFAULT = [
+            { title: "Aging, Mental Health and Ethnic Disparities: Understanding Geriatric Mental Health in Western Nepal", journal: "Journal of Geriatric Psychiatry and Neurology", year: "2025", link: "https://journals.sagepub.com/doi/full/10.1177/08919887251403594", tags: ["Mental Health", "Geriatrics", "Nepal"] },
+            { title: "Patient satisfaction with healthcare services among health insurance program beneficiaries in Nepal: A cross-sectional study", journal: "PLOS ONE", year: "2025", link: "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0334352", tags: ["Patient Satisfaction", "Health Insurance"] },
+            { title: "Patient satisfaction with the components of the National Health Insurance Program of Nepal", journal: "BMC Health Services Research", year: "2025", link: "https://link.springer.com/article/10.1186/s12913-025-12893-5", tags: ["Health Insurance", "Nepal"] },
+            { title: "Assistive Artificial Intelligence in Epilepsy and Its Impact on Epilepsy Care in LMICs", journal: "Brain Sciences", year: "2025", link: "https://www.mdpi.com/2076-3425/15/5/481", tags: ["AI", "Epilepsy", "LMICs"] },
+            { title: "Experiences of healthcare workers who faced physical workplace violence in Nepal", journal: "BMJ Public Health", year: "2024", link: "https://bmjpublichealth.bmj.com/content/2/1/e001032", tags: ["Workplace Violence", "Nepal"] },
+            { title: "Nutrition and Food Securities in Nepal: A narrative review of policies", journal: "Nutrition Reviews", year: "2023", link: "https://doi.org/10.1093/nutrit/nuad025", tags: ["Nutrition", "Food Security", "Nepal"] },
+            { title: "Double burden of malnutrition in Nepal: A trend analysis using Global Burden of Disease data", journal: "PLOS ONE", year: "2023", link: "https://doi.org/10.1371/journal.pone.0273485", tags: ["Malnutrition", "Nepal"] },
+            { title: "Patient Satisfaction and its socio-demographic correlates in a tertiary public hospital in Nepal", journal: "BMC Health Services Research", year: "2021", link: "https://doi.org/10.1186/s12913-021-06155-3", tags: ["Patient Satisfaction", "Nepal"] },
+            { title: "Sociodemographic correlates of antenatal care visits in Nepal: results from NDHS 2016", journal: "BMC Pregnancy and Childbirth", year: "2020", link: "https://doi.org/10.1186/s12884-020-03218-x", tags: ["Maternal Health", "Nepal"] },
+            { title: "Effect of COVID-19 on maternal and neonatal services", journal: "The Lancet Global Health", year: "2020", link: "https://doi.org/10.1016/S2214-109X(20)30482-4", tags: ["COVID-19", "Maternal Health"] },
+            { title: "Frontline Healthcare Workers' Knowledge and Perception of COVID-19 in Nepal", journal: "Healthcare (MDPI)", year: "2020", link: "https://www.mdpi.com/2227-9032/8/4/554/htm", tags: ["COVID-19", "Healthcare Workers"] },
+            { title: "Measuring Fidelity, feasibility, costs: evaluation of group antenatal care in Nepal", journal: "Reproductive Health", year: "2020", link: "https://doi.org/10.1186/s12978-019-0840-4", tags: ["Maternal Health", "Implementation"] },
+            { title: "The power of peers: effectiveness evaluation of group antenatal care in rural Nepal", journal: "Reproductive Health", year: "2019", link: "https://doi.org/10.1186/s12978-019-0820-8", tags: ["Maternal Health", "Nepal"] },
+            { title: "Developing and deploying a community healthcare worker-driven, digitally-enabled integrated care system in rural Nepal", journal: "Healthcare (Elsevier)", year: "2018", link: "https://doi.org/10.1016/j.hjdsi.2018.05.002", tags: ["Digital Health", "Nepal"] },
+            { title: "Design and implementation of an affordable, public sector electronic medical record in rural Nepal", journal: "Journal of Innovation in Health Informatics", year: "2017", link: "https://informatics.bmj.com/content/24/2/186", tags: ["EMR", "Digital Health", "Nepal"] },
+            { title: "Power, potential, and pitfalls in global health academic partnerships: reflections on an approach in Nepal", journal: "Global Health Action", year: "2017", link: "https://www.tandfonline.com/doi/full/10.1080/16549716.2017.1367161", tags: ["Global Health", "Partnerships"] },
+            { title: "Practical issues in the measurement of child survival in health systems trials in rural Nepal", journal: "BMJ Global Health", year: "2016", link: "https://gh.bmj.com/content/1/4/e000050", tags: ["Child Health", "Nepal"] },
+            { title: "Types of cooking stove and risk of Acute Lower Respiratory Infection among under-five children in Nepal", journal: "Health Prospect", year: "2015", link: "https://www.nepjol.info/index.php/HPROSPECT/article/view/12369", tags: ["Child Health", "Environmental Health"] }
+        ];
+
+        // Active list for a section — prefer the auto-synced publications.json, else the built-in default.
+        function activePubs(key, fallback) {
+            return (PUBS[key] && PUBS[key].length) ? PUBS[key] : (fallback || []);
+        }
+
+        // Total publications across every section. Updates automatically as papers are added.
+        function totalPublications() {
+            return activePubs('us', US_DEFAULT).length
+                 + activePubs('nepal', NEPAL_DEFAULT).length
+                 + activePubs('other', []).length;
+        }
+
         const icons = {
             menu: '<svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.7"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>',
             close: '<svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.7"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>',
@@ -219,7 +265,7 @@
                         <div class="grid grid-cols-1 md:grid-cols-3 gap-px bg-rule border border-rule rounded-xl overflow-hidden text-left">
                             <div class="bg-card p-8">
                                 <div class="text-navy mb-4">${icons.microscope}</div>
-                                <div class="font-serif text-4xl font-600 text-ink mb-1">24</div>
+                                <div class="font-serif text-4xl font-600 text-ink mb-1">${totalPublications()}</div>
                                 <div class="text-muted text-sm">Peer-Reviewed Publications</div>
                             </div>
                             <div class="bg-card p-8">
@@ -239,40 +285,10 @@
         }
 
         function renderResearch() {
-            const US_DEFAULT = [
-                { title: "The Evolving Role of Critical Access Hospitals in Rural Physician Training", journal: "JAMA Health Forum", year: "2025", link: "https://jamanetwork.com/journals/jama-health-forum/fullarticle/2840783", tags: ["Medical Education", "Rural Health"] },
-                { title: "Comparing Indian Health Service Sites to Rural Physician Teaching Hospitals", journal: "JAMA Internal Medicine", year: "2025", link: "https://jamanetwork.com/journals/jamainternalmedicine/article-abstract/2835618", tags: ["Medical Education", "IHS"] },
-                { title: "Evaluating Teaching Health Center Planning and Development", journal: "Journal of Graduate Medical Education", year: "2025", link: "https://jgme.kglmeridian.com/view/journals/jgme/17/3/article-p296.xml", tags: ["Medical Education", "THC"] },
-                { title: "Cultivating Rural Surgeons: An Analysis of the Rural Surgery GME Landscape", journal: "Journal of Surgical Education", year: "2025", link: "https://www.sciencedirect.com/science/article/abs/pii/S1931720425000273", tags: ["Surgical Education", "Rural Health"] },
-                { title: "Financial Barriers to Rural Graduate Medical Education", journal: "Academic Medicine", year: "2025", link: "https://academic.oup.com/academicmedicine/article/100/4/490/8343766", tags: ["Medical Education", "Medicare Funding"] },
-                { title: "Characteristics of Hospitals by Graduate Medical Education Expense Category", journal: "Academic Medicine", year: "2023", link: "https://journals.lww.com/academicmedicine/abstract/9900/characteristics_of_hospitals_by_graduate_medical.689.aspx", tags: ["Medical Education", "Rural Health"] }
-            ];
-
-            const NEPAL_DEFAULT = [
-                { title: "Aging, Mental Health and Ethnic Disparities: Understanding Geriatric Mental Health in Western Nepal", journal: "Journal of Geriatric Psychiatry and Neurology", year: "2025", link: "https://journals.sagepub.com/doi/full/10.1177/08919887251403594", tags: ["Mental Health", "Geriatrics", "Nepal"] },
-                { title: "Patient satisfaction with healthcare services among health insurance program beneficiaries in Nepal: A cross-sectional study", journal: "PLOS ONE", year: "2025", link: "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0334352", tags: ["Patient Satisfaction", "Health Insurance"] },
-                { title: "Patient satisfaction with the components of the National Health Insurance Program of Nepal", journal: "BMC Health Services Research", year: "2025", link: "https://link.springer.com/article/10.1186/s12913-025-12893-5", tags: ["Health Insurance", "Nepal"] },
-                { title: "Assistive Artificial Intelligence in Epilepsy and Its Impact on Epilepsy Care in LMICs", journal: "Brain Sciences", year: "2025", link: "https://www.mdpi.com/2076-3425/15/5/481", tags: ["AI", "Epilepsy", "LMICs"] },
-                { title: "Experiences of healthcare workers who faced physical workplace violence in Nepal", journal: "BMJ Public Health", year: "2024", link: "https://bmjpublichealth.bmj.com/content/2/1/e001032", tags: ["Workplace Violence", "Nepal"] },
-                { title: "Nutrition and Food Securities in Nepal: A narrative review of policies", journal: "Nutrition Reviews", year: "2023", link: "https://doi.org/10.1093/nutrit/nuad025", tags: ["Nutrition", "Food Security", "Nepal"] },
-                { title: "Double burden of malnutrition in Nepal: A trend analysis using Global Burden of Disease data", journal: "PLOS ONE", year: "2023", link: "https://doi.org/10.1371/journal.pone.0273485", tags: ["Malnutrition", "Nepal"] },
-                { title: "Patient Satisfaction and its socio-demographic correlates in a tertiary public hospital in Nepal", journal: "BMC Health Services Research", year: "2021", link: "https://doi.org/10.1186/s12913-021-06155-3", tags: ["Patient Satisfaction", "Nepal"] },
-                { title: "Sociodemographic correlates of antenatal care visits in Nepal: results from NDHS 2016", journal: "BMC Pregnancy and Childbirth", year: "2020", link: "https://doi.org/10.1186/s12884-020-03218-x", tags: ["Maternal Health", "Nepal"] },
-                { title: "Effect of COVID-19 on maternal and neonatal services", journal: "The Lancet Global Health", year: "2020", link: "https://doi.org/10.1016/S2214-109X(20)30482-4", tags: ["COVID-19", "Maternal Health"] },
-                { title: "Frontline Healthcare Workers' Knowledge and Perception of COVID-19 in Nepal", journal: "Healthcare (MDPI)", year: "2020", link: "https://www.mdpi.com/2227-9032/8/4/554/htm", tags: ["COVID-19", "Healthcare Workers"] },
-                { title: "Measuring Fidelity, feasibility, costs: evaluation of group antenatal care in Nepal", journal: "Reproductive Health", year: "2020", link: "https://doi.org/10.1186/s12978-019-0840-4", tags: ["Maternal Health", "Implementation"] },
-                { title: "The power of peers: effectiveness evaluation of group antenatal care in rural Nepal", journal: "Reproductive Health", year: "2019", link: "https://doi.org/10.1186/s12978-019-0820-8", tags: ["Maternal Health", "Nepal"] },
-                { title: "Developing and deploying a community healthcare worker-driven, digitally-enabled integrated care system in rural Nepal", journal: "Healthcare (Elsevier)", year: "2018", link: "https://doi.org/10.1016/j.hjdsi.2018.05.002", tags: ["Digital Health", "Nepal"] },
-                { title: "Design and implementation of an affordable, public sector electronic medical record in rural Nepal", journal: "Journal of Innovation in Health Informatics", year: "2017", link: "https://informatics.bmj.com/content/24/2/186", tags: ["EMR", "Digital Health", "Nepal"] },
-                { title: "Power, potential, and pitfalls in global health academic partnerships: reflections on an approach in Nepal", journal: "Global Health Action", year: "2017", link: "https://www.tandfonline.com/doi/full/10.1080/16549716.2017.1367161", tags: ["Global Health", "Partnerships"] },
-                { title: "Practical issues in the measurement of child survival in health systems trials in rural Nepal", journal: "BMJ Global Health", year: "2016", link: "https://gh.bmj.com/content/1/4/e000050", tags: ["Child Health", "Nepal"] },
-                { title: "Types of cooking stove and risk of Acute Lower Respiratory Infection among under-five children in Nepal", journal: "Health Prospect", year: "2015", link: "https://www.nepjol.info/index.php/HPROSPECT/article/view/12369", tags: ["Child Health", "Environmental Health"] }
-            ];
-
-            // Prefer publications.json (auto-synced from ORCID); fall back to the built-in defaults above.
-            const usPublications = (PUBS.us && PUBS.us.length) ? PUBS.us : US_DEFAULT;
-            const nepalPublications = (PUBS.nepal && PUBS.nepal.length) ? PUBS.nepal : NEPAL_DEFAULT;
-            const otherPublications = (PUBS.other && PUBS.other.length) ? PUBS.other : [];
+            // Prefer publications.json (auto-synced from ORCID); fall back to the built-in defaults.
+            const usPublications = activePubs('us', US_DEFAULT);
+            const nepalPublications = activePubs('nepal', NEPAL_DEFAULT);
+            const otherPublications = activePubs('other', []);
 
             function renderPublicationCard(pub) {
                 return `
@@ -689,7 +705,7 @@
                                 </div>
                             </div>
                             <p class="text-ink/80 leading-relaxed mb-4">
-                                With over 24 peer-reviewed publications in top-tier journals including JAMA, The Lancet, and BMJ, my research spans from Nepal to the United States, addressing critical issues in healthcare access, medical education policy, and health equity.
+                                With ${totalPublications()} peer-reviewed publications in top-tier journals including JAMA, The Lancet, and BMJ, my research spans from Nepal to the United States, addressing critical issues in healthcare access, medical education policy, and health equity.
                             </p>
                             <p class="text-ink/80 leading-relaxed mb-4">
                                 My work has influenced policy decisions at both national and international levels, particularly in rural graduate medical education expansion in the US, health insurance implementation in Nepal, and maternal health service delivery during the COVID-19 pandemic.
