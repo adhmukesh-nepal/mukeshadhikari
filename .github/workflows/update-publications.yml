@@ -21,7 +21,7 @@ jobs:
     steps:
       - uses: actions/checkout@v5
 
-      - uses: peter-evans/create-pull-request@v7
+      - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
 
@@ -29,7 +29,7 @@ jobs:
         run: python3 scripts/sync_publications.py
 
       - name: Open pull request if anything changed
-        uses: peter-evans/create-pull-request@v6
+        uses: peter-evans/create-pull-request@v7
         with:
           commit-message: "Add newly published articles from ORCID"
           branch: auto/new-publications
