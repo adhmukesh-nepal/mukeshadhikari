@@ -145,10 +145,27 @@ There is **no build step** — pushing to `main` deploys via GitHub Pages (live 
 4. Commit and push to `main` (or open a PR for review).
 5. Verify on the live site after Pages redeploys.
 
-Git note: the local working folder (`website_mukeshadhikari-main`) is NOT itself a
-git checkout — commits in past sessions were made by cloning the repo, copying the
-edited files in, committing, and pushing. Consider running `git init` here and
-wiring the remote to simplify future work.
+### Git workflow
+
+This folder **is** a git checkout tracking `origin`
+(`adhmukesh-nepal/mukeshadhikari`, branch `main`). Work directly here:
+
+```bash
+git add -A
+git commit -m "message"
+git push
+```
+
+Pull changes made on GitHub — e.g. after **merging an ORCID auto-sync PR**:
+
+```bash
+git pull
+```
+
+Notes:
+- Commit author is set locally to `adhmukesh-nepal` / `madhikari@unc.edu`.
+- `index.html.backup` and other `*.backup` files are git-ignored (local only).
+- For risky changes, branch and open a PR instead of pushing straight to `main`.
 
 ---
 
@@ -172,4 +189,3 @@ wiring the remote to simplify future work.
 - ORCID profile is behind the curated publication list — add papers to ORCID so
   the auto-sync stays useful.
 - Contact form depends on the Web3Forms access key embedded in `index.html`.
-- Consider `git init` in this folder (see §6).
