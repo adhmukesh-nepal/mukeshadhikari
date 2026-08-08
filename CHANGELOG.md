@@ -3,6 +3,16 @@
 Human-readable log of substantive changes to mukeshadhikari.com. Newest first.
 Dates are the date the change was made.
 
+## 2026-08-08 (seventh pass — R leads the toolchain)
+
+- **"Tools & reproducibility" now reads "reproducible analysis pipelines in R and Stata"**
+  (was Stata-only, with R listed afterwards among languages). Client and work-product
+  analysis is being done in R: it's free and open-source, so the clean-room provenance
+  claim needs no license purchase and there is no site-license ambiguity to explain.
+  Stata stays — it's genuinely used — but the tool that leads should be the one the
+  deliverable arrives in.
+- **Republished the CV** with the same reordering.
+
 ## 2026-08-08 (sixth pass — international data corrected; CV refreshed)
 
 - **International data line corrected** to demonstrated work only: removed **GBD**,
