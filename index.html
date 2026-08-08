@@ -191,7 +191,8 @@
             linkedin: '<svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>',
             facebook: '<svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>',
             youtube: '<svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"/></svg>',
-            mail: '<svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>'
+            mail: '<svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>',
+            download: '<svg width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.8" style="display:inline;vertical-align:-2px"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>'
         };
 
         const SECTIONS = ['home', 'research', 'policy', 'teaching', 'resources', 'socialmedia', 'about', 'contact'];
@@ -200,7 +201,7 @@
         // /resources and /socialmedia are reachable by URL and linked from Contact, they're just
         // not top-level tabs: Resources has no content yet, and Social Media reads
         // personal-brand sitting beside the research sections.
-        const NAV_SECTIONS = ['home', 'research', 'policy', 'teaching', 'about', 'contact'];
+        const NAV_SECTIONS = ['home', 'research', 'policy', 'teaching', 'resources', 'about', 'contact'];
 
         const SITE_TITLE = 'Mukesh Adhikari, PhD, MPH, MPA — Health Services Researcher';
 
@@ -314,6 +315,10 @@
                                 class="px-7 py-3 bg-navy text-white font-medium rounded-md hover:bg-navydark transition-colors">
                                 View Research
                             </button>
+                            <a href="Adhikari_Mukesh_CV_2026.pdf" download
+                                class="px-7 py-3 border border-navy text-navy font-medium rounded-md hover:bg-navy/5 transition-colors inline-flex items-center gap-2">
+                                ${icons.download} Download CV
+                            </a>
                             <button onclick="navigateTo('contact')"
                                 class="px-7 py-3 border border-navy text-navy font-medium rounded-md hover:bg-navy/5 transition-colors">
                                 Get in Touch
@@ -585,7 +590,18 @@
 
         function renderResources() {
             // Add resources here as { title, description, category, year, filename }.
-            const resources = [];
+            // The CV is the public build — no phone number. Regenerate it from
+            // ../../consulting_practice/build_cv.py, which emits a full version (with phone,
+            // for direct sending) and this web version, then copy the web one here.
+            const resources = [
+                {
+                    title: 'Curriculum Vitae',
+                    description: 'Methods, data assets, and selected analytic work — causal policy evaluation on national administrative and survey data, United States and South Asia.',
+                    category: 'CV',
+                    year: '2026',
+                    filename: 'Adhikari_Mukesh_CV_2026.pdf'
+                }
+            ];
 
             const downloadIcon = `<svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" style="display:inline;vertical-align:middle"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>`;
             const pdfIcon = `<svg width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>`;

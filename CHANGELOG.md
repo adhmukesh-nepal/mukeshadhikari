@@ -3,6 +3,24 @@
 Human-readable log of substantive changes to mukeshadhikari.com. Newest first.
 Dates are the date the change was made.
 
+## 2026-08-08 (fifth pass — CV published; Resources back in the nav)
+
+- **Added `Adhikari_Mukesh_CV_2026.pdf`** (2 pages, 179 KB) and a Resources card for it.
+  The "Resources coming soon" empty state no longer renders — the section has content.
+  **This is the public build of the CV, with the phone number stripped.** It is generated
+  by `../../consulting_practice/build_cv.py`, which emits two PDFs from one HTML source: a
+  full version carrying the phone (for direct sending) and this web version without it. The
+  phone is a personal mobile, and a number on a public page gets scraped and cached
+  permanently. **Never overwrite this file with the full version** — rerun the build script
+  and copy `Adhikari_Mukesh_CV_2026_web.pdf` here.
+- **"Download CV" button in the homepage hero**, between View Research and Get in Touch.
+  Added a `download` icon to the shared `icons` object (the existing one was local to
+  `renderResources`).
+- **`resources` returned to `NAV_SECTIONS`** — it came out earlier today only because it had
+  nothing in it.
+- **`/resources` added to `sitemap.xml`**, now that indexing it is worth doing.
+  `/socialmedia` stays out: it's a Facebook embed with no indexable content.
+
 ## 2026-08-08 (fourth pass — evaluation split, casing consistency)
 
 - **"Evaluation" → "Program evaluation", plus a new "Economic evaluation" group**

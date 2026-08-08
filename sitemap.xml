@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Section URLs work as deep links because 404.html is a copy of index.html (see CLAUDE.md §5).
-     /resources and /socialmedia are deliberately omitted: Resources has no content yet, and
-     indexing an empty page hurts more than it helps. Add /resources here once it has the CV
-     and working papers, and add /working-papers if that becomes its own section. -->
+     /socialmedia is deliberately omitted — it is a Facebook embed with no indexable content.
+     /resources was added 2026-08-08 once it held the CV. -->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://mukeshadhikari.com/</loc>
@@ -18,6 +17,12 @@
   </url>
   <url>
     <loc>https://mukeshadhikari.com/about</loc>
+    <lastmod>2026-08-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://mukeshadhikari.com/resources</loc>
     <lastmod>2026-08-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
