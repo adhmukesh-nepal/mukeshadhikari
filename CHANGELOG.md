@@ -3,6 +3,23 @@
 Human-readable log of substantive changes to mukeshadhikari.com. Newest first.
 Dates are the date the change was made.
 
+## 2026-08-08 (fourth pass — evaluation split, casing consistency)
+
+- **"Evaluation" → "Program evaluation", plus a new "Economic evaluation" group**
+  (cost-effectiveness analysis, costing of service delivery and program implementation,
+  cost outcomes estimated alongside effectiveness). "Evaluation" alone was vague and
+  overlapped the new group; "Program evaluation" is the term US funders and RFPs use, and
+  it covers both the effectiveness and implementation work. `cost` moved out of the
+  implementation-evaluation phrase so the two groups don't duplicate it.
+- **Casing made consistent** across the block. Each `·`-separated entry now starts with a
+  capital, matching the Research Focus Areas list convention elsewhere in About — the
+  lists previously capitalised only the first entry. Group labels now use `&`
+  consistently ("Tools & reproducibility", "US administrative & survey data"), matching
+  the "Methods & Data" heading rather than mixing "and" with "&".
+- Seven groups now, so Tools & reproducibility takes `md:col-span-2` again: three even
+  rows plus a full-width closer.
+- `<noscript>` methods sentence updated in step, per §3.
+
 ## 2026-08-08 (third pass — trim Methods & Data to demonstrated experience)
 
 - **Removed the "Robustness practice" group** from Methods & Data. The causal-inference
