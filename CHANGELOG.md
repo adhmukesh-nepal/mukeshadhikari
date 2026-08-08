@@ -3,6 +3,14 @@
 Human-readable log of substantive changes to mukeshadhikari.com. Newest first.
 Dates are the date the change was made.
 
+## 2026-08-08 (eighth pass — interactive visualization)
+
+- **Added "Interactive data visualization (Observable)"** to Tools & reproducibility, and
+  to the published CV. Framed capability-first with the tool in parentheses, because most
+  readers won't recognise the platform but all of them know what interactive visualization
+  is. Supports the data-viz and policy-brief service lines, where a web-native figure is a
+  real differentiator over a static image.
+
 ## 2026-08-08 (seventh pass — R leads the toolchain)
 
 - **"Tools & reproducibility" now reads "reproducible analysis pipelines in R and Stata"**
