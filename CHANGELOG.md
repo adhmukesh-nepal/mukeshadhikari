@@ -13,6 +13,14 @@ Dates are the date the change was made.
   `BLS OES/QCEW`** from US administrative data — and PBJ from the `<noscript>` block,
   keeping it in sync as §3 requires. These are datasets for planned work, not completed
   work; listing them read as experience. They go back once the analysis exists.
+- **Added `Health Professional Shortage Area designations`, `Federally Qualified Health
+  Center program data`, and the `Medical Expenditure Panel Survey (MEPS)`** to the US
+  data group (and to the `<noscript>` block). All three are demonstrated work, unlike
+  the datasets removed above.
+- **Removed `natality files` and `BRFSS`** — not worked in.
+- **Relabelled the group "US administrative & survey data."** MEPS and ACS/PUMS are
+  surveys, not administrative files, and the label now matches the hero tagline
+  ("national administrative and survey data").
 - Tools and reproducibility lost its `md:col-span-2`, so the six remaining groups form
   an even 3×2 grid.
 
