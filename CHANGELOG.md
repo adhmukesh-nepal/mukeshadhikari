@@ -3,6 +3,17 @@
 Human-readable log of substantive changes to mukeshadhikari.com. Newest first.
 Dates are the date the change was made.
 
+## 2026-08-08 (sixth pass — international data corrected; CV refreshed)
+
+- **International data line corrected** to demonstrated work only: removed **GBD**,
+  **WHO National Health Workforce Accounts**, and **NDHS**; spelled out **Demographic and
+  Health Surveys (DHS)** and **Multiple Indicator Cluster Surveys (MICS)** in full, since
+  bare acronyms mean nothing to a non-specialist reader. `<noscript>` updated in step.
+  (The remaining "NDHS" in `publications.json` is inside an actual paper title — a citation,
+  not a capability claim, so it stays.)
+- **Republished CV** with the same correction, plus the Nepal Health Policy Lab co-founder
+  role and the Health Foundation Nepal promotion.
+
 ## 2026-08-08 (fifth pass — CV published; Resources back in the nav)
 
 - **Added `Adhikari_Mukesh_CV_2026.pdf`** (2 pages, 179 KB) and a Resources card for it.
