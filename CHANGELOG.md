@@ -3,6 +3,48 @@
 Human-readable log of substantive changes to mukeshadhikari.com. Newest first.
 Dates are the date the change was made.
 
+## 2026-08-08 (second pass — positioning, social previews, crawlability)
+
+- **New "Methods & Data" block in About.** Seven labelled groups: causal inference,
+  evaluation, other methods, robustness practice, US administrative data,
+  international data, tools and reproducibility. The site previously named no
+  method or dataset anywhere — it listed research *topics* only.
+- **`headshot.jpg` is now a real JPEG.** It was PNG data (872×872, 1.0 MB) served
+  with a `.jpg` extension, which failed in headless Chrome and risked rejection by
+  strict social-card validators. Now genuine JPEG, 400×400, 44 KB — a 96% saving on
+  a file that displays at 176px. The 872px original is kept locally as
+  `headshot-872-original.png.backup` (git-ignored), not committed.
+- **Dedicated `og-image.jpg` (1200×630).** `og:image` and `twitter:image` pointed at
+  the square headshot, wrong for a `summary_large_image` card. Added a proper card —
+  name, credentials, eyebrow, tagline, site — with `og:image:width/height` and alt
+  text. `og-image-source.html` is the committed source; regenerate with:
+  `"/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" --headless
+  --disable-gpu --hide-scrollbars --force-device-scale-factor=2
+  --window-size=1200,630 --screenshot=og.png file://$(pwd)/og-image-source.html`
+  then `sips -s format jpeg -s formatOptions 90 -z 630 1200 og.png --out og-image.jpg`.
+  JSON-LD `image` still points at the headshot, which is correct for a Person photo.
+- **`<noscript>` fallback added.** All content is JS-injected into `#app`; extracting
+  text from the raw HTML previously yielded only the `<title>`. Google runs JS, but
+  LinkedIn's preview fetcher and archiving tools don't. The block carries name, role,
+  tagline, journals, methods, and Scholar/ORCID/LinkedIn/email links. **Keep it in
+  sync with About when the bio changes.**
+- **Meta and JSON-LD repositioned** to match the new hero: `description`,
+  `og:description`, `twitter:description`, and JSON-LD `jobTitle` and `description`
+  now lead with health economist and causal policy evaluation. Added Causal
+  Inference, Program Evaluation, and Health Workforce to `knowsAbout`. `<title>`,
+  `og:title`, `twitter:title`, and the `<h1>` are unchanged.
+- **Nav trimmed to six tabs.** Introduced `NAV_SECTIONS` (home, research, policy,
+  teaching, about, contact) separate from `SECTIONS`, which still governs routing.
+  `/resources` and `/socialmedia` continue to resolve and render — they are just no
+  longer top-level tabs. Resources has no content yet (its "coming soon" placeholder
+  read as an abandoned site in the nav), and Social Media reads personal-brand beside
+  the research sections. Contact now carries a "Social media feed" link so the
+  section stays reachable. **Put Resources back in `NAV_SECTIONS` once the CV and
+  working papers are there.**
+- **`sitemap.xml` expanded** from the homepage alone to the six nav routes, with
+  `lastmod` 2026-08-08. `/resources` and `/socialmedia` are deliberately excluded;
+  a comment in the file explains when to add them.
+
 ## 2026-08-08
 
 - **Accuracy pass on About and the homepage stat cards** (three text edits; no
