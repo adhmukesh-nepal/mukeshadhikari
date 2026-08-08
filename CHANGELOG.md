@@ -3,6 +3,19 @@
 Human-readable log of substantive changes to mukeshadhikari.com. Newest first.
 Dates are the date the change was made.
 
+## 2026-08-08 (third pass — trim Methods & Data to demonstrated experience)
+
+- **Removed the "Robustness practice" group** from Methods & Data. The causal-inference
+  line already implies it, and itemising honest-DiD bounds and wild cluster bootstrap
+  invited scrutiny with no upside.
+- **Removed `small-area estimation`** from Other methods.
+- **Removed `CMS Payroll-Based Journal`, `Care Compare and Provider Information`, and
+  `BLS OES/QCEW`** from US administrative data — and PBJ from the `<noscript>` block,
+  keeping it in sync as §3 requires. These are datasets for planned work, not completed
+  work; listing them read as experience. They go back once the analysis exists.
+- Tools and reproducibility lost its `md:col-span-2`, so the six remaining groups form
+  an even 3×2 grid.
+
 ## 2026-08-08 (second pass — positioning, social previews, crawlability)
 
 - **New "Methods & Data" block in About.** Seven labelled groups: causal inference,
