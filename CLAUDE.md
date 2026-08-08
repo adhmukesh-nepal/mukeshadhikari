@@ -37,7 +37,19 @@ website_mukeshadhikari-main/
 ├── publications.json              # Publication data: { updated, us[], nepal[], other[] }.
 │                                  #   Source of truth for the Research section & counts.
 │                                  #   Auto-updated from ORCID via the workflow below.
-├── headshot.jpg                   # Profile photo (~1 MB)
+├── headshot.jpg                   # Profile photo. Real JPEG, 400×400, ~44 KB (it used to be
+│                                  #   PNG bytes with a .jpg name; fixed 2026-08-08). Used by
+│                                  #   the hero, the About card, and JSON-LD `image`.
+├── og-image.jpg                   # 1200×630 social-preview card for og:image / twitter:image.
+│                                  #   NOT the headshot — a summary_large_image card needs 1.91:1.
+├── og-image-source.html           # Source for og-image.jpg (headshot embedded as a data URI).
+│                                  #   Regenerate after editing:
+│                                  #     "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" \
+│                                  #       --headless --disable-gpu --hide-scrollbars \
+│                                  #       --force-device-scale-factor=2 --window-size=1200,630 \
+│                                  #       --screenshot=og.png file://$(pwd)/og-image-source.html
+│                                  #     sips -s format jpeg -s formatOptions 90 -z 630 1200 \
+│                                  #       og.png --out og-image.jpg
 ├── annualreport_dohs_2081_82.pdf  # ~19 MB PDF. No longer linked from the site
 │                                  #   (removed from Resources); kept in repo for now.
 ├── portfolio_html.html            # LEGACY standalone portfolio page (old purple design).
@@ -71,6 +83,17 @@ Everything is inside `index.html`. Mental model:
 - **Sections:** `SECTIONS = ['home','research','policy','teaching','resources',
   'socialmedia','about','contact']`. Each has a `render<Section>()` function that
   returns an HTML template string.
+- **Nav is a subset of sections.** `NAV_SECTIONS` (home, research, policy, teaching,
+  about, contact) is what `renderNav()` draws; `SECTIONS` is what routes. So
+  `/resources` and `/socialmedia` still resolve and render but aren't top-level tabs —
+  Resources until it has content, Social Media because it reads personal-brand to a
+  contracting audience (Contact links to it instead). **Add Resources back to
+  `NAV_SECTIONS` once the CV and working papers are in it.**
+- **`<noscript>` block** in `<body>`, before the main `<script>`: name, role, tagline,
+  journals, methods, and Scholar/ORCID/LinkedIn/email links. It exists because every
+  section is JS-injected, so the raw HTML would otherwise expose only the `<title>` to
+  LinkedIn's preview fetcher and to archiving tools. **Keep it in sync with the About
+  section whenever the bio or positioning changes** — it duplicates that copy on purpose.
 - **Rendering:** `render()` writes `renderNav() + renderSection() + footer` into
   `#app`. `renderSection()` dispatches on `currentSection`.
 - **Navigation & routing:** `navigateTo(section)` updates state, pushes a clean
@@ -183,9 +206,17 @@ Notes:
 
 ## 8. Known issues / possible follow-ups
 
+- **Tailwind Play CDN is still used in production** (`<script src="https://cdn.tailwindcss.com">`).
+  Tailwind documents it as development-only: it compiles CSS in the browser on every load, so
+  slow connections get a flash of unstyled content. Fix is Tailwind CLI → one committed
+  `styles.css`, no runtime npm. Deliberately not bundled with the 2026-08-08 content work
+  because it touches every style on the site and needs its own before/after check.
 - `annualreport_dohs_2081_82.pdf` (~19 MB) is unused/unlinked — remove if not
-  needed to slim the repo.
+  needed to slim the repo (it is most of the repo's 51 MB).
 - `portfolio_html.html` is a legacy page, not linked — candidate for deletion.
+- Resources still renders a "coming soon" empty state. It's off the nav now, so only
+  someone deep-linking `/resources` sees it — but it should get the CV and working
+  papers, then go back into `NAV_SECTIONS`.
 - ORCID profile is behind the curated publication list — add papers to ORCID so
   the auto-sync stays useful.
 - Contact form depends on the Web3Forms access key embedded in `index.html`.
