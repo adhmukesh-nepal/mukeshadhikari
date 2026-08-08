@@ -3,6 +3,33 @@
 Human-readable log of substantive changes to mukeshadhikari.com. Newest first.
 Dates are the date the change was made.
 
+## 2026-08-08
+
+- **Accuracy pass on About and the homepage stat cards** (three text edits; no
+  structural or JS changes). Re-copied `index.html` to `404.html`.
+  - **Journal names made precise.** "peer-reviewed publications in top-tier journals
+    including JAMA, The Lancet, and BMJ" → "peer-reviewed publications, including in
+    JAMA Health Forum, JAMA Internal Medicine, The Lancet Global Health, and BMJ
+    Global Health." The compressed form read as the flagship titles; the actual
+    venues are the family journals.
+  - **Career stat card reconciled with the Education timeline.** "15 Years —
+    Teaching & Research Career (2010–present)" → "14 Years — Public Health Practice,
+    Research & Teaching (2012–present)". The old card dated the career two years
+    before the BPH (2012) listed in About, and "Teaching & Research" excluded the
+    Nepal practice years it was counting.
+  - **Hero repositioned.** Eyebrow "Researcher · Science Communicator · Educator" →
+    "Health Economist · Health Services Researcher · Policy Analyst". Tagline
+    "Turning public health research into clear public communication and measurable
+    policy impact." → "Causal policy evaluation using national administrative and
+    survey data — health workforce, access, and health systems in the United States
+    and South Asia." The old tagline repeated the unsupported policy-impact claim
+    removed from About below, and led with communication rather than capability.
+    `<h1>` and the meta/JSON-LD descriptions are unchanged.
+  - **Removed an unsubstantiated impact claim.** "My work has influenced policy
+    decisions at both national and international levels…" → a factual statement of
+    what the published work covers. The subject areas are unchanged; the assertion
+    of policy influence is gone, since no specific citation backs it.
+
 ## 2026-07-13
 
 - **Add project documentation.** Added `CLAUDE.md` (project context, file tree,
