@@ -84,11 +84,13 @@ Everything is inside `index.html`. Mental model:
   'socialmedia','about','contact']`. Each has a `render<Section>()` function that
   returns an HTML template string.
 - **Nav is a subset of sections.** `NAV_SECTIONS` (home, research, policy, teaching,
-  about, contact) is what `renderNav()` draws; `SECTIONS` is what routes. So
-  `/resources` and `/socialmedia` still resolve and render but aren't top-level tabs —
-  Resources until it has content, Social Media because it reads personal-brand to a
-  contracting audience (Contact links to it instead). **Add Resources back to
-  `NAV_SECTIONS` once the CV and working papers are in it.**
+  resources, about, contact) is what `renderNav()` draws; `SECTIONS` is what routes. So
+  `/socialmedia` still resolves and renders but isn't a top-level tab, because it reads
+  personal-brand to a contracting audience (Contact links to it instead).
+- **Resources** are the `resources` array in `renderResources()` — one object per PDF
+  (`title, description, category, year, filename`), file committed at the repo root.
+  Currently the CV and NHEICC's AI Fundamentals deck (posted at NHEICC's request,
+  attributed to NHEICC / presenter Mahesh Dahal).
 - **`<noscript>` block** in `<body>`, before the main `<script>`: name, role, tagline,
   journals, methods, and Scholar/ORCID/LinkedIn/email links. It exists because every
   section is JS-injected, so the raw HTML would otherwise expose only the `<title>` to
@@ -214,9 +216,7 @@ Notes:
 - `annualreport_dohs_2081_82.pdf` (~19 MB) is unused/unlinked — remove if not
   needed to slim the repo (it is most of the repo's 51 MB).
 - `portfolio_html.html` is a legacy page, not linked — candidate for deletion.
-- Resources still renders a "coming soon" empty state. It's off the nav now, so only
-  someone deep-linking `/resources` sees it — but it should get the CV and working
-  papers, then go back into `NAV_SECTIONS`.
+- Resources has the CV and one presentation; working papers still to add.
 - ORCID profile is behind the curated publication list — add papers to ORCID so
   the auto-sync stays useful.
 - Contact form depends on the Web3Forms access key embedded in `index.html`.

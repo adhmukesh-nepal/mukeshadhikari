@@ -3,6 +3,15 @@
 Human-readable log of substantive changes to mukeshadhikari.com. Newest first.
 Dates are the date the change was made.
 
+## 2026-09-24 — NHEICC AI training slides in Resources
+
+- **Added "AI Fundamentals for Health Workers"** (`NHEICC_AI_Fundamentals_Training_2026.pdf`,
+  31 slides, ~1.3 MB) to Resources, shared at NHEICC's request. Attributed to NHEICC and the
+  presenter, Mahesh Dahal — it is their deck, not mine.
+- **Re-exported from the .pptx through PowerPoint** rather than posting the PDF as received:
+  that PDF repeated the last word of every wrapped line ("translating, translating… a a
+  doctor"). The PowerPoint source was clean, so the fault was in the export.
+
 ## 2026-08-08 (eighth pass — interactive visualization)
 
 - **Added "Interactive data visualization (Observable)"** to Tools & reproducibility, and
