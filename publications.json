@@ -1,6 +1,58 @@
 {
-  "updated": "2026-07-13",
+  "updated": "2026-11-17",
   "us": [
+    {
+      "title": "Determining the Sweet Spot for Rural Hospital Engagement in General Surgery Training",
+      "journal": "Academic Medicine",
+      "year": "2026",
+      "link": "https://doi.org/10.1093/acamed/wvag335",
+      "tags": [
+        "Medical Education",
+        "Surgical Education",
+        "Rural Health"
+      ]
+    },
+    {
+      "title": "Rethinking Rurality in Graduate Medical Education",
+      "journal": "The Journal of Rural Health",
+      "year": "2026",
+      "link": "https://doi.org/10.1111/jrh.70238",
+      "tags": [
+        "Medical Education",
+        "Rural Health"
+      ]
+    },
+    {
+      "title": "Rural Versus Urban Distribution of Obstetrics and Gynecology Residency Training and Associated Rural Community Characteristics",
+      "journal": "The Journal of Rural Health",
+      "year": "2026",
+      "link": "https://doi.org/10.1111/jrh.70231",
+      "tags": [
+        "Medical Education",
+        "Rural Health",
+        "Maternal Health"
+      ]
+    },
+    {
+      "title": "Growing the Rural Physician Workforce Through Graduate Medical Education",
+      "journal": "North Carolina Medical Journal",
+      "year": "2026",
+      "link": "https://doi.org/10.18043/001c.169241",
+      "tags": [
+        "Medical Education",
+        "Rural Health"
+      ]
+    },
+    {
+      "title": "From Dreams to Fruition: The Development of the Mountain Area Health Education Center Boone Rural Family Medicine Residency",
+      "journal": "North Carolina Medical Journal",
+      "year": "2026",
+      "link": "https://doi.org/10.18043/001c.169257",
+      "tags": [
+        "Medical Education",
+        "Rural Health"
+      ]
+    },
     {
       "title": "Health Resources and Services Administration and Veterans Affairs Funding Intersections Expand Graduate Medical Education Training Opportunities in Rural and Underserved Areas",
       "journal": "The Journal of Rural Health",
@@ -9,6 +61,17 @@
       "tags": [
         "Medical Education",
         "Rural Health"
+      ]
+    },
+    {
+      "title": "Physician Training in Rural and Health Center Settings More Than Doubled, 2008–24",
+      "journal": "Health Affairs",
+      "year": "2025",
+      "link": "https://doi.org/10.1377/hlthaff.2024.01297",
+      "tags": [
+        "Medical Education",
+        "Rural Health",
+        "THC"
       ]
     },
     {
@@ -113,6 +176,16 @@
         "AI",
         "Epilepsy",
         "LMICs"
+      ]
+    },
+    {
+      "title": "Experiences and Effect of Implementing the Social Health Insurance (SHI) Program in Nepal: A Mixed Method Study",
+      "journal": "PLOS Global Public Health",
+      "year": "2025",
+      "link": "https://doi.org/10.1371/journal.pgph.0003492",
+      "tags": [
+        "Health Insurance",
+        "Nepal"
       ]
     },
     {
